@@ -1,0 +1,126 @@
+@media screen and (max-width: 991px) {
+    .bg-cover {
+        background: url(../images/landing-page-respiradores-cover-mobile.jpg);
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right center;
+        padding: 0;
+    }
+
+    .fullscreen .center-col {
+        top: 30% !important;
+    }
+
+    .particles-version h1 {
+        font-size: 3.5rem !important;
+    }
+
+    .particles-version h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .sello-kn95 {
+        width: 18% !important;
+        margin-bottom: 15px !important;
+    }
+
+    .logo-cover {
+        width: 25% !important;
+        position: absolute !important;
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+
+    .particles-version h2 {
+        font-size: 2rem !important;
+    }
+
+    .dot-01 {
+        left: 30px !important;
+        top: 80px !important;
+    }
+
+    .dot-02 {
+        left: 20px !important;
+        top: 140px !important;
+    }
+
+    .dot-03 {
+        left: -50px !important;
+        top: 210px !important;
+    }
+
+    .dot-04 {
+        left: 10px !important;
+        top: 280px !important;
+    }
+
+    [data-tooltip]:before {
+        font-size: 14px !important;
+    }
+
+    .titulo-individual h2 {
+        font-size: 2rem !important;
+    }
+
+    #comprar h2 {
+        font-size: 2rem !important;
+    }
+
+    .empaque-respirador {
+        width: 80% !important;
+        margin: 0 auto !important;
+        position: initial !important;
+    }
+
+    .address-text {
+        padding: 4rem 0.75rem !important;
+    }
+
+    .mobile {
+        display: block !important;
+    }
+
+    .desktop {
+        display: none !important;
+    }
+
+    .layer-mask {
+        height: 100vh !important;
+    }
+
+    .mask-container {
+        cursor: pointer !important;
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        transform: scale(1) !important;
+        transition: 0.5s !important;
+    }
+
+    .mask-container:hover div:nth-child(1){
+        transform: translate(0px, 0px) !important;
+    }
+    
+    .mask-container:hover div:nth-child(2){
+        transform: translate(0px, 140px) !important;
+    }
+    
+    .mask-container:hover div:nth-child(3){
+        transform: translate(0px, 280px) !important;
+    }
+    
+    .mask-container:hover div:nth-child(4){
+        transform: translate(0px, 420px) !important;
+    }
+
+    .mask-container:hover p {
+        top: 160px !important;
+        position: absolute !important;
+    }
+
+    .logo-footer {
+        width: 20% !important;
+    }
+}

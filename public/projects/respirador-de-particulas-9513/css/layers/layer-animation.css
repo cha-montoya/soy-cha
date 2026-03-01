@@ -1,0 +1,53 @@
+/* ----------------------------------------------
+:: Layer Mask Animation
+---------------------------------------------- */
+
+.layer-mask {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mask-container {
+    cursor: pointer;
+    position: relative;
+    width: 800px;
+    height: 596px;
+    transform: scale(.8);
+    transition: 0.5s;
+}
+
+.mask-container div {
+    position: absolute;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.mask-container:hover div:nth-child(1){
+    transform: translate(-240px, -160px);
+}
+
+.mask-container:hover div:nth-child(2){
+    transform: translate(-120px, -80px);
+}
+
+.mask-container:hover div:nth-child(3){
+    transform: translate(0px, 0px);
+}
+
+.mask-container:hover div:nth-child(4){
+    transform: translate(120px, 80px);
+}
+
+.mask-container p {
+    display: none;
+}
+
+.mask-container:hover p {
+    transition: opacity .35s ease .25s;
+    display: block;
+}

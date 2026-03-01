@@ -1,0 +1,213 @@
+.sello-kn95 {
+    width: 8%;
+    margin-bottom: 15px;
+}
+
+.right-banner {
+    position: absolute;
+    background: #2b314d;
+}
+
+.dark-blue-bg {
+    background: #2b314d;
+}
+
+.blue-bg {
+    background: #00abc9;
+}
+
+.white-bg {
+    background: #ffffff;
+}
+
+.feature-item {
+    display: table;
+    padding: 8px 0;
+    max-width: 100%;
+    text-align: left;
+}
+
+.feature-item .icon {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.laptop-features-icon {
+    display: table-cell;
+    vertical-align: top;
+    width: 90px;
+    transition: all 1.2s;
+}
+
+.features-content {
+    display: table-cell;
+    padding-left: 20px;
+}
+
+.features-content p {
+    color: #FFFFFF;
+    margin-top: 32px;
+    font-size: 1.5rem !important;
+    font-weight: 400;
+    line-height: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mask-usage {
+    width: 70%;
+}
+
+.position-absolute {
+    position: absolute !important;
+}
+
+#comprar h2 {
+    font-size: 3rem !important;
+    font-weight: 700;
+}
+
+.empaque-respirador {
+    width: 80%;
+    padding: 40px 0;
+    right: -60px;
+    position: relative;
+}
+
+.logo-cover {
+    width: 10%;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}
+
+.logo-footer {
+    width: 8%;
+    display: block;
+    margin: 0 auto;
+    padding: 0 0 20px 0;
+}
+
+.mask-tecnologia {
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 130px;
+    border: 1px solid #838383;
+    color: #838383 !important;
+    padding: 10px;
+    background: #ffffff;
+    letter-spacing: -0.1px;
+    line-height: 1;
+}
+
+.send-front {
+    z-index: 10;
+}
+
+.diferencias {
+    letter-spacing: -0.3px;
+}
+
+.diferencias h3 {
+    font-weight: 500;
+}
+
+.diferencias h4 {
+    font-weight: 500 !important;
+}
+
+.diferencias span {
+    color: #00abc9;
+}
+
+.titulo-individual {
+    padding: 50px 0 10px 0;
+    text-align: center;
+    letter-spacing: -0.3px;
+    font-weight: 700 !important;
+}
+
+.titulo-individual h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.titulo-individual p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #2b2b2b;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: 0.5px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.btn.btn-gradient img {
+    width: 35%;
+}
+
+.comprar {
+    padding: 12px !important;
+}
+
+.LV_valid {
+    display: none !important;
+}
+
+#kampyleButtonContainer {
+    display: none !important;
+}
+
+.mobile {
+    display: none;
+}
+
+.concierto-title {
+    top: 230px;
+    position: relative;
+}
+
+.video-button {
+    width: 70px;
+    height: 70px;
+    background: #00c8e6;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    line-height: 73px;
+    padding-left: 15px;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+    z-index: 2;
+    -webkit-border-radius: 50%;
+    -webkit-animation: pulse_effect 1s infinite;
+    -o-animation: pulse_effect 1s infinite;
+    animation: pulse_effect 1s infinite;
+    -webkit-box-shadow: 0 0 0 0 rgb(255 255 255);
+    box-shadow: 0 0 0 0 rgb(255 255 255);
+}
+
+.video-button i {
+    color: #fff;
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+}
+
+.video-button:hover {
+    background: #FFFFFF;
+}
+
+.video-button:hover i {
+    color: #00c8e6;
+}
+
+.top-100 {
+    top: 100px !important;
+}
