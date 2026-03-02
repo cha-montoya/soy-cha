@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react"
-import { useUTMPersonalization } from '../../hooks/useUTMPersonalization'
+import { useUTMPersonalization } from "../../hooks/useUTMPersonalization"
+import { useParallax } from "../../hooks/useParallax"
 
 import bassIn from "../../assets/videos/bass_in.mp4"
 import bassOut from "../../assets/videos/bass_out.mp4"
@@ -39,7 +40,7 @@ export default function Hero() {
     }
   }, [])
 
-  //Texto
+  // Texto reveal
   const [showText, setShowText] = useState(false)
   const textRef = useRef(null)
 
@@ -59,54 +60,101 @@ export default function Hero() {
     return () => observer.disconnect()
   }, [])
 
+  // 🔥 Parallax (solo desktop)
+  const parallaxRef = useRef(null)
+  useParallax(parallaxRef, 0.15)
+
   return (
-    <section id="hero" className="relative h-screen w-full overflow-hidden bg-white scroll-mt-20">
-
+    <section
+      id="hero"
+      className="relative h-screen w-full overflow-hidden bg-white scroll-mt-20"
+    >
       <div className="relative z-10 h-full flex items-center container mx-auto px-6 py-32">
+        
+        {/* Texto + Parallax */}
+        <div
+          ref={parallaxRef}
+          style={{ willChange: "transform" }}
+          className="w-1/2"
+        >
+          <div
+            ref={textRef}
+            className={`px-6 md:px-16 transition-all duration-700 ease-out ${
+              showText
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-6"
+            }`}
+          >
+            <div className="hero-eyebrow text-neutral-500">
+              Growth Strategy · Design · MarTech
+            </div>
 
-        {/* Texto */}
-        <div ref={textRef} className={`w-1/2 px-6 md:px-16 transition-all duration-700 ease-out ${showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <div className="hero-eyebrow text-neutral-500">Growth Strategy · Design · MarTech</div>
-          <h1 className="text-8xl md:text-7xl font-black leading-tight tracking-tight font-elegant" dangerouslySetInnerHTML={{ __html: headline }} />
-          <p className="mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out">
-            {sub}
-          </p>
-          <p className={`mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out
-            ${showText
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-4"}
-          `}>
-            <ul className="space-y-2 mt-6">
-              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
-                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] bg-neutral-400 dark:bg-neutral-600 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black dark:group-hover:bg-white" />
-                Desarrollador <span className="marker">Creativo</span> de Integraciones MarTech
-              </li>
+            <h1
+              className="text-8xl md:text-7xl font-black leading-tight tracking-tight font-elegant"
+              dangerouslySetInnerHTML={{ __html: headline }}
+            />
 
-              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
-                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] bg-neutral-400 dark:bg-neutral-600 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black dark:group-hover:bg-white" />
-                Growth & <span className="marker">Estratega</span> de Email Marketing
-              </li>
+            <p className="mt-4 text-lg text-neutral-500 font-sans leading-relaxed">
+              {sub}
+            </p>
 
-              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
-                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] bg-neutral-400 dark:bg-neutral-600 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black dark:group-hover:bg-white" />
-                <span className="marker">Experto</span> en Email Deliverability
-              </li>
+            {/* Lista (ya no dentro de <p>) */}
+            <div
+              className={`mt-6 transition-all duration-700 delay-150 ease-out ${
+                showText
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+            >
+              <ul className="space-y-3">
+                <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+                  <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
+                  Desarrollador{" "}
+                  <span className="marker">
+                    Creativo
+                  </span>{" "}
+                  de Integraciones MarTech
+                </li>
 
-              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
-                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] bg-neutral-400 dark:bg-neutral-600 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black dark:group-hover:bg-white" />
-                Automatización & Data & para <span className="marker">Crecimientos Escalables</span>
-              </li>
-            </ul>
-          </p>
-          <div className="mt-12">
-            <button className="btn-glitch-fill">
-              <span className="text">// {cta}</span><span className="text-decoration"> _</span>
-              <span className="decoration">⇒</span>
-            </button>
+                <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+                  <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
+                  Growth &{" "}
+                  <span className="marker">
+                    Estratega
+                  </span>{" "}
+                  de Email Marketing
+                </li>
+
+                <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+                  <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
+                  <span className="marker">
+                    Experto
+                  </span>{" "}
+                  en Email Deliverability
+                </li>
+
+                <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+                  <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
+                  Automatización & Data para{" "}
+                  <span className="marker">
+                    Crecimientos Escalables
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-12">
+              <button className="btn-glitch-fill">
+                <span className="text">// {cta}</span>
+                <span className="text-decoration"> _</span>
+                <span className="decoration">⇒</span>
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Animacion */}
+        {/* Video */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none">
           <video
             key={currentVideo}
@@ -116,13 +164,10 @@ export default function Hero() {
             playsInline
             preload="auto"
             onEnded={handleEnded}
-            className="
-              h-[80vh] max-w-none object-contain
-            "
+            className="h-[80vh] max-w-none object-contain"
           />
         </div>
       </div>
-
     </section>
   )
 }

@@ -62,7 +62,7 @@ export default function Projects() {
 
       <div className="mb-16 text-center">
           <div className="hero-eyebrow text-neutral-500">Proyectos</div>
-          <h2 className="font-elegant text-6xl md:text-5xl font-black tracking-tight mb-8 text-white">
+          <h2 className="font-elegant text-8xl md:text-7xl font-black tracking-tight mb-8 text-white">
             Trabajos con propósito de negocio.
           </h2>
           <p className="text-lg leading-relaxed text-neutral-200">

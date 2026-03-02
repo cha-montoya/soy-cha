@@ -8,7 +8,7 @@ export default function About() {
         {/* Contenido */}
         <div className="w-1/2 px-6 md:p-16 relative items-center">
           <div className="hero-eyebrow text-neutral-500">Sobre Mí</div>
-          <h2 className="font-elegant text-6xl md:text-5xl font-black tracking-tight mb-8">
+          <h2 className="font-elegant text-8xl md:text-7xl font-black tracking-tight mb-8">
             Dos disciplinas.<br />Una sola visión.
           </h2>
           <p className="text-lg leading-relaxed">
