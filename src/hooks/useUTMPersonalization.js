@@ -13,25 +13,25 @@ import { useMemo } from 'react'
 
 const COPY = {
   recruiter: {
-    headline: 'Hola, reclutador 👋 Esto es lo que necesitas saber.',
-    sub:      'Más de 20 años entre diseño y growth. Actualmente disponible para nuevas oportunidades.',
+    headline: 'Hola, visitante de <span class="italic text-primary">LinkedIn</span> 👋',
+    sub:      'Esto es lo que necesitas saber: Tengo más de 20 años entre diseño y growth. Actualmente disponible para nuevas oportunidades.',
     cta:      'Ver mi CV',
     variant:  'recruiter',
   },
   propuesta: {
-    headline: 'Esto es lo que puedo hacer por tu marca.',
-    sub:      'Estrategia de crecimiento, diseño y marketing automation — en un solo perfil.',
+    headline: 'Esto es lo que puedo hacer <span class="italic text-primary">por tu marca.</span>',
+    sub:      'Estrategia de crecimiento, diseño y marketing automation, en un solo perfil.',
     cta:      'Ver servicios',
     variant:  'propuesta',
   },
   referral: {
-    headline: 'Bienvenido. Ya tenemos algo en común.',
+    headline: 'Bienvenido. Ya tenemos <span class="italic text-primary">algo en común.</span>',
     sub:      'Alguien pensó que deberíamos conocernos. Buen gusto de su parte.',
     cta:      'Conoce mi trabajo',
     variant:  'referral',
   },
   default: {
-    headline: 'Estrategia que se ve. Diseño que convierte.',
+    headline: 'Estrategia que se ve. Diseño que <span class="italic text-primary">convierte.</span>',
     sub:      'Soy Carlos \'Cha\' Montoya, estratega de crecimiento digital y diseñador gráfico con más de 20 años conectando creatividad con resultados de negocio.',
     cta:      'Conóceme',
     variant:  'default',

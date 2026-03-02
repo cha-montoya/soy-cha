@@ -67,11 +67,9 @@ export default function Hero() {
         {/* Texto */}
         <div ref={textRef} className={`w-1/2 px-6 md:px-16 transition-all duration-700 ease-out ${showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="hero-eyebrow text-neutral-500">Growth Strategy · Design · MarTech</div>
-          <h1 className="text-8xl md:text-7xl font-black leading-tight tracking-tight font-elegant">
-            {headline} {/* Estrategia que se ve.<br />Diseño que <span className="italic text-primary">convierte.</span> */}
-          </h1>
+          <h1 className="text-8xl md:text-7xl font-black leading-tight tracking-tight font-elegant" dangerouslySetInnerHTML={{ __html: headline }} />
           <p className="mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out">
-            {sub} {/* Soy Carlos 'Cha' Montoya, estratega de crecimiento digital y diseñador gráfico con más de 20 años conectando creatividad con resultados de negocio. */}
+            {sub}
           </p>
           <p className={`mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out
             ${showText
@@ -102,7 +100,7 @@ export default function Hero() {
           </p>
           <div className="mt-12">
             <button className="btn-glitch-fill">
-              <span className="text">// {cta} {/* Conóceme */}</span><span className="text-decoration"> _</span>
+              <span className="text">// {cta}</span><span className="text-decoration"> _</span>
               <span className="decoration">⇒</span>
             </button>
           </div>
