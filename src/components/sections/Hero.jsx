@@ -64,28 +64,42 @@ export default function Hero() {
         {/* Texto */}
         <div ref={textRef} className={`w-1/2 px-6 md:px-16 transition-all duration-700 ease-out ${showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="hero-eyebrow text-neutral-500">Growth Strategy · Design · MarTech</div>
-          <h1 className="text-8xl md:text-7xl font-black leading-tight tracking-tight font-elegant">
+          <h1 id="hero-headline" className="text-8xl md:text-7xl font-black leading-tight tracking-tight font-elegant">
             Estrategia que se ve.<br />Diseño que <span className="italic text-primary">convierte.</span>
           </h1>
-          <p className={`mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out
-            ${showText
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-4"}
-          `}>Hola, soy Carlos 'Cha' Montoya — estratega de crecimiento digital y diseñador gráfico con más de 20 años conectando creatividad con resultados de negocio.
+          <p id="hero-sub" className="mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out">
+            Soy Carlos 'Cha' Montoya, estratega de crecimiento digital y diseñador gráfico con más de 20 años conectando creatividad con resultados de negocio.
           </p>
           <p className={`mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out
             ${showText
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4"}
           `}>
-            <span className="marker">Creative</span> Developer & Motion Designer<br />
-            Growth & Email Marketing <span className="marker">Strategist</span><br />
-            CRM & Deliverability <span className="marker">Expert</span><br />
-            Automation, Data & Martech Integrations for <span className="marker">Scalable Growth</span>
+            <ul className="space-y-2 mt-6">
+              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] bg-neutral-400 dark:bg-neutral-600 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black dark:group-hover:bg-white" />
+                Desarrollador <span className="marker">Creativo</span> de Integraciones MarTech
+              </li>
+
+              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] bg-neutral-400 dark:bg-neutral-600 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black dark:group-hover:bg-white" />
+                Growth & <span className="marker">Estratega</span> de Email Marketing
+              </li>
+
+              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] bg-neutral-400 dark:bg-neutral-600 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black dark:group-hover:bg-white" />
+                <span className="marker">Experto</span> en Email Deliverability
+              </li>
+
+              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-[2px] bg-neutral-400 dark:bg-neutral-600 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black dark:group-hover:bg-white" />
+                Automatización & Data & para <span className="marker">Crecimientos Escalables</span>
+              </li>
+            </ul>
           </p>
           <div className="mt-12">
             <button className="btn-glitch-fill">
-              <span className="text">// Conóceme</span><span className="text-decoration"> _</span>
+              <span id ="hero-cta" className="text">// Conóceme</span><span className="text-decoration"> _</span>
               <span className="decoration">⇒</span>
             </button>
           </div>

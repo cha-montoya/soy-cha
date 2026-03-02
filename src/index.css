@@ -73,6 +73,10 @@ body,
   }
 }
 
+.group:hover .marker::after {
+  opacity: 0.25;
+}
+
 .nav-link {
   position: relative;
   padding: 0.25rem 0;
