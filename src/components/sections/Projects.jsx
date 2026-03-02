@@ -61,9 +61,14 @@ export default function Projects() {
     <section id="projects" className="bg-slate-900 py-32 px-6 md:px-16">
 
       <div className="mb-16 text-center">
-          <h2 className="font-display text-6xl md:text-5xl font-black tracking-tight mb-8 text-white">
-            Proyectos
+          <div className="hero-eyebrow text-neutral-500">Proyectos</div>
+          <h2 className="font-elegant text-6xl md:text-5xl font-black tracking-tight mb-8 text-white">
+            Trabajos con propósito de negocio.
           </h2>
+          <p className="text-lg leading-relaxed text-neutral-200">
+            Cada proyecto aquí comenzó con un problema de negocio. El diseño y la estrategia fueron la forma de resolverlo.<br />
+            No solo muestro cómo quedó — muestro por qué funcionó.
+          </p>
         </div>
 
       {/* FILTROS */}

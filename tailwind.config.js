@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         sans: ['Figtree', 'sans-serif'],
         display: ['Red Hat Display', 'sans-serif'],
+        elegant: ['Source Serif', 'serif'],
       },
     },
   },

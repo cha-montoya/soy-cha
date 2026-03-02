@@ -7,14 +7,16 @@ export default function About() {
       <div className="relative z-10 h-full flex items-center container mx-auto px-6">
         {/* Contenido */}
         <div className="w-1/2 px-6 md:p-16 relative items-center">
-          <h2 className="font-display text-6xl md:text-5xl font-black tracking-tight mb-8">
-            Sobre Mí
+          <div className="hero-eyebrow text-neutral-500">Sobre Mí</div>
+          <h2 className="font-elegant text-6xl md:text-5xl font-black tracking-tight mb-8">
+            Dos disciplinas.<br />Una sola visión.
           </h2>
           <p className="text-lg leading-relaxed">
-            Soy diseñador web con enfoque editorial y experimental.
-            Me interesa construir experiencias visuales que conecten
-            narrativa, ritmo y tecnología, explorando transiciones,
-            movimiento y profundidad en la web.
+            Empecé como diseñador gráfico en 2002 — construyendo identidades visuales, materiales de campaña y sistemas de marca. Pero siempre me intrigó la misma pregunta: ¿por qué algunas piezas funcionan y otras no?<br /><br />
+            Esa curiosidad me llevó al marketing digital y, eventualmente, al mundo del marketing automation. Desde 2014 me especialicé en estrategia de crecimiento: segmentación de audiencias, modelos de datos, customer lifecycle, journey mapping y la implementación técnica de plataformas como Eloqua, Marketo, Salesforce Marketing Cloud, HubSpot, Responsys y Acoustic.<br /><br />
+            Hoy trabajo en la intersección de ambos mundos: traigo pensamiento estratégico a los problemas de diseño, y criterio creativo a las decisiones de datos. He liderado equipos de tecnología y creatividad para marcas como 3M LATAM, Abbott, Christus Muguerza y KidZania, siempre con un ojo en los resultados y otro en la experiencia del usuario.<br /><br />
+            Soy experto en email marketing y deliverability — uno de los campos más técnicos y subestimados del marketing digital.<br /><br />
+            Estoy en búsqueda de un rol donde pueda liderar equipos y proyectos, sin perder el contacto con la ejecución.
           </p>
         </div>
         <div className="w-1/2 h-screen">
