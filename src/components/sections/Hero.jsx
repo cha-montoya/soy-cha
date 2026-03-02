@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react"
+import { useUTMPersonalization } from '../../hooks/useUTMPersonalization'
 
 import bassIn from "../../assets/videos/bass_in.mp4"
 import bassOut from "../../assets/videos/bass_out.mp4"
@@ -19,6 +20,8 @@ const videoSequence = [
 const IDLE_PAUSE = 1200
 
 export default function Hero() {
+  const { headline, sub, cta } = useUTMPersonalization()
+
   const [currentVideo, setCurrentVideo] = useState(0)
   const timeoutRef = useRef(null)
 
@@ -64,11 +67,11 @@ export default function Hero() {
         {/* Texto */}
         <div ref={textRef} className={`w-1/2 px-6 md:px-16 transition-all duration-700 ease-out ${showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="hero-eyebrow text-neutral-500">Growth Strategy · Design · MarTech</div>
-          <h1 id="hero-headline" className="text-8xl md:text-7xl font-black leading-tight tracking-tight font-elegant">
-            Estrategia que se ve.<br />Diseño que <span className="italic text-primary">convierte.</span>
+          <h1 className="text-8xl md:text-7xl font-black leading-tight tracking-tight font-elegant">
+            {headline} {/* Estrategia que se ve.<br />Diseño que <span className="italic text-primary">convierte.</span> */}
           </h1>
-          <p id="hero-sub" className="mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out">
-            Soy Carlos 'Cha' Montoya, estratega de crecimiento digital y diseñador gráfico con más de 20 años conectando creatividad con resultados de negocio.
+          <p className="mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out">
+            {sub} {/* Soy Carlos 'Cha' Montoya, estratega de crecimiento digital y diseñador gráfico con más de 20 años conectando creatividad con resultados de negocio. */}
           </p>
           <p className={`mt-4 text-lg text-neutral-500 font-sans leading-relaxed transition-all duration-700 delay-150 ease-out
             ${showText
@@ -99,7 +102,7 @@ export default function Hero() {
           </p>
           <div className="mt-12">
             <button className="btn-glitch-fill">
-              <span id ="hero-cta" className="text">// Conóceme</span><span className="text-decoration"> _</span>
+              <span className="text">// {cta} {/* Conóceme */}</span><span className="text-decoration"> _</span>
               <span className="decoration">⇒</span>
             </button>
           </div>
