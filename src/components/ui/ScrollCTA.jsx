@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useScrollDepth } from './useScrollDepth'
+import { useScrollDepth } from '../../hooks/useScrollDepth'
 
 /**
  * ScrollCTA
