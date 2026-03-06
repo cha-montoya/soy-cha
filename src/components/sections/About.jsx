@@ -3,7 +3,7 @@ import About3D from "../ui/About3D"
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen bg-slate-900 text-white marker:overflow-hidden flex items-center justify-center relative z-20 scroll-mt-20">
+    <section id="about" className="relative min-h-screen bg-slate-900 text-white overflow-hidden flex items-center justify-center relative z-20 scroll-mt-20">
       <div className="relative z-10 h-full flex items-center container mx-auto px-6">
         {/* Contenido */}
         <div className="w-1/2 px-6 md:p-16 relative items-center">

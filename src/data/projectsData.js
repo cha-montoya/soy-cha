@@ -38,6 +38,7 @@ export const projects = [
         title: "Newsletter Navidad",
         client: "Christus Muguerza",
         category: "email",
+        personalizedPreview: true,
         clientLogo: "/projects/logos/logo-christus-light.svg?text=Logo Christus Muguerza",
         thumbnail: "/projects/newsletter/chrustus-newsletter-diciembre-cover.jpg",
         previewUrl: "/projects/newsletter/christus-newsletter-diciembre.html",

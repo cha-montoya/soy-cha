@@ -284,3 +284,21 @@ body,
 .reveal-line:last-child {
   letter-spacing: -0.02em;
 }
+
+.logo-track {
+  animation: scrollLogos 30s linear infinite;
+  width: max-content;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
