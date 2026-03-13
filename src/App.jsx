@@ -1,7 +1,10 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Home from "./pages/Home"
+import Loader from "./components/ui/Loader"
 
 export default function App() {
+
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const colors = ["#042940", "#005C53", "#9FC131", "#DBF227", "#D6D58E"]
@@ -36,5 +39,10 @@ export default function App() {
     return () => clearInterval(interval)
   }, [])
 
-  return <Home />
+  return (
+    <>
+      {loading && <Loader onFinish={() => setLoading(false)} />}
+      <Home />
+    </>
+  )
 }

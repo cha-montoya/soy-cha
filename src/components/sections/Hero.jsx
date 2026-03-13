@@ -161,29 +161,29 @@ export default function Hero() {
               dangerouslySetInnerHTML={{ __html: headline }}
             />
 
-            <p className="mt-4 text-lg md:text-xl text-neutral-500 font-sans leading-relaxed">
+            <p className="mt-8 text-lg md:text-lg text-neutral-500 font-sans leading-relaxed">
               {sub}
             </p>
 
-            <ul className="mt-6 space-y-3 text-neutral-500">
-              <li className="group relative pl-6 text-lg md:text-xl tracking-wide leading-relaxed font-sans">
+            {/* <ul className="mt-6 space-y-3 text-neutral-500">
+              <li className="group relative pl-6 text-lg md:text-lg tracking-wide leading-relaxed font-sans">
                 <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
                 Desarrollador <span className="marker">Creativo</span> de Integraciones MarTech
               </li>
-              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+              <li className="group relative pl-6 text-lg md:text-lg tracking-wide leading-relaxed font-sans">
                 <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
                 Growth & <span className="marker">Estratega</span> de Email Marketing
               </li>
-              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+              <li className="group relative pl-6 text-lg md:text-lg tracking-wide leading-relaxed font-sans">
                 <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
                 <span className="marker">Experto</span> en Email Deliverability
               </li>
-              <li className="group relative pl-6 text-lg tracking-wide leading-relaxed font-sans">
+              <li className="group relative pl-6 text-lg md:text-lg tracking-wide leading-relaxed font-sans">
                 <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
                 Automatización & Data para <span className="marker">Crecimientos Escalables</span>
               </li>
-            </ul>
-            <div className="mt-12">
+            </ul> */}
+            <div className="mt-8">
               <button className="btn-glitch-fill">
                 <span className="text">// {cta}</span>
                 <span className="text-decoration"> _</span>

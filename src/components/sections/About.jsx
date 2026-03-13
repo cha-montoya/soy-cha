@@ -9,13 +9,13 @@ export default function About() {
         <div className="w-1/2 px-6 md:p-16 relative items-center">
           <div className="hero-eyebrow text-neutral-500">Sobre Mí</div>
           <h2 className="font-elegant text-8xl md:text-7xl font-black tracking-tight mb-8">
-            Dos disciplinas.<br />Una sola visión.
+            Dos disciplinas.<br />Una sola <span className="italic text-primary">visión.</span>
           </h2>
           <p className="text-lg leading-relaxed">
-            Empecé como diseñador gráfico en 2002 — construyendo identidades visuales, materiales de campaña y sistemas de marca. Pero siempre me intrigó la misma pregunta: ¿por qué algunas piezas funcionan y otras no?<br /><br />
+            Empecé como diseñador gráfico en 2002 construyendo identidades visuales, materiales de campaña y sistemas de marca. Pero siempre me intrigó la misma pregunta: ¿por qué algunas piezas funcionan y otras no?<br /><br />
             Esa curiosidad me llevó al marketing digital y, eventualmente, al mundo del marketing automation. Desde 2014 me especialicé en estrategia de crecimiento: segmentación de audiencias, modelos de datos, customer lifecycle, journey mapping y la implementación técnica de plataformas como Eloqua, Marketo, Salesforce Marketing Cloud, HubSpot, Responsys y Acoustic.<br /><br />
-            Hoy trabajo en la intersección de ambos mundos: traigo pensamiento estratégico a los problemas de diseño, y criterio creativo a las decisiones de datos. He liderado equipos de tecnología y creatividad para marcas como 3M LATAM, Abbott, Christus Muguerza y KidZania, siempre con un ojo en los resultados y otro en la experiencia del usuario.<br /><br />
-            Soy experto en email marketing y deliverability — uno de los campos más técnicos y subestimados del marketing digital.<br /><br />
+            Hoy trabajo en la intersección de ambos mundos: traigo pensamiento estratégico a los problemas de diseño, y criterio creativo a las decisiones de datos. He liderado equipos de tecnología y creatividad para marcas como <span className="text-bold">3M LATAM, Abbott, Christus Muguerza y KidZania,</span> siempre con un ojo en los resultados y otro en la experiencia del usuario.<br /><br />
+            Soy experto en email marketing y deliverability uno de los campos más técnicos y subestimados del marketing digital.<br /><br />
             Estoy en búsqueda de un rol donde pueda liderar equipos y proyectos, sin perder el contacto con la ejecución.
           </p>
         </div>

@@ -6,7 +6,8 @@ import Header from "../components/layout/Header"
 import Hero from "../components/sections/Hero"
 import About from "../components/sections/About"
 import MindsetIntro from "../components/sections/MindsetIntro"
-import Mindset from "../components/sections/Mindset"
+import MindsetHeader from "../components/sections/MindsetHeader"
+import MindsetCards from "../components/sections/MindsetCards"
 import Services from "../components/sections/Services"
 import Projects from "../components/sections/Projects"
 import Contact from "../components/sections/Contact"
@@ -61,7 +62,8 @@ function Home() {
         <Hero />
         <About />
         <MindsetIntro />
-        <Mindset />
+        <MindsetHeader />
+        <MindsetCards />
         <Services />
         <Projects />
         <Contact />
