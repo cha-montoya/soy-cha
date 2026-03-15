@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import Home from "./pages/Home"
 import Loader from "./components/ui/Loader"
+import Home from "./pages/Home"
+import { supabase } from "./lib/supabase";
 
 export default function App() {
 
@@ -41,8 +42,10 @@ export default function App() {
 
   return (
     <>
-      {loading && <Loader onFinish={() => setLoading(false)} />}
-      <Home />
+      {loading && <Loader finishLoading={() => setLoading(false)} />}
+        
+      {!loading && <Home />}
     </>
+
   )
 }

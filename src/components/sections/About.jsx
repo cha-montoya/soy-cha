@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import About3D from "../ui/About3D"
 
 export default function About() {
   return (
@@ -20,7 +19,7 @@ export default function About() {
           </p>
         </div>
         <div className="w-1/2 h-screen">
-          <About3D />
+
         </div>
       </div>
     </section>

@@ -78,7 +78,7 @@ export default function ProjectModal({ project, onClose }) {
 
                             <ProjectTimeline involvement={project.involvement} />
 
-                            <div className="mt-16 space-y-8">
+                            <div className="mt-8 space-y-8">
 
                                 <div>
                                     <h3 className="text-xl mb-2 font-bold">Contexto</h3>
@@ -120,8 +120,8 @@ export default function ProjectModal({ project, onClose }) {
                                         </h3>
 
                                         <p className="text-slate-400 mb-4 text-sm">
-                                            En este proyecto se utilizó imágenes dinámicas para personalización.
-                                            Ingresa tu nombre para ver cómo funciona.
+                                            En este proyecto se utilizó contenido dinámico para personalización.
+                                            Ingresa tu nombre para ver cómo funciona en el ugly sweater.
                                         </p>
 
                                         <input
@@ -129,7 +129,7 @@ export default function ProjectModal({ project, onClose }) {
                                             placeholder="Escribe tu nombre"
                                             value={name}
                                             onChange={(e) => saveName(e.target.value)}
-                                            className="w-full border border-slate-600 bg-slate-800 rounded-md px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white"
+                                            className="input w-full border-b border-neutral-300 bg-transparent py-3 focus:outline-none"
                                         />
 
                                     </div>

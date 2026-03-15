@@ -7,7 +7,7 @@ export default function ProjectTimeline({ involvement }) {
     ]
 
     return (
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
         {stages.map((stage, index) => {
             const active = involvement[stage.key]
 

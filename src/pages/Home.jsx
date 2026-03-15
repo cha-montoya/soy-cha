@@ -16,49 +16,25 @@ import Footer from "../components/layout/Footer"
 gsap.registerPlugin(ScrollTrigger)
 
 function Home() {
-    const scrollerRef = useRef(null)
 
-    useEffect(() => {
-    if (!scrollerRef.current) return
-
-    ScrollTrigger.defaults({
-        scroller: scrollerRef.current,
-    })
-
-    ScrollTrigger.scrollerProxy(scrollerRef.current, {
-        scrollTop(value) {
-        if (arguments.length) {
-            scrollerRef.current.scrollTop = value
-        }
-        return scrollerRef.current.scrollTop
-        },
-        getBoundingClientRect() {
-        return {
-            top: 0,
-            left: 0,
-            width: window.innerWidth,
-            height: window.innerHeight,
-        }
-        },
-    })
-
-    // ✅ Solo un refresh inicial, sin listener recursivo
+  useEffect(() => {
     ScrollTrigger.refresh()
 
     return () => {
-        ScrollTrigger.defaults({ scroller: window })
-        ScrollTrigger.getAll().forEach((t) => t.kill())
+      ScrollTrigger.getAll().forEach((t) => t.kill())
     }
-    }, [])
+  }, [])
 
   return (
     <>
       <Header />
-      <main
-        ref={scrollerRef}
-        id="scroll-container"
-        className="h-screen overflow-y-scroll scroll-smooth bg-white"
-      >
+      {/*
+        IMPORTANTE: quitamos el div con overflow-y-scroll como scroller.
+        El scroll ahora lo maneja window directamente, que es lo que
+        ScrollTrigger espera para que el pin funcione correctamente.
+        El <main> es solo un contenedor visual, no el scroller.
+      */}
+      <main id="scroll-container" className="bg-white">
         <Hero />
         <About />
         <MindsetIntro />

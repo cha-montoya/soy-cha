@@ -33,12 +33,25 @@ export default function Services() {
             </p>
         </div>
 
+        <div className="container mx-auto">
+            <div className="grid lg:grid-cols-2 gap-20 items-start">
+                <div>
+                    <h3 className="font-elegant text-6xl md:text-5xl font-black tracking-tight mb-8 text-white">Liderazgo de Equipos & <span className="italic text-primary">Project Management</span></h3>
+                </div>
+                <div>
+                    <p className="text-lg leading-relaxed text-neutral-200 mx-auto">He liderado equipos donde conviven perfiles de diseño, tecnología y estrategia y sé que la brecha entre esos mundos se cierra con comunicación clara, no con jerarquía. Gestiono proyectos con foco en resultados medibles, plazos reales y equipos que crecen en el proceso.</p>
+                </div>
+                
+            </div>
+        </div>
+            
+
         <div className="mb-16 flex items-top">
             <div className="w-1/2">
-                <h3 className="font-elegant text-6xl md:text-5xl font-black tracking-tight mb-8 text-white">Liderazgo de Equipos & <span className="italic text-primary">Project Management</span></h3>
+                
             </div>
             <div className="w-1/2">
-                <p className="text-lg leading-relaxed text-neutral-200 mx-auto">He liderado equipos donde conviven perfiles de diseño, tecnología y estrategia y sé que la brecha entre esos mundos se cierra con comunicación clara, no con jerarquía. Gestiono proyectos con foco en resultados medibles, plazos reales y equipos que crecen en el proceso.</p>
+                
             </div>
         </div>
         
