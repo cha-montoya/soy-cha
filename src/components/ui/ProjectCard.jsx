@@ -15,7 +15,7 @@ export default function ProjectCard({ project, onOpen, index }) {
                 transitionDelay: `${index * 100}ms`,
             }}
         >
-        <div className="relative aspect-square overflow-hidden bg-slate-800">
+        <div className="relative aspect-square overflow-hidden bg-slate-800 rounded-xl">
             <img
             src={project.thumbnail}
             alt={project.title}

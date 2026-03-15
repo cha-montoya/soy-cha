@@ -10,11 +10,11 @@ export default function MindsetHeader() {
           Mindset
         </div>
 
-        <h2 className="font-elegant text-8xl md:text-7xl font-black tracking-tight mb-8">
+        <h2 className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8">
           <span className="italic text-primary">Cómo pienso</span> dentro de una campaña.
         </h2>
 
-        <p className="text-lg leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-8 text-sm md:text-base lg:text-lg leading-relaxed">
           No soy solo quien ejecuta ni solo quien analiza. Participo en las tres capas
           y eso cambia la calidad de lo que se construye.
         </p>

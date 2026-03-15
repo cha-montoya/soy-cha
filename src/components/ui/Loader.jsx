@@ -45,7 +45,7 @@ function Loader({ finishLoading }) {
 
     return (
 
-        <div className={`fixed inset-0 bg-black text-white flex items-center justify-center z-[9999] transition-transform duration-1000 ${reveal ? "loader-reveal" : ""}`}>
+        <div className={`fixed inset-0 bg-slate-900 text-white flex items-center justify-center z-[9999] transition-transform duration-1000 ${reveal ? "loader-reveal" : ""}`}>
 
             <div className="text-center">
 

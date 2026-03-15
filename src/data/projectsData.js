@@ -12,6 +12,8 @@ export const projects = [
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
+            "https://placehold.co/600x800",
+            "https://placehold.co/600x800",
             "https://placehold.co/600x800"
         ],
 

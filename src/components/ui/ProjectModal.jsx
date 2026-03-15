@@ -58,7 +58,7 @@ export default function ProjectModal({ project, onClose }) {
                         {/* INFO */}
                         <div>
 
-                            <h2 className="text-4xl font-black tracking-tight mb-4">
+                            <h2 className="text-4xl font-display font-black tracking-tight mb-4">
                                 {project.title}
                             </h2>
 
@@ -81,14 +81,14 @@ export default function ProjectModal({ project, onClose }) {
                             <div className="mt-8 space-y-8">
 
                                 <div>
-                                    <h3 className="text-xl mb-2 font-bold">Contexto</h3>
+                                    <h3 className="text-xl mb-2 font-black font-display">Contexto</h3>
                                     <p className="text-slate-300">
                                         {project.context}
                                     </p>
                                 </div>
 
                                 <div>
-                                    <h3 className="text-xl mb-2">Responsabilidades</h3>
+                                    <h3 className="text-xl mb-2 font-black font-display">Responsabilidades</h3>
 
                                     <ul className="text-slate-300 list-disc pl-6 space-y-2">
                                         {project.responsibilities.map((item, index) => (
@@ -140,7 +140,7 @@ export default function ProjectModal({ project, onClose }) {
                         </div>
 
                         {/* IMAGES */}
-                        <div className="grid grid-cols-2 gap-4 auto-rows-[200px]">
+                        <div className="grid grid-cols-2 gap-6 auto-rows-[200px]">
 
                             {project.images?.map((img, i) => {
 
@@ -157,7 +157,7 @@ export default function ProjectModal({ project, onClose }) {
                                         <img
                                             src={imageSrc}
                                             alt=""
-                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 rounded-xl"
                                         />
                                     </div>
                                 )

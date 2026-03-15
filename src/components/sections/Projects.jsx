@@ -61,12 +61,12 @@ export default function Projects() {
     <section id="projects" className="bg-slate-900 py-32 px-6 md:px-16 scroll-mt-20">
 
       <div className="mb-16 text-center">
-          <div className="hero-eyebrow text-neutral-500">Proyectos</div>
-          <h2 className="font-elegant text-8xl md:text-7xl font-black tracking-tight mb-8 text-white">
+          <div className="hero-eyebrow text-neutral-400">Proyectos</div>
+          <h2 className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8 text-white">
             Trabajos con propósito de negocio.
           </h2>
-          <p className="text-lg leading-relaxed text-neutral-200">
-            Cada proyecto aquí comenzó con un problema de negocio. El diseño y la estrategia fueron la forma de resolverlo.<br />
+          <p className="text-sm md:text-base lg:text-lg leading-relaxed text-neutral-200">
+            Cada proyecto aquí comenzó con un problema de negocio. El diseño y la estrategia fueron la forma de resolverlo.<br /> <br />
             No solo muestro cómo quedó, muestro por qué funcionó.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function Projects() {
 
       <div className="max-w-7xl mx-auto">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map(project => (
             <ProjectCard
               key={project.id}

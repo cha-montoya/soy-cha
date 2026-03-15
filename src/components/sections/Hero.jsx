@@ -135,18 +135,22 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="hero"
-      className="relative h-screen w-full bg-white scroll-mt-20"
+      className="relative w-full bg-white scroll-mt-20
+                 h-auto min-h-screen
+                 flex flex-col
+                 lg:h-screen lg:block"
     >
-      <div className="relative z-10 h-full flex items-center container mx-auto px-6 md:px-12 py-24 md:py-32">
+      <div className="relative z-10 h-full container mx-auto px-6 md:px-12
+                      flex flex-col
+                      lg:flex lg:flex-row lg:items-center lg:py-24">
 
         {/* ================= TEXT ================= */}
-        {/* textWrapperRef — GSAP mueve Y (parallax) */}
+        {/* On mobile: full width, sits on top. On lg+: left half column */}
         <div
           ref={textWrapperRef}
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-1/2 pt-24 pb-6 lg:py-32"
           style={{ willChange: "transform" }}
         >
-          {/* textRef — GSAP maneja entrada + fade out */}
           <div
             ref={textRef}
             className="px-6 md:px-16"
@@ -161,28 +165,10 @@ export default function Hero() {
               dangerouslySetInnerHTML={{ __html: headline }}
             />
 
-            <p className="mt-8 text-lg md:text-lg text-neutral-500 font-sans leading-relaxed">
+            <p className="mt-8 text-sm md:text-base lg:text-lg leading-relaxed text-neutral-500 font-sans">
               {sub}
             </p>
 
-            {/* <ul className="mt-6 space-y-3 text-neutral-500">
-              <li className="group relative pl-6 text-lg md:text-lg tracking-wide leading-relaxed font-sans">
-                <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
-                Desarrollador <span className="marker">Creativo</span> de Integraciones MarTech
-              </li>
-              <li className="group relative pl-6 text-lg md:text-lg tracking-wide leading-relaxed font-sans">
-                <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
-                Growth & <span className="marker">Estratega</span> de Email Marketing
-              </li>
-              <li className="group relative pl-6 text-lg md:text-lg tracking-wide leading-relaxed font-sans">
-                <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
-                <span className="marker">Experto</span> en Email Deliverability
-              </li>
-              <li className="group relative pl-6 text-lg md:text-lg tracking-wide leading-relaxed font-sans">
-                <span className="absolute left-0 top-[0.6em] h-5 w-[2px] bg-neutral-400 origin-bottom scale-y-50 transition-all duration-300 group-hover:scale-y-100 group-hover:bg-black" />
-                Automatización & Data para <span className="marker">Crecimientos Escalables</span>
-              </li>
-            </ul> */}
             <div className="mt-8">
               <button className="btn-glitch-fill">
                 <span className="text">// {cta}</span>
@@ -194,10 +180,15 @@ export default function Hero() {
         </div>
 
         {/* ================= VIDEO ================= */}
-        <div className="w-full md:w-auto mt-12 md:mt-0 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 pointer-events-none flex justify-center">
+        {/*
+          Mobile  → normal flow, centered below text, relative positioning
+          lg+     → absolute right, vertically centered (original behavior)
+        */}
+        <div className="w-full flex justify-center pb-12
+                        lg:w-auto lg:pb-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2
+                        pointer-events-none">
           <div
             ref={videoWrapperRef}
-            className="absolute right-0 top-1/2 -translate-y-1/2"
             style={{ willChange: "transform" }}
           >
             <video
@@ -208,7 +199,7 @@ export default function Hero() {
               playsInline
               preload="auto"
               onEnded={handleEnded}
-              className="h-[45vh] md:h-[80vh] max-w-none object-contain"
+              className="h-[45vh] lg:h-[80vh] max-w-none object-contain"
             />
           </div>
         </div>

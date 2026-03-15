@@ -60,11 +60,26 @@ body,
       display: inline-flex;
       align-items: center;
       gap: .5rem;
-      font-size: .8rem;
       font-weight: 500;
       letter-spacing: .2em;
       text-transform: uppercase;
       margin-bottom: 1.5rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.55rem; /* mobile */
+}
+
+@media (min-width: 768px) {
+  .hero-eyebrow {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-eyebrow {
+    font-size: 0.8rem;
+  }
 }
 
 .hero-eyebrow::before {

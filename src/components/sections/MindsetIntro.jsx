@@ -45,7 +45,7 @@ export default function MindsetIntro() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-600 px-6 md:px-16"
     >
-      <div className="max-w-6xl text-6xl md:text-8xl container mx-auto px-6 font-black leading-tight tracking-tight text-white">
+      <div className="max-w-6xl text-5xl md:text-8xl container mx-auto px-6 font-black leading-tight tracking-tight text-white">
         <span className="block fill-line font-display">
           No diseño piezas individuales.
         </span>

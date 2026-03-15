@@ -14,25 +14,25 @@ function Contact(){
 
                         <div className="hero-eyebrow">Contacto</div>
 
-                        <h2 className="font-elegant text-6xl md:text-7xl font-black tracking-tight mb-8 text-black">
+                        <h2 className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8 text-black">
                             ¿Construyendo algo <span className="italic text-primary">interesante?</span>
                         </h2>
 
-                        <p className="mt-4 text-lg text-neutral-500 font-sans leading-relaxed max-w-md">
+                        <p className="mt-4 text-sm md:text-base lg:text-lg text-neutral-500 font-sans leading-relaxed max-w-md">
                             Estoy explorando nuevos roles y proyectos selectos. 
                             Si buscas a alguien que entienda el negocio, diseñe la solución 
                             y mida si funcionó. Hablemos.
                         </p>
 
                         {/* CTA BUTTONS */}
-                        <div className="flex gap-6 mt-10">
+                        <div className="md:flex gap-6 mt-8">
 
                             <a 
                                 href="https://www.linkedin.com/in/carlos-alberto-montoya/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <button className="btn-glitch-fill">
+                                <button className="btn-glitch-fill mb-8">
                                     <span className="text">// LinkedIn</span>
                                     <span className="text-decoration"> _</span>
                                     <span className="decoration">⇒</span>

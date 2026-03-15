@@ -26,7 +26,7 @@ const cards = [
     desc: "Implemento lo que diseño. Conozco las plataformas por dentro: sus límites, sus workarounds y cómo hacer que hablen entre ellas.",
     skills: [
       ["Marketing Automation", "Flujos en Eloqua, Marketo, SFMC, HubSpot, Responsys y Acoustic. Desde welcome series hasta recuperación de carrito."],
-      ["Implementación de campañas", "Setup completo: listas, segmentos, plantillas, programación, A/B y QA. Cero lanzamientos sin checklist."],
+      ["Campañas", "Setup completo: listas, segmentos, plantillas, programación, A/B y QA. Cero lanzamientos sin checklist."],
       ["Integraciones MarTech", "Conexión entre plataformas de automation, CRM, ecommerce y analytics. APIs, webhooks y conectores nativos."],
       ["Desarrollo de insumos", "Uso de atributos y contenido dinámico para adaptar cada mensaje."],
       ["IP Warm-up & Ramp-up", "Planes de calentamiento de IPs para nueva infraestructura. Protejo la reputación del dominio desde el día uno."],
@@ -118,19 +118,19 @@ export default function MindsetCards() {
             <div className="bg-neutral-950 p-12 rounded-xl w-full max-w-5xl">
 
               <div className="mb-10">
-                <div className="hero-eyebrow text-neutral-500">
+                <div className="hero-eyebrow text-neutral-400">
                   <span className="text-primary">{card.num}.</span> Mentalidad
                 </div>
                 <h3 className="text-6xl font-black font-elegant mb-4">{card.title}</h3>
                 <p className="italic mb-8">{card.subtitle}</p>
                 <div className="line-divider"></div>
-                <p className="text-neutral-300 mt-8 text-lg max-w-2xl">{card.desc}</p>
+                <p className="text-neutral-300 mt-8 text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl">{card.desc}</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 grid-estrategica">
                 {card.skills.map(([title, desc]) => (
                   <div key={title} className="bg-neutral-900 p-6 rounded-xl">
-                    <p className="text-white mb-3">
+                    <p className="text-white mb-3 font-black font-display">
                       <span className="skill-dot"></span> {title}
                     </p>
                     <div className="line-divider" />
