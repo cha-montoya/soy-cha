@@ -145,7 +145,6 @@ export default function Hero() {
                       lg:flex lg:flex-row lg:items-center lg:py-24">
 
         {/* ================= TEXT ================= */}
-        {/* On mobile: full width, sits on top. On lg+: left half column */}
         <div
           ref={textWrapperRef}
           className="w-full lg:w-1/2 pt-24 pb-6 lg:py-32"

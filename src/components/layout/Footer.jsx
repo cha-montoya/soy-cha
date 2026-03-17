@@ -52,7 +52,7 @@ function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("hero")}
-                  className="hover:text-primary transition"
+                  className="hover:text-primary transition nav-link"
                 >
                   Inicio
                 </button>
@@ -60,7 +60,7 @@ function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="hover:text-primary transition"
+                  className="hover:text-primary transition nav-link"
                 >
                   Sobre Mí
                 </button>
@@ -68,7 +68,7 @@ function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("mindset-intro")}
-                  className="hover:text-primary transition"
+                  className="hover:text-primary transition nav-link"
                 >
                   Cómo pienso
                 </button>
@@ -76,7 +76,7 @@ function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="hover:text-primary transition"
+                  className="hover:text-primary transition nav-link"
                 >
                   Servicios
                 </button>
@@ -84,7 +84,7 @@ function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("projects")}
-                  className="hover:text-primary transition"
+                  className="hover:text-primary transition nav-link"
                 >
                   Proyectos
                 </button>
@@ -92,7 +92,7 @@ function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="hover:text-primary transition"
+                  className="hover:text-primary transition nav-link"
                 >
                   Contacto
                 </button>
@@ -109,7 +109,8 @@ function Footer() {
             <ul className="space-y-2 text-neutral-200 text-sm md:text-base lg:text-lg">
               <li><a className="nav-link" href="mailto:cha@soycha.com">cha@soycha.com</a></li>
               <li><a className="nav-link" href="https://www.linkedin.com/in/carlos-alberto-montoya/" target="_blank">LinkedIn</a></li>
-              <li>CDMX, México</li>
+              <div className="line-divider" />
+              <li>México</li>
             </ul>
           </div>
 
@@ -124,8 +125,6 @@ function Footer() {
 
           <span>React</span>
           <span>·</span>
-          <span>Vite</span>
-          <span>·</span>
           <span>TailwindCSS</span>
           <span>·</span>
           <span>Framer Motion</span>
@@ -139,7 +138,7 @@ function Footer() {
         <div className="mt-6 text-xs text-neutral-400 flex flex-col md:flex-row md:justify-between gap-4">
 
           <p>
-            Este sitio utiliza cookies mínimas para mejorar la experiencia de navegación.
+            Este sitio utiliza cookies mínimas para mejorar la experiencia de navegación y demostración.
           </p>
 
           <p>

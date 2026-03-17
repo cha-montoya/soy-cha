@@ -1,65 +1,54 @@
+import { useTranslation } from "react-i18next"
 import ContactForm from "../forms/ContactForm"
 
-function Contact(){
+function Contact() {
+    const { t } = useTranslation()
 
     return (
-        <section id="contact" className="min-h-screen bg-slate-100 relative scroll-mt-20 px-6 py-32">
+        <section id="contact" className="min-h-screen bg-slate-100 relative scroll-mt-20 px-6 py-16 md:py-32">
+        <div className="container mx-auto">
+            <div className="grid lg:grid-cols-2 gap-20 items-start">
 
-            <div className="container mx-auto">
+            {/* LEFT SIDE */}
+            <div>
+                <div className="hero-eyebrow">{t("contact.eyebrow")}</div>
 
-                <div className="grid lg:grid-cols-2 gap-20 items-start">
+                <h2
+                className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8 text-black"
+                dangerouslySetInnerHTML={{ __html: t("contact.headline") }}
+                />
 
-                    {/* LEFT SIDE */}
-                    <div>
+                <p className="mt-4 text-sm md:text-base lg:text-lg text-neutral-500 font-sans leading-relaxed max-w-md">
+                {t("contact.paragraph")}
+                </p>
 
-                        <div className="hero-eyebrow">Contacto</div>
+                <div className="md:flex gap-6 mt-8">
+                    <a href="https://www.linkedin.com/in/carlos-alberto-montoya/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <button className="btn-glitch-fill mb-8">
+                        <span className="text">// {t("contact.linkedin")}</span>
+                        <span className="text-decoration"> _</span>
+                        <span className="decoration">⇒</span>
+                        </button>
+                    </a>
 
-                        <h2 className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8 text-black">
-                            ¿Construyendo algo <span className="italic text-primary">interesante?</span>
-                        </h2>
-
-                        <p className="mt-4 text-sm md:text-base lg:text-lg text-neutral-500 font-sans leading-relaxed max-w-md">
-                            Estoy explorando nuevos roles y proyectos selectos. 
-                            Si buscas a alguien que entienda el negocio, diseñe la solución 
-                            y mida si funcionó. Hablemos.
-                        </p>
-
-                        {/* CTA BUTTONS */}
-                        <div className="md:flex gap-6 mt-8">
-
-                            <a 
-                                href="https://www.linkedin.com/in/carlos-alberto-montoya/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <button className="btn-glitch-fill mb-8">
-                                    <span className="text">// LinkedIn</span>
-                                    <span className="text-decoration"> _</span>
-                                    <span className="decoration">⇒</span>
-                                </button>
-                            </a>
-
-                            <a 
-                                href="/cv-carlos-montoya.pdf"
-                                download
-                            >
-                                <button className="btn-glitch-fill">
-                                    <span className="text">// Descargar CV</span>
-                                    <span className="text-decoration"> _</span>
-                                    <span className="decoration">⇒</span>
-                                </button>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                    {/* FORM SIDE */}
-                    <ContactForm />
-
+                    <a href="/cv-carlos-montoya.pdf" download>
+                        <button className="btn-glitch-fill">
+                        <span className="text">// {t("contact.cv")}</span>
+                        <span className="text-decoration"> _</span>
+                        <span className="decoration">⇒</span>
+                        </button>
+                    </a>
                 </div>
+            </div>
+
+            {/* FORM SIDE */}
+            <ContactForm />
 
             </div>
+        </div>
         </section>
     )
 }

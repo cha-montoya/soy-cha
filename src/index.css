@@ -365,19 +365,8 @@ body,
   }
 }
 
-.grid-estrategica .skill-dot {
-  background: #D6D58E;
-}
-
-.grid-operativa .skill-dot {
-  background: #005C53;
-}
-
-.grid-analitica .skill-dot {
-  background: #9FC131;
-}
-
 .skill-dot {
+  background: #D6D58E;
   display: inline-block;
   width: 6px;
   height: 6px;

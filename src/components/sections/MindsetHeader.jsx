@@ -1,4 +1,9 @@
+import { useTranslation } from "react-i18next"
+
 export default function MindsetHeader() {
+
+  const { t } = useTranslation()
+
   return (
     <section
       id="mindset"
@@ -6,17 +11,12 @@ export default function MindsetHeader() {
     >
       <div className="container mx-auto px-6 text-center">
 
-        <div className="hero-eyebrow text-slate-200">
-          Mindset
-        </div>
+        <div className="hero-eyebrow text-slate-200">{t("mindsetHeader.eyebrow")}</div>
 
-        <h2 className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8">
-          <span className="italic text-primary">Cómo pienso</span> dentro de una campaña.
-        </h2>
+        <h2 className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8" dangerouslySetInnerHTML={{ __html: t("mindsetHeader.headline") }} />
 
         <p className="mt-8 text-sm md:text-base lg:text-lg leading-relaxed">
-          No soy solo quien ejecuta ni solo quien analiza. Participo en las tres capas
-          y eso cambia la calidad de lo que se construye.
+          {t("mindsetHeader.paragraph")}
         </p>
 
       </div>

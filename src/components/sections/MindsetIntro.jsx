@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react"
+import { useTranslation } from "react-i18next"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function MindsetIntro() {
+  const { t } = useTranslation()
   const sectionRef = useRef(null)
 
   useEffect(() => {
@@ -45,19 +47,12 @@ export default function MindsetIntro() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-600 px-6 md:px-16"
     >
-      <div className="max-w-6xl text-5xl md:text-8xl container mx-auto px-6 font-black leading-tight tracking-tight text-white">
-        <span className="block fill-line font-display">
-          No diseño piezas individuales.
-        </span>
-        <span className="block fill-line font-display">
-          Diseño sistemas.
-        </span>
-        <span className="block fill-line font-display">
-          Estrategia, ejecución y optimización
-        </span>
-        <span className="block fill-line font-display">
-          como un solo flujo.
-        </span>
+      <div className="w-full max-w-6xl container mx-auto px-6 font-black leading-tight tracking-tight text-white
+                      text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+        <span className="block fill-line font-display">{t("mindset.line1")}</span>
+        <span className="block fill-line font-display">{t("mindset.line2")}</span>
+        <span className="block fill-line font-display">{t("mindset.line3")}</span>
+        <span className="block fill-line font-display">{t("mindset.line4")}</span>
       </div>
     </section>
   )

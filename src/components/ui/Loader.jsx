@@ -67,7 +67,6 @@ function Loader({ finishLoading }) {
                 </h1>
 
                 {/* full width progress bar */}
-
                 <div className="absolute bottom-20 left-0 w-full h-[2px] bg-neutral-800">
 
                     <div

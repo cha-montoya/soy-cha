@@ -1,0 +1,223 @@
+{
+    "loader": {
+
+    },
+
+    "nav": {
+        "hero": "Home",
+        "about": "About me",
+        "mindset": "Mindset",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+
+    "about": {
+        "eyebrow": "About Me",
+        "headline": "Two disciplines.<br />One single <span class='italic text-primary'>vision.</span>",
+        "p1": "I started as a graphic designer in 2002, building visual identities, campaign materials and brand systems. But I was always driven by the same question: why do some pieces work and others don't?",
+        "p2": "That curiosity led me to digital marketing and, eventually, to the world of marketing automation. Since 2014 I've specialized in growth strategy: audience segmentation, data models, customer lifecycle, journey mapping and the technical implementation of platforms like Eloqua, Marketo, Salesforce Marketing Cloud, HubSpot, Responsys and Acoustic.",
+        "p3": "Today I work at the intersection of both worlds: I bring strategic thinking to design problems, and creative judgment to data decisions. I've led technology and creative teams for brands like 3M LATAM, Abbott, Christus Muguerza and KidZania, always with one eye on results and one on user experience.",
+        "p4": "I'm an expert in email marketing and deliverability, one of the most technical and underrated fields in digital marketing.",
+        "p5": "I'm looking for a role where I can lead teams and projects without losing touch with execution."
+    },
+
+    "mindset": {
+        "line1": "I don't design individual pieces.",
+        "line2": "I design systems.",
+        "line3": "Strategy, execution and optimization",
+        "line4": "as a single flow."
+    },
+
+    "mindsetHeader": {
+        "eyebrow": "Mindset",
+        "headline": "<span class='italic text-primary'>How I think</span> inside a campaign.",
+        "paragraph": "I'm not just the one who executes, nor just the one who analyzes. I participate in all three layers — and that changes the quality of what gets built."
+    },
+
+    "mindsetCards": {
+        "eyebrow": "Mindset",
+        "cards": [
+            {
+            "num": "01",
+            "title": "Strategic",
+            "subtitle": "Understand before executing.",
+            "desc": "Everything starts with a clear mental model: who the user is, how they behave, and what they need at each stage. Without this, execution is just noise.",
+            "skills": [
+                ["Data Modeling", "Designing structures that support segmentation, personalization and reporting."],
+                ["Segmentation", "Defining dynamic audiences based on behavior and lifecycle."],
+                ["Customer Journey", "Mapping interactions to design relevant communications."],
+                ["Hyperpersonalization", "Using implicit and explicit attributes to adapt every message."],
+                ["CRM Architecture", "Organizing data and structures for scalability."],
+                ["Reporting", "Defining relevant metrics to evaluate performance."]
+            ]
+            },
+            {
+            "num": "02",
+            "title": "Operative",
+            "subtitle": "Strategy is only worth what you can execute.",
+            "desc": "I implement what I design. I know the platforms inside out: their limits, their workarounds, and how to make them talk to each other.",
+            "skills": [
+                ["Marketing Automation", "Flows in Eloqua, Marketo, SFMC, HubSpot, Responsys and Acoustic. From welcome series to cart recovery."],
+                ["Campaigns", "Full setup: lists, segments, templates, scheduling, A/B and QA. Zero launches without a checklist."],
+                ["MarTech Integrations", "Connecting automation, CRM, ecommerce and analytics platforms. APIs, webhooks and native connectors."],
+                ["Dynamic Content", "Using attributes and dynamic content to tailor every message."],
+                ["IP Warm-up & Ramp-up", "IP warming plans for new infrastructure. Protecting domain reputation from day one."],
+                ["AI Integrations", "AI models for content personalization, behavior prediction and send-time optimization."]
+            ]
+            },
+            {
+            "num": "03",
+            "title": "Analytical",
+            "subtitle": "Data doesn't lie. But it does get misread.",
+            "desc": "I read metrics in context, not in a vacuum. A good open rate can hide a segmentation problem. A low CTR can be a design problem.",
+            "skills": [
+                ["Dashboard Creation", "Reports in Looker Studio, Tableau, Power BI integrated with GA4 and automation platforms."],
+                ["Insight Reading", "Open rate, CTR, CTOR, bounce, unsubscribe, sessions, conversions, funnel drop-off, LTV, CAC and churn."],
+                ["Email Deliverability", "Domain and IP reputation, bounce logs, suppression lists and authentication: SPF, DKIM, DMARC."],
+                ["Campaign Optimization", "Continuous improvement cycles: adjusting segments, copy, timing, frequency and channels."],
+                ["Error Identification", "Diagnosing deliverability issues, engagement drops, tracking anomalies and integration errors."],
+                ["Result Attribution", "Attribution models to understand which channel truly contributed to conversion beyond last-click."]
+            ]
+            }
+        ]
+    },
+
+    "services": {
+        "eyebrow": "Services",
+        "headline": "What can I <span class='italic text-primary'>do for you.</span>",
+        "paragraph": "If you need someone who understands both strategy and creative execution without having to translate between the two, we can work together.",
+        "sub": "Team Leadership & <span class='italic text-primary'>Project Management</span>",
+        "line1": "I've led teams where design, technology and strategy profiles coexist, and I know that the gap between those worlds is closed with clear communication, not hierarchy. I manage projects with a focus on measurable results, realistic deadlines and teams that grow in the process.",
+        "cards": [
+            {
+                "title": "Creative and technology team management",
+                "desc": "Coordinating mixed profiles: designers, developers, automation specialists and analysts. I translate between disciplines so the team moves in the same direction."
+            },
+            {
+                "title": "Briefing and scope definition",
+                "desc": "Requirements gathering, scope documentation and deliverable definition. A good brief prevents 80% of a project's problems."
+            },
+            {
+                "title": "Stakeholder and client management",
+                "desc": "Managing expectations, communicating progress and escalating decisions. I know when to protect the team from last-minute changes and when to adapt."
+            },
+            {
+                "title": "Mentoring and talent development",
+                "desc": "Supporting junior and mid-level profiles in their technical and strategic growth. I'm interested in building teams that don't need me for every decision."
+            },
+            {
+                "title": "Cross-functional communication",
+                "desc": "Bridge between design, technology and business. I speak all three languages — and that reduces friction, accelerates decisions and improves the quality of the final output."
+            },
+            {
+                "title": "Project tracking and delivery",
+                "desc": "Timeline control, blocker identification and dependency management across teams. I'd rather solve a problem on Tuesday than explain it on Friday."
+            }
+        ]
+    },
+
+    "projects": {
+    "eyebrow": "Projects",
+    "headline": "Work with business purpose.",
+    "p1": "Every project here started with a business problem. Design and strategy were the way to solve it.",
+    "p2": "I don't just show how it looked, I show why it worked.",
+    "filters": {
+        "all": "All",
+        "branding": "Branding",
+        "web": "Web",
+        "email": "Email"
+    },
+    "modal": {
+        "context": "Context",
+        "responsibilities": "Responsibilities",
+        "cta": "View Project",
+        "personalizationTitle": "Try the personalization",
+        "personalizationDesc": "This project used dynamic content for personalization. Enter your name to see how it works on the ugly sweater.",
+        "personalizationPlaceholder": "Enter your name"
+    },
+    "data": {
+        "1": {
+        "context": "Landing page to inform about the benefits, features and properties of the KN9513 mask during the COVID-19 pandemic. The strategic focus was to highlight the quality of the masks through the layers they are made of.",
+        "responsibilities": [
+            "Audience Segmentation",
+            "Narrative Structure",
+            "Graphic Design",
+            "Visual Optimization"
+        ]
+        },
+        "2": {
+        "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+        "responsibilities": [
+            "Audience segmentation",
+            "Narrative structure",
+            "Responsive design",
+            "Visual optimization for CTR"
+        ]
+        },
+        "3": {
+        "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+        "responsibilities": [
+            "Audience segmentation",
+            "Narrative structure",
+            "Responsive design",
+            "Visual optimization for CTR"
+        ]
+        },
+        "4": {
+        "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+        "responsibilities": [
+            "Audience segmentation",
+            "Narrative structure",
+            "Responsive design",
+            "Visual optimization for CTR"
+        ]
+        },
+        "5": {
+        "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+        "responsibilities": [
+            "Audience segmentation",
+            "Narrative structure",
+            "Responsive design",
+            "Visual optimization for CTR"
+        ]
+        },
+        "6": {
+        "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+        "responsibilities": [
+            "Audience segmentation",
+            "Narrative structure",
+            "Responsive design",
+            "Visual optimization for CTR"
+        ]
+        }
+    }
+    },
+
+    "timeline": {
+        "strategy": "Strategy",
+        "design": "Design",
+        "implementation": "Implementation",
+        "analytics": "Analytics"
+    },
+
+    "contact": {
+        "eyebrow": "Contact",
+        "headline": "Building something <span class='italic text-primary'>interesting?</span>",
+        "paragraph": "I'm exploring new roles and select projects. If you're looking for someone who understands the business, designs the solution and measures whether it worked. Let's talk.",
+        "linkedin": "LinkedIn",
+        "cv": "Download CV",
+        "form": {
+            "name": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phone": "Mobile Phone",
+            "company": "Company",
+            "message": "Message",
+            "idle": "Send message",
+            "loading": "Sending...",
+            "success": "✓ Message sent",
+            "error": "Error. Please try again"
+        }
+    }
+}
