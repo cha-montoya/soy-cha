@@ -26,14 +26,14 @@ export default function Header() {
     <div className="flex items-center gap-2 text-sm font-semibold text-neutral-500">
       <button
         onClick={toggleLanguage}
-        className={`transition-colors hover:text-black ${i18n.language === "es" ? "text-black underline underline-offset-4" : ""}`}
+        className={`transition-colors hover:text-black ${i18n.language === "es" ? "text-black pb-1 pt-1 border-b-2 border-main-color" : ""}`}
       >
         ES
       </button>
       <span>|</span>
       <button
         onClick={toggleLanguage}
-        className={`transition-colors hover:text-black ${i18n.language === "en" ? "text-black underline underline-offset-4" : ""}`}
+        className={`transition-colors hover:text-black ${i18n.language === "en" ? "text-black pb-1 pt-1 border-b-2 border-main-color" : ""}`}
       >
         EN
       </button>

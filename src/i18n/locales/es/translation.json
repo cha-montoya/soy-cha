@@ -221,5 +221,21 @@
             "success": "✓ Mensaje enviado",
             "error": "Error. Intenta nuevamente"
         }
+    },
+
+    "footer": {
+        "tagline1": "Estrategia, diseño y desarrollo.",
+        "tagline2": "Construyendo experiencias digitales que conectan negocio y tecnología.",
+        "menu": "Menú",
+        "menu1": "Inicio",
+        "menu2": "Sobre mí",
+        "menu3": "Cómo pienso",
+        "menu4": "Servicios",
+        "menu5": "Proyectos",
+        "menu6": "Contacto",
+        "contact": "Contacto",
+        "country": "México",
+        "disclamer": "Este sitio utiliza cookies mínimas para mejorar la experiencia de navegación y demostración.",
+        "copyright": "Derechos Reservados."
     }
 }

@@ -23,7 +23,7 @@ export default function AboutTicker() {
 
   useEffect(() => {
 
-    const durations = [40, 46, 38, 44, 42, 48]
+    const durations = [80, 90, 75, 85, 88, 95]
 
     rows.current.forEach((row, i) => {
 
@@ -50,7 +50,7 @@ export default function AboutTicker() {
       {[...tickerText].map((text, i) => (
         <span
           key={i}
-          className="text-transparent [-webkit-text-stroke:1px_rgba(71,85,105,1)]"
+          className="text-transparent [-webkit-text-stroke:1px_rgba(71,85,105,1)] px-4"
         >
           {text} —
         </span>
@@ -60,13 +60,13 @@ export default function AboutTicker() {
 
   return (
     <div
-      className="w-full overflow-hidden text-4xl md:text-8xl font-display font-black uppercase tracking-tight [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+      className="w-full overflow-hidden text-3xl md:text-5xl font-display font-black uppercase tracking-tight [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
       onMouseEnter={() => hoverSpeed(2)}
       onMouseLeave={() => hoverSpeed(1)}
     >
 
       {[...Array(6)].map((_, i) => (
-        <div key={i} className="overflow-hidden">
+        <div key={i} className="overflow-hidden py-2">
 
           <div
             ref={el => rows.current[i] = el}

@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next"
+import { EnvelopeIcon, LinkedinLogoIcon, GithubLogoIcon, MapPinLineIcon } from "@phosphor-icons/react"
+
 function Footer() {
+  const { t } = useTranslation()
 
   const scrollToSection = (id) => {
   const el = document.getElementById(id)
@@ -23,11 +27,10 @@ function Footer() {
             <h3 className="text-2xl font-black tracking-tight font-display mb-4">
               Carlos 'Cha' Montoya
             </h3>
-
-            <p className="text-neutral-200 leading-relaxed max-w-xs text-sm md:text-base lg:text-lg">
-              Estrategia, diseño y desarrollo.
-              Construyendo experiencias digitales que conectan negocio y tecnología.
-            </p>
+            <div className="text-neutral-200 leading-relaxed max-w-xs text-sm md:text-base lg:text-lg space-y-6">
+              <p>{t("footer.tagline1")}</p>
+              <p>{t("footer.tagline2")}</p>
+            </div>
 
             {/* <div className="flex gap-6 mt-6">
 
@@ -42,10 +45,9 @@ function Footer() {
             </div> */}
           </div>
 
-          {/* NAVIGATION */}
           <div>
             <h4 className="text-lg font-black font-display mb-4">
-              Menú
+              {t("footer.menu")}
             </h4>
 
             <ul className="space-y-2 text-neutral-200 text-sm md:text-base lg:text-lg">
@@ -54,7 +56,7 @@ function Footer() {
                   onClick={() => scrollToSection("hero")}
                   className="hover:text-primary transition nav-link"
                 >
-                  Inicio
+                  {t("footer.menu1")}
                 </button>
               </li>
               <li>
@@ -62,7 +64,7 @@ function Footer() {
                   onClick={() => scrollToSection("about")}
                   className="hover:text-primary transition nav-link"
                 >
-                  Sobre Mí
+                  {t("footer.menu2")}
                 </button>
               </li>
               <li>
@@ -70,7 +72,7 @@ function Footer() {
                   onClick={() => scrollToSection("mindset-intro")}
                   className="hover:text-primary transition nav-link"
                 >
-                  Cómo pienso
+                  {t("footer.menu3")}
                 </button>
               </li>
               <li>
@@ -78,7 +80,7 @@ function Footer() {
                   onClick={() => scrollToSection("services")}
                   className="hover:text-primary transition nav-link"
                 >
-                  Servicios
+                  {t("footer.menu4")}
                 </button>
               </li>
               <li>
@@ -86,7 +88,7 @@ function Footer() {
                   onClick={() => scrollToSection("projects")}
                   className="hover:text-primary transition nav-link"
                 >
-                  Proyectos
+                  {t("footer.menu5")}
                 </button>
               </li>
               <li>
@@ -94,7 +96,7 @@ function Footer() {
                   onClick={() => scrollToSection("contact")}
                   className="hover:text-primary transition nav-link"
                 >
-                  Contacto
+                  {t("footer.menu6")}
                 </button>
               </li>
             </ul>
@@ -103,14 +105,32 @@ function Footer() {
           {/* CONTACT */}
           <div>
             <h4 className="text-lg font-black mb-4 font-display">
-              Contacto
+              {t("footer.contact")}
             </h4>
 
             <ul className="space-y-2 text-neutral-200 text-sm md:text-base lg:text-lg">
-              <li><a className="nav-link" href="mailto:cha@soycha.com">cha@soycha.com</a></li>
-              <li><a className="nav-link" href="https://www.linkedin.com/in/carlos-alberto-montoya/" target="_blank">LinkedIn</a></li>
-              <div className="line-divider" />
-              <li>México</li>
+              <li className="flex items-center gap-2">
+                <EnvelopeIcon className="w-5 h-5 text-neutral-300" />
+                <a className="nav-link" href="mailto:cha@soycha.com">
+                  cha@soycha.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <LinkedinLogoIcon className="w-5 h-5 text-neutral-300" />
+                <a className="nav-link" href="https://www.linkedin.com/in/carlos-alberto-montoya/" target="_blank">
+                  LinkedIn
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <GithubLogoIcon className="w-5 h-5 text-neutral-300" />
+                <a className="nav-link" href="https://github.com/cha-montoya/" target="_blank">
+                  GitHub
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPinLineIcon className="w-5 h-5 text-neutral-300" />
+                  {t("footer.country")}
+              </li>
             </ul>
           </div>
 
@@ -138,11 +158,11 @@ function Footer() {
         <div className="mt-6 text-xs text-neutral-400 flex flex-col md:flex-row md:justify-between gap-4">
 
           <p>
-            Este sitio utiliza cookies mínimas para mejorar la experiencia de navegación y demostración.
+            {t("footer.disclamer")}
           </p>
 
           <p>
-            © {new Date().getFullYear()} Carlos 'Cha' Montoya. Derechos Reservados.
+            © {new Date().getFullYear()} Carlos 'Cha' Montoya. {t("footer.copyright")}
           </p>
 
         </div>

@@ -72,12 +72,12 @@ export const projects = [
 
     {
         id: 3,
-        title: "Email Captación MBA",
-        client: "Universidad X",
-        category: "email",
-        clientLogo: "https://placehold.co/200x80?text=Logo",
-        thumbnail: "https://placehold.co/800x800",
-        previewUrl: "/projects/email-mba/index.html",
+        title: "Esferas de Limpieza",
+        client: "3M LATAM",
+        category: "web",
+        clientLogo: "/projects/logos/logo-3m-light.svg?text=Logo 3M",
+        thumbnail: "/projects/esferas-de-limpieza/esferas-cover.jpg",
+        previewUrl: "/projects/esferas-de-limpieza/index.html",
 
         images: [
             "https://placehold.co/600x800",

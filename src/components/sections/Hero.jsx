@@ -169,7 +169,9 @@ export default function Hero() {
             </p>
 
             <div className="mt-8">
-              <button className="btn-glitch-fill">
+              <button
+                onClick={() => scrollToSection("about")}
+                className="btn-glitch-fill">
                 <span className="text">// {cta}</span>
                 <span className="text-decoration"> _</span>
                 <span className="decoration">⇒</span>

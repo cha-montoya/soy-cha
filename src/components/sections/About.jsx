@@ -32,7 +32,7 @@ export default function About() {
         </div>
 
         {/* ===== TICKER ===== */}
-        <div className="w-full lg:w-1/2 h-64 lg:h-screen flex items-center justify-center pb-16 lg:pb-0">
+        <div className="w-full lg:w-1/2 h-[480px] lg:h-screen flex items-center justify-center pb-16 lg:pb-0">
           <AboutTicker />
         </div>
 

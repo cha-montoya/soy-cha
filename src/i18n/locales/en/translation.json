@@ -219,5 +219,21 @@
             "success": "✓ Message sent",
             "error": "Error. Please try again"
         }
+    },
+
+    "footer": {
+        "tagline1": "Strategy, design, and development.",
+        "tagline2": "Building digital experiences that connect business and technology.",
+        "menu": "Menu",
+        "menu1": "Home",
+        "menu2": "About Me",
+        "menu3": "Mindset",
+        "menu4": "Services",
+        "menu5": "Projects",
+        "menu6": "Contact",
+        "contact": "Contact",
+        "country": "Mexico",
+        "disclamer": "This site uses minimal cookies to improve the browsing and demonstration experience.",
+        "copyright": "All Rights Reserved."
     }
 }
