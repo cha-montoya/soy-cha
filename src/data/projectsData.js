@@ -1,6 +1,7 @@
 export const projects = [
     {
         id: 1,
+        automation: "/projects/logos/eloqua.svg",
         title: "Respirador de Partículas 9513",
         client: "3M LATAM",
         category: "web",
@@ -32,11 +33,12 @@ export const projects = [
         "Estructura narrativa",
         "Diseño Gráfico",
         "Optimización Visual"
-        ]
+        ],
     },
 
     {
         id: 2,
+        automation: "/projects/logos/eloqua.svg",
         title: "Newsletter Navidad",
         client: "Christus Muguerza",
         category: "email",
@@ -72,6 +74,7 @@ export const projects = [
 
     {
         id: 3,
+        automation: "/projects/logos/eloqua.svg",
         title: "Esferas de Limpieza",
         client: "3M LATAM",
         category: "web",
@@ -106,12 +109,13 @@ export const projects = [
 
     {
         id: 4,
-        title: "Email Captación MBA",
-        client: "Universidad X",
-        category: "web",
-        clientLogo: "https://placehold.co/200x80?text=Logo",
-        thumbnail: "https://placehold.co/800x800",
-        previewUrl: "/projects/email-mba/index.html",
+        automation: "/projects/logos/acoustic.svg",
+        title: "Registro Campaña a:care",
+        client: "Abbott",
+        category: "email",
+        clientLogo: "/projects/logos/logo-abbott-light.svg?text=Logo Abbott",
+        thumbnail: "/projects/reto-acare/reto-acare-cover.jpg",
+        previewUrl: "/projects/reto-acare/index.html",
 
         images: [
             "https://placehold.co/600x800",
@@ -140,12 +144,13 @@ export const projects = [
 
     {
         id: 5,
-        title: "Email Captación MBA",
-        client: "Universidad X",
+        automation: "/projects/logos/responsys.svg",
+        title: "Campaña Mi Cumple",
+        client: "KidZania",
         category: "email",
-        clientLogo: "https://placehold.co/200x80?text=Logo",
-        thumbnail: "https://placehold.co/800x800",
-        previewUrl: "/projects/email-mba/index.html",
+        clientLogo: "/projects/logos/logo-kidzania-light.png?text=Logo Kidzania",
+        thumbnail: "/projects/cumple-kidzania/cumple-cover.jpg",
+        previewUrl: "/projects/cumple-kidzania/index.html",
 
         images: [
             "https://placehold.co/600x800",

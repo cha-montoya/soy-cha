@@ -70,27 +70,36 @@ export default function ProjectModal({ project, onClose }) {
                 <div className="mt-8 space-y-8">
 
                     <div>
-                    <h3 className="text-xl mb-2 font-black font-display">{t("projects.modal.context")}</h3>
-                    <p className="text-slate-300">{projectData.context}</p>
+                        <h3 className="text-xl mb-2 font-black font-display">{t("projects.modal.context")}</h3>
+                        <p className="text-slate-300">{projectData.context}</p>
                     </div>
 
                     <div>
-                    <h3 className="text-xl mb-2 font-black font-display">{t("projects.modal.responsibilities")}</h3>
-                    <ul className="text-slate-300 list-disc pl-6 space-y-2">
-                        {projectData.responsibilities.map((item, index) => (
-                        <li key={index}>{item}</li>
-                        ))}
-                    </ul>
+                        <h3 className="text-xl mb-2 font-black font-display">Automation</h3>
+                        <img
+                        src={project.automation}
+                        alt={`${project.client} logo`}
+                        className="max-h-30 max-w-30 object-contain opacity-60 transition duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] hover:opacity-100"
+                        />
+                    </div>
 
-                    {project.previewUrl && (
-                        <div className="mt-12">
-                        <button onClick={handleOpenProject} className="btn-glitch-fill-white">
-                            <span className="text">// {t("projects.modal.cta")}</span>
-                            <span className="text-decoration"> _</span>
-                            <span className="decoration">⇒</span>
-                        </button>
-                        </div>
-                    )}
+                    <div>
+                        <h3 className="text-xl mb-2 font-black font-display">{t("projects.modal.responsibilities")}</h3>
+                        <ul className="text-slate-300 list-disc pl-6 space-y-2">
+                            {projectData.responsibilities.map((item, index) => (
+                            <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+
+                        {project.previewUrl && (
+                            <div className="mt-12">
+                            <button onClick={handleOpenProject} className="btn-glitch-fill-white">
+                                <span className="text">// {t("projects.modal.cta")}</span>
+                                <span className="text-decoration"> _</span>
+                                <span className="decoration">⇒</span>
+                            </button>
+                            </div>
+                        )}
                     </div>
 
                     {project.personalizedPreview && (

@@ -2,7 +2,11 @@ import { useTranslation } from "react-i18next"
 import ContactForm from "../forms/ContactForm"
 
 function Contact() {
-    const { t } = useTranslation()
+    const { t, i18n } = useTranslation()
+
+    const cvFile = i18n.language === "es"
+    ? "../../assets/cv/cv_carlos_montoya_es.pdf"
+    : "../../assets/cv/cv_carlos_montoya_en.pdf"
 
     return (
         <section id="contact" className="min-h-screen bg-slate-100 relative scroll-mt-20 px-6 py-16 md:py-32">
@@ -34,7 +38,7 @@ function Contact() {
                         </button>
                     </a>
 
-                    <a href="/cv-carlos-montoya.pdf" download>
+                    <a href={cvFile} target="_blank">
                         <button className="btn-glitch-fill">
                         <span className="text">// {t("contact.cv")}</span>
                         <span className="text-decoration"> _</span>
