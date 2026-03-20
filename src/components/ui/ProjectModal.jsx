@@ -49,7 +49,7 @@ export default function ProjectModal({ project, onClose }) {
                 {/* INFO */}
                 <div>
                 <h2 className="text-4xl font-display font-black tracking-tight mb-2">
-                    {project.title}
+                    {projectData.title}
                 </h2>
                 <p className="text-slate-400 mb-4 capitalize">
                     {project.client} · {project.category}
@@ -75,12 +75,8 @@ export default function ProjectModal({ project, onClose }) {
                     </div>
 
                     <div>
-                        <h3 className="text-xl mb-2 font-black font-display">Automation</h3>
-                        <img
-                        src={project.automation}
-                        alt={`${project.client} logo`}
-                        className="max-h-30 max-w-30 object-contain opacity-60 transition duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] hover:opacity-100"
-                        />
+                        <h3 className="text-xl mb-2 font-black font-display">Stack</h3>
+                        <p className="text-slate-300">{project.automation}</p>
                     </div>
 
                     <div>
@@ -120,19 +116,37 @@ export default function ProjectModal({ project, onClose }) {
                 </div>
 
                 {/* IMAGES */}
-                <div className="grid grid-cols-2 gap-6 auto-rows-[200px]">
-                {project.images?.map((img, i) => {
-                    const imageSrc = project.personalizedPreview && i === 0 ? niftyUrl : img
+                <div className="flex flex-col gap-6">
+
+                {/* First image — full width */}
+                {project.images?.length > 0 && (() => {
+                    const img0 = project.personalizedPreview ? niftyUrl : project.images[0]
                     return (
-                    <div key={i} className="overflow-hidden bg-slate-800">
+                    <div className="overflow-hidden bg-slate-800 h-[280px]">
                         <img
-                        src={imageSrc}
+                        src={img0}
                         alt=""
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 rounded-xl"
                         />
                     </div>
                     )
-                })}
+                })()}
+
+                {/* Rest — 2-column grid */}
+                {project.images?.length > 1 && (
+                    <div className="grid grid-cols-2 gap-6 auto-rows-[240px]">
+                    {project.images.slice(1).map((img, i) => (
+                        <div key={i + 1} className="overflow-hidden bg-slate-800">
+                        <img
+                            src={img}
+                            alt=""
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 rounded-xl"
+                        />
+                        </div>
+                    ))}
+                    </div>
+                )}
+
                 </div>
 
             </div>

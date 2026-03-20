@@ -1,16 +1,11 @@
 {
-    "test": "Hola mundo",
-
-    "loader": {
-
-    },
-
     "nav": {
         "hero": "Inicio",
         "about": "Sobre mí",
         "mindset": "Cómo pienso",
         "services": "Servicios",
         "projects": "Proyectos",
+        "trajectory": "Trayectoria",
         "contact": "Contacto"
     },
 
@@ -22,6 +17,12 @@
         "p3": "Hoy trabajo en la intersección de ambos mundos: traigo pensamiento estratégico a los problemas de diseño, y criterio creativo a las decisiones de datos. He liderado equipos de tecnología y creatividad para marcas como 3M LATAM, Abbott, Christus Muguerza y KidZania, siempre con un ojo en los resultados y otro en la experiencia del usuario.",
         "p4": "Soy experto en email marketing y deliverability uno de los campos más técnicos y subestimados del marketing digital.",
         "p5": "Estoy en búsqueda de un rol donde pueda liderar equipos y proyectos, sin perder el contacto con la ejecución."
+    },
+
+    "trajectory": {
+        "eyebrow": "Mi Trayectoria",
+        "headline": "En dónde <span class='italic text-primary'>he estado.</span>",
+        "line1": "Dos décadas dedicadas al diseño, la automatización del marketing, la estrategia de crecimiento y la tecnología, siempre creando cosas que realmente funcionan."
     },
     
     "mindset": {
@@ -140,58 +141,94 @@
     },
     "data": {
         "1": {
-        "context": "Landing Page para informar sobre los beneficios, características y propiedades de la mascarilla KN9513 durante pandemia de COVID-19. El enfoque estratégico fue remarcar la calidad de las mascarillas por las capas con las que están fabricadas.",
-        "responsibilities": [
-            "Segmentación de Audiencia",
-            "Estructura narrativa",
-            "Diseño Gráfico",
-            "Optimización Visual"
-        ]
+            "title": "Respirador de Partículas 9513",
+            "context": "Landing Page para informar sobre los beneficios, características y propiedades de la mascarilla KN9513 durante pandemia de COVID-19. El enfoque estratégico fue remarcar la calidad de las mascarillas por las capas con las que están fabricadas.",
+            "responsibilities": [
+                "Segmentación de Audiencia",
+                "Estructura narrativa",
+                "Diseño Gráfico",
+                "Optimización Visual"
+            ]
         },
         "2": {
-        "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-        "responsibilities": [
-            "Segmentación de audiencia",
-            "Estructura narrativa",
-            "Diseño responsive",
-            "Optimización visual para CTR"
-        ]
+            "title": "Newsletter Navidad",
+            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+            "responsibilities": [
+                "Segmentación de audiencia",
+                "Estructura narrativa",
+                "Diseño responsive",
+                "Optimización visual para CTR"
+            ]
         },
         "3": {
-        "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-        "responsibilities": [
-            "Segmentación de audiencia",
-            "Estructura narrativa",
-            "Diseño responsive",
-            "Optimización visual para CTR"
-        ]
+            "title": "Esferas de Limpieza",
+            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+            "responsibilities": [
+                "Segmentación de audiencia",
+                "Estructura narrativa",
+                "Diseño responsive",
+                "Optimización visual para CTR"
+            ]
         },
         "4": {
-        "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-        "responsibilities": [
-            "Segmentación de audiencia",
-            "Estructura narrativa",
-            "Diseño responsive",
-            "Optimización visual para CTR"
-        ]
+            "title": "Registro Campaña a:care",
+            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+            "responsibilities": [
+                "Segmentación de audiencia",
+                "Estructura narrativa",
+                "Diseño responsive",
+                "Optimización visual para CTR"
+            ]
         },
         "5": {
-        "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-        "responsibilities": [
-            "Segmentación de audiencia",
-            "Estructura narrativa",
-            "Diseño responsive",
-            "Optimización visual para CTR"
-        ]
+            "title": "Campaña Mi Cumple",
+            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+            "responsibilities": [
+                "Segmentación de audiencia",
+                "Estructura narrativa",
+                "Diseño responsive",
+                "Optimización visual para CTR"
+            ]
         },
         "6": {
-        "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-        "responsibilities": [
-            "Segmentación de audiencia",
-            "Estructura narrativa",
-            "Diseño responsive",
-            "Optimización visual para CTR"
-        ]
+            "title": "Newsletter Automatizado",
+            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+            "responsibilities": [
+                "Segmentación de audiencia",
+                "Estructura narrativa",
+                "Diseño responsive",
+                "Optimización visual para CTR"
+            ]
+        },
+        "7": {
+            "title": "Branding Amafka",
+            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+            "responsibilities": [
+                "Segmentación de audiencia",
+                "Estructura narrativa",
+                "Diseño responsive",
+                "Optimización visual para CTR"
+            ]
+        },
+        "8": {
+            "title": "Branding Hermanos Mezcal",
+            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+            "responsibilities": [
+                "Segmentación de audiencia",
+                "Estructura narrativa",
+                "Diseño responsive",
+                "Optimización visual para CTR"
+            ]
+        },
+        "9": {
+            "title": "Newsletter Automatizado",
+            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+            "responsibilities": [
+                "Segmentación de audiencia",
+                "Estructura narrativa",
+                "Diseño responsive",
+                "Optimización visual para CTR"
+            ]
         }
     }
     },

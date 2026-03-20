@@ -1,7 +1,7 @@
 export const projects = [
     {
         id: 1,
-        automation: "/projects/logos/eloqua.svg",
+        automation: "HTML + CSS + Bootstrap + JS + Eloqua",
         title: "Respirador de Partículas 9513",
         client: "3M LATAM",
         category: "web",
@@ -10,7 +10,6 @@ export const projects = [
         previewUrl: "/projects/respirador-de-particulas-9513/index.html",
 
         images: [
-            "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
@@ -38,7 +37,7 @@ export const projects = [
 
     {
         id: 2,
-        automation: "/projects/logos/eloqua.svg",
+        automation: "Stripo + NiftyImages + Eloqua",
         title: "Newsletter Navidad",
         client: "Christus Muguerza",
         category: "email",
@@ -48,6 +47,7 @@ export const projects = [
         previewUrl: "/projects/newsletter/christus-newsletter-diciembre.html",
 
         images: [
+            "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
@@ -74,7 +74,7 @@ export const projects = [
 
     {
         id: 3,
-        automation: "/projects/logos/eloqua.svg",
+        automation: "HTML + CSS + Bootstrap + JS + Eloqua",
         title: "Esferas de Limpieza",
         client: "3M LATAM",
         category: "web",
@@ -83,6 +83,7 @@ export const projects = [
         previewUrl: "/projects/esferas-de-limpieza/index.html",
 
         images: [
+            "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
@@ -109,7 +110,7 @@ export const projects = [
 
     {
         id: 4,
-        automation: "/projects/logos/acoustic.svg",
+        automation: "Stripo + After Effects + Acoustic",
         title: "Registro Campaña a:care",
         client: "Abbott",
         category: "email",
@@ -118,6 +119,7 @@ export const projects = [
         previewUrl: "/projects/reto-acare/index.html",
 
         images: [
+            "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
@@ -144,8 +146,8 @@ export const projects = [
 
     {
         id: 5,
-        automation: "/projects/logos/responsys.svg",
-        title: "Campaña Mi Cumple",
+        automation: "Stripo + Responsys",
+        title: "Campaña Mi Cumple", 
         client: "KidZania",
         category: "email",
         clientLogo: "/projects/logos/logo-kidzania-light.png?text=Logo Kidzania",
@@ -153,6 +155,7 @@ export const projects = [
         previewUrl: "/projects/cumple-kidzania/index.html",
 
         images: [
+            "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
@@ -179,14 +182,16 @@ export const projects = [
 
     {
         id: 6,
-        title: "Email Captación MBA",
-        client: "Universidad X",
-        category: "web",
-        clientLogo: "https://placehold.co/200x80?text=Logo",
-        thumbnail: "https://placehold.co/800x800",
-        previewUrl: "/projects/email-mba/index.html",
+        automation: "Stripo + REST API + Marketo",
+        title: "Newsletter Automatizado",
+        client: "Universidad Privada del Norte",
+        category: "email",
+        clientLogo: "/projects/logos/logo-upn-light.svg",
+        thumbnail: "/projects/newsletter-upn/upn-newsletter-cover.jpg",
+        previewUrl: "/projects/newsletter-upn/index.html",
 
         images: [
+            "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
             "https://placehold.co/600x800",
@@ -210,4 +215,110 @@ export const projects = [
         "Optimización visual para CTR"
         ]
     },
+
+    {
+        id: 7,
+        automation: "Illustrator",
+        title: "Branding",
+        client: "Amafka",
+        category: "branding",
+        clientLogo: "",
+        thumbnail: "/projects/amafka/amafka-logo-cover.webp",
+        previewUrl: "",
+
+        images: [
+            "/projects/amafka/amafka-01.webp",
+            "https://placehold.co/600x800",
+            "https://placehold.co/600x800"
+        ],
+
+        context:
+        "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+
+        involvement: {
+        strategy: false,
+        design: true,
+        implementation: false,
+        analytics: false
+        },
+
+        responsibilities: [
+        "Segmentación de audiencia",
+        "Estructura narrativa",
+        "Diseño responsive",
+        "Optimización visual para CTR"
+        ]
+    },
+
+    {
+        id: 8,
+        automation: "Illustrator",
+        title: "Branding Hermanos Mezcal",
+        client: "Hermanos Mezcal",
+        category: "branding",
+        clientLogo: "",
+        thumbnail: "/projects/hermanos-mezcal/hermanos-mezcal-cover.webp",
+        previewUrl: "",
+
+        images: [
+            "https://placehold.co/600x800",
+            "/projects/hermanos-mezcal/hermanos-mezcal-01.webp",
+            "https://placehold.co/600x800",
+            "https://placehold.co/600x800",
+            "https://placehold.co/600x800"
+        ],
+
+        context:
+        "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+
+        involvement: {
+        strategy: false,
+        design: true,
+        implementation: false,
+        analytics: false
+        },
+
+        responsibilities: [
+        "Segmentación de audiencia",
+        "Estructura narrativa",
+        "Diseño responsive",
+        "Optimización visual para CTR"
+        ]
+    },
+
+    {
+        id: 9,
+        automation: "Stripo + REST API + Marketo",
+        title: "Newsletter Automatizado",
+        client: "Universidad Privada del Norte",
+        category: "email",
+        clientLogo: "/projects/logos/logo-upn-light.svg",
+        thumbnail: "/projects/newsletter-upn/upn-newsletter-cover.jpg",
+        previewUrl: "/projects/newsletter-upn/index.html",
+
+        images: [
+            "https://placehold.co/600x800",
+            "https://placehold.co/600x800",
+            "https://placehold.co/600x800",
+            "https://placehold.co/600x800",
+            "https://placehold.co/600x800"
+        ],
+
+        context:
+        "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+
+        involvement: {
+        strategy: true,
+        design: true,
+        implementation: false,
+        analytics: false
+        },
+
+        responsibilities: [
+        "Segmentación de audiencia",
+        "Estructura narrativa",
+        "Diseño responsive",
+        "Optimización visual para CTR"
+        ]
+    }
 ]

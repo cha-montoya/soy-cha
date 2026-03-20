@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react"
 const sections = [
   { id: "hero", anchor: "hero", tKey: "nav.hero" },
   { id: "about", anchor: "about", tKey: "nav.about" },
+  { id: "trajectory", anchor: "trajectory", tKey: "nav.trajectory" },
   { id: "mindset-intro", anchor: "mindset-intro", tKey: "nav.mindset" },
   { id: "services", anchor: "services", tKey: "nav.services" },
   { id: "projects", anchor: "projects", tKey: "nav.projects" },

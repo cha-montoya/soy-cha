@@ -1,7 +1,13 @@
 import useInView from "../../hooks/useInView"
+import { useTranslation } from "react-i18next"
 
 export default function ProjectCard({ project, onOpen, index }) {
+    const { t } = useTranslation()
     const [ref, isVisible] = useInView()
+
+    // Pull translated context and responsibilities by project id
+    const projectData = t(`projects.data.${project.id}`, { returnObjects: true })
+
     return (
         <div
             ref={ref}
@@ -18,7 +24,7 @@ export default function ProjectCard({ project, onOpen, index }) {
         <div className="relative aspect-square overflow-hidden bg-slate-800 rounded-xl">
             <img
             src={project.thumbnail}
-            alt={project.title}
+            alt={projectData.title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
@@ -26,8 +32,8 @@ export default function ProjectCard({ project, onOpen, index }) {
         </div>
 
         <div className="mt-4">
-            <h3 className="text-lg font-sans text-black text-white mb-2">
-            {project.title}
+            <h3 className="text-lg font-sans text-black text-white mb-2 font-black font-display">
+                {projectData.title}
             </h3>
             <div className="line-divider"></div>
             <p className="text-sm text-slate-400 mt-2 capitalize">

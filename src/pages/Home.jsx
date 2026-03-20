@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Header from "../components/layout/Header"
 import Hero from "../components/sections/Hero"
 import About from "../components/sections/About"
+import Trajectory from "../components/sections/Trajectory"
 import MindsetIntro from "../components/sections/MindsetIntro"
 import MindsetHeader from "../components/sections/MindsetHeader"
 import MindsetCards from "../components/sections/MindsetCards"
@@ -28,15 +29,10 @@ function Home() {
   return (
     <>
       <Header />
-      {/*
-        IMPORTANTE: quitamos el div con overflow-y-scroll como scroller.
-        El scroll ahora lo maneja window directamente, que es lo que
-        ScrollTrigger espera para que el pin funcione correctamente.
-        El <main> es solo un contenedor visual, no el scroller.
-      */}
       <main id="scroll-container" className="bg-white">
         <Hero />
         <About />
+        <Trajectory />
         <MindsetIntro />
         <MindsetHeader />
         <MindsetCards />
