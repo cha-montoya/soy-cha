@@ -219,7 +219,7 @@ export const projects = [
     {
         id: 7,
         automation: "Illustrator",
-        title: "Branding",
+        title: "Amafka",
         client: "Amafka",
         category: "branding",
         clientLogo: "",
@@ -253,19 +253,19 @@ export const projects = [
     {
         id: 8,
         automation: "Illustrator",
-        title: "Branding Hermanos Mezcal",
+        title: "Hermanos Mezcal",
         client: "Hermanos Mezcal",
         category: "branding",
-        clientLogo: "",
+        clientLogo: "/projects/hermanos-mezcal/mezcal-logo-light.svg",
         thumbnail: "/projects/hermanos-mezcal/hermanos-mezcal-cover.webp",
         previewUrl: "",
 
         images: [
-            "https://placehold.co/600x800",
             "/projects/hermanos-mezcal/hermanos-mezcal-01.webp",
-            "https://placehold.co/600x800",
-            "https://placehold.co/600x800",
-            "https://placehold.co/600x800"
+            "/projects/hermanos-mezcal/hermanos-mezcal-02.webp",
+            "/projects/hermanos-mezcal/hermanos-mezcal-03.webp",
+            "/projects/hermanos-mezcal/hermanos-mezcal-04.webp",
+            "/projects/hermanos-mezcal/hermanos-mezcal-05.webp"
         ],
 
         context:
@@ -288,27 +288,27 @@ export const projects = [
 
     {
         id: 9,
-        automation: "Stripo + REST API + Marketo",
-        title: "Newsletter Automatizado",
-        client: "Universidad Privada del Norte",
-        category: "email",
-        clientLogo: "/projects/logos/logo-upn-light.svg",
-        thumbnail: "/projects/newsletter-upn/upn-newsletter-cover.jpg",
-        previewUrl: "/projects/newsletter-upn/index.html",
+        automation: "Illustrator + Photoshop",
+        title: "Carbón",
+        client: "Carbón",
+        category: "branding",
+        clientLogo: "/projects/carbon/carbon-logo-light.svg",
+        thumbnail: "/projects/carbon/carbon-logo-cover.webp",
+        previewUrl: "",
 
         images: [
-            "https://placehold.co/600x800",
-            "https://placehold.co/600x800",
-            "https://placehold.co/600x800",
-            "https://placehold.co/600x800",
-            "https://placehold.co/600x800"
+            "/projects/carbon/carbon-01.webp",
+            "/projects/carbon/carbon-02.webp",
+            "/projects/carbon/carbon-03.webp",
+            "/projects/carbon/carbon-04.webp",
+            "/projects/carbon/carbon-05.webp"
         ],
 
         context:
         "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
 
         involvement: {
-        strategy: true,
+        strategy: false,
         design: true,
         implementation: false,
         analytics: false

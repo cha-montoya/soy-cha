@@ -69,7 +69,7 @@ function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("mindset-intro")}
+                  onClick={() => scrollToSection("trajectory")}
                   className="hover:text-primary transition nav-link"
                 >
                   {t("footer.menu3")}
@@ -77,7 +77,7 @@ function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("services")}
+                  onClick={() => scrollToSection("mindset-intro")}
                   className="hover:text-primary transition nav-link"
                 >
                   {t("footer.menu4")}
@@ -85,7 +85,7 @@ function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("projects")}
+                  onClick={() => scrollToSection("services")}
                   className="hover:text-primary transition nav-link"
                 >
                   {t("footer.menu5")}
@@ -93,10 +93,18 @@ function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("contact")}
+                  onClick={() => scrollToSection("projects")}
                   className="hover:text-primary transition nav-link"
                 >
                   {t("footer.menu6")}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="hover:text-primary transition nav-link"
+                >
+                  {t("footer.menu7")}
                 </button>
               </li>
             </ul>

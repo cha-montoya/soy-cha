@@ -201,7 +201,7 @@
             ]
         },
         "7": {
-            "title": "Branding Amafka",
+            "title": "Amafka",
             "context": "Email designed as part of a segmented strategy for a B2B executive program.",
             "responsibilities": [
                 "Audience segmentation",
@@ -211,7 +211,7 @@
             ]
         },
         "8": {
-            "title": "Newsletter Automatizado",
+            "title": "Hermanos Mezcal",
             "context": "Email designed as part of a segmented strategy for a B2B executive program.",
             "responsibilities": [
                 "Audience segmentation",
@@ -221,7 +221,7 @@
             ]
         },
         "9": {
-            "title": "Newsletter Automatizado",
+            "title": "Carbón",
             "context": "Email designed as part of a segmented strategy for a B2B executive program.",
             "responsibilities": [
                 "Audience segmentation",
@@ -266,10 +266,11 @@
         "menu": "Menu",
         "menu1": "Home",
         "menu2": "About me",
-        "menu3": "How I think",
-        "menu4": "Services",
-        "menu5": "Projects",
-        "menu6": "Contact",
+        "menu3": "Trajectory",
+        "menu4": "How I think",
+        "menu5": "Services",
+        "menu6": "Projects",
+        "menu7": "Contact",
         "contact": "Contact",
         "country": "Mexico City, Mexico",
         "disclamer": "This site uses minimal cookies to improve browsing and demo experience.",

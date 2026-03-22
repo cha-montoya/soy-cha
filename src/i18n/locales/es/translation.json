@@ -201,7 +201,7 @@
             ]
         },
         "7": {
-            "title": "Branding Amafka",
+            "title": "Amafka",
             "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
             "responsibilities": [
                 "Segmentación de audiencia",
@@ -211,7 +211,7 @@
             ]
         },
         "8": {
-            "title": "Branding Hermanos Mezcal",
+            "title": "Hermanos Mezcal",
             "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
             "responsibilities": [
                 "Segmentación de audiencia",
@@ -221,7 +221,7 @@
             ]
         },
         "9": {
-            "title": "Newsletter Automatizado",
+            "title": "Carbón",
             "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
             "responsibilities": [
                 "Segmentación de audiencia",
@@ -266,10 +266,11 @@
         "menu": "Menú",
         "menu1": "Inicio",
         "menu2": "Sobre mí",
-        "menu3": "Cómo pienso",
-        "menu4": "Servicios",
-        "menu5": "Proyectos",
-        "menu6": "Contacto",
+        "menu3": "Trayectoria",
+        "menu4": "Cómo pienso",
+        "menu5": "Servicios",
+        "menu6": "Proyectos",
+        "menu7": "Contacto",
         "contact": "Contacto",
         "country": "Ciudad de México, México",
         "disclamer": "Este sitio utiliza cookies mínimas para mejorar la experiencia de navegación y demostración.",
