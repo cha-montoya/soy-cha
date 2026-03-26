@@ -1,100 +1,16 @@
 import { useTranslation } from "react-i18next"
 
-// ─── DATA ──────────────────────────────────────────────────────────────────
-const milestones = [
-    {
-        year: "2002",
-        role: "Licenciatura Diseño Gráfico",
-        company: "Universidad Justo Sierra",
-        type: "education",
-        tools: [],
-        achievement: "Foundation in visual communication, typography & brand identity.",
-    },
-    {
-        year: "2002",
-        role: "Diseñador Gráfico Jr.",
-        company: "Alberto Lastra & Asociados",
-        type: "job",
-        tools: ["Illustrator", "Photoshop", "Freehand", "Page Maker"],
-        achievement: "First client campaigns: print, outdoor & early digital banners.",
-    },
-    {
-        year: "2007",
-        role: "Diseñador Gráfico Sr.",
-        company: "ArtCompany",
-        type: "job",
-        tools: ["Dreamweaver", "HTML", "CSS", "Flash"],
-        achievement: "Transitioned to web. Built landing pages for SMBs across Mexico.",
-    },
-    {
-        year: "2012",
-        role: "Email Marketing Specialist",
-        company: "Empresa Retail MX",
-        type: "job",
-        tools: ["Responsys", "HTML Email", "Litmus"],
-        achievement: "Managed 2M+ subscriber base. 30% open rate lift via segmentation.",
-    },
-    {
-        year: "2014",
-        role: "Marketing Automation Lead",
-        company: "Tech Startup LATAM",
-        type: "job",
-        tools: ["HubSpot", "Salesforce", "Marketo"],
-        achievement: "Built first automated nurture tracks — 4× pipeline velocity.",
-    },
-    {
-        year: "2016",
-        role: "CRM & MarTech Consultant",
-        company: "Freelance",
-        type: "freelance",
-        tools: ["Eloqua", "Marketo", "Salesforce", "Acoustic"],
-        achievement: "5 enterprise accounts. Led martech audits + migration projects.",
-    },
-    {
-        year: "2018",
-        role: "Growth Strategy Director",
-        company: "Agencia Digital",
-        type: "job",
-        tools: ["HubSpot", "GA4", "Segment", "Mixpanel"],
-        achievement: "Led growth for 12 B2B clients. Avg. 2.4× revenue in 18 months.",
-    },
-    {
-        year: "2020",
-        role: "Head of MarTech",
-        company: "FinTech MX",
-        type: "job",
-        tools: ["Braze", "Amplitude", "Looker", "React"],
-        achievement: "Scaled from 0 to 800K users. Full lifecycle automation stack.",
-    },
-    {
-        year: "2022",
-        role: "Independent Consultant",
-        company: "Freelance",
-        type: "freelance",
-        tools: ["Next.js", "TailwindCSS", "Vercel", "OpenAI API"],
-        achievement: "Integrated AI into client campaigns. First AI-assisted creative pipeline.",
-    },
-    {
-        year: "2025",
-        role: "Growth · Design · MarTech",
-        company: "soycha.com",
-        type: "freelance",
-        tools: ["React", "GSAP", "HubSpot", "AI / LLMs"],
-        achievement: "Full-stack brand + growth partner. Strategy × Design × Technology.",
-    },
-    ]
-
-    const TYPE_META = {
-    job:       { label: "Full-time",  accent: "#005C52" },
-    freelance: { label: "Freelance",  accent: "#042940" },
-    education: { label: "Education",  accent: "#9FC131" },
+// ─── TYPE META ─────────────────────────────────────────────────────────────
+const TYPE_META = {
+    job:       { accent: "#005C52" },
+    freelance: { accent: "#042940" },
+    education: { accent: "#9FC131" },
     }
 
     // ─── DESKTOP CARD ──────────────────────────────────────────────────────────
-    function MilestoneCard({ m, index }) {
-    const meta    = TYPE_META[m.type]
-    const isFirst = index === 0
-    const isLast  = index === milestones.length - 1
+    function MilestoneCard({ m, index, isFirst, isLast }) {
+    const { t } = useTranslation()
+    const meta = TYPE_META[m.type]
 
     return (
         <div
@@ -131,7 +47,7 @@ const milestones = [
                 border: `1px solid ${meta.accent}44`,
             }}
             >
-            {meta.label}
+            {t(`trajectory.typeMeta.${m.type}`)}
             </span>
 
             <h3 className="font-elegant text-xl font-black text-black leading-snug">{m.role}</h3>
@@ -171,6 +87,9 @@ const milestones = [
     export default function Trajectory() {
     const { t } = useTranslation()
 
+    // Read milestones from translation file
+    const milestones = t("trajectory.milestones", { returnObjects: true })
+
     // Drag-to-scroll handler (desktop)
     const handleDragScroll = (e) => {
         const el = e.currentTarget
@@ -197,22 +116,20 @@ const milestones = [
             id="trajectory"
             className="bg-white text-black pt-20 px-6 md:px-16 scroll-mt-20"
         >
-
             <div className="w-full lg:w-1/2 px-6 md:px-16 py-24 lg:py-16 mx-auto text-center">
-                <div>
-                    <div className="hero-eyebrow text-neutral-400">
-                    {t("trajectory.eyebrow")}
-                    </div>
-                    <h2
-                        className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8 text-black"
-                        dangerouslySetInnerHTML={{ __html: t("trajectory.headline") }}
-                    />
-                    <p className="text-sm md:text-base lg:text-lg leading-relaxed text-neutral-400">
-                        {t("trajectory.line1")}
-                    </p>
+            <div>
+                <div className="hero-eyebrow text-neutral-400">
+                {t("trajectory.eyebrow")}
                 </div>
-            </div>                                                            
-            
+                <h2
+                className="font-elegant text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-8 text-black"
+                dangerouslySetInnerHTML={{ __html: t("trajectory.headline") }}
+                />
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed text-neutral-400">
+                {t("trajectory.line1")}
+                </p>
+            </div>
+            </div>
         </section>
 
         {/* Inject single rule to hide WebKit scrollbar */}
@@ -235,7 +152,13 @@ const milestones = [
                 style={{ height: "500px", width: "max-content", paddingInline: "64px" }}
             >
                 {milestones.map((m, i) => (
-                <MilestoneCard key={m.year} m={m} index={i} />
+                <MilestoneCard
+                    key={`${m.year}-${i}`}
+                    m={m}
+                    index={i}
+                    isFirst={i === 0}
+                    isLast={i === milestones.length - 1}
+                />
                 ))}
             </div>
             </div>
@@ -247,10 +170,10 @@ const milestones = [
             <div className="absolute left-[6px] top-0 bottom-0 w-px bg-slate-700" />
 
             <div className="flex flex-col">
-                {milestones.map((m) => {
+                {milestones.map((m, i) => {
                 const meta = TYPE_META[m.type]
                 return (
-                    <div key={m.year} className="relative pl-10 pb-10">
+                    <div key={`${m.year}-${i}`} className="relative pl-10 pb-10">
                     <div
                         className="absolute left-0 top-2 w-3.5 h-3.5 rounded-full z-10"
                         style={{ background: meta.accent, boxShadow: `0 0 8px ${meta.accent}88` }}
@@ -271,7 +194,7 @@ const milestones = [
                         border: `1px solid ${meta.accent}44`,
                         }}
                     >
-                        {meta.label}
+                        {t(`trajectory.typeMeta.${m.type}`)}
                     </span>
 
                     <h3 className="font-elegant text-xl font-black text-white leading-snug">{m.role}</h3>

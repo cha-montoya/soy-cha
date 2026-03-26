@@ -22,7 +22,73 @@
     "trajectory": {
         "eyebrow": "Mi Trayectoria",
         "headline": "En dónde <span class='italic text-primary'>he estado.</span>",
-        "line1": "Dos décadas dedicadas al diseño, la automatización del marketing, la estrategia de crecimiento y la tecnología, siempre creando cosas que realmente funcionan."
+        "line1": "Dos décadas dedicadas al diseño, la automatización del marketing, la estrategia de crecimiento y la tecnología, siempre creando cosas que realmente funcionan.",
+        "milestones": [
+            {
+                "year": "2002",
+                "role": "Licenciatura Diseño Gráfico",
+                "company": "Universidad Justo Sierra",
+                "type": "education",
+                "tools": [],
+                "achievement": "Egreso de la carrera de Diseño Gráfico."
+            },
+            {
+                "year": "2002",
+                "role": "Diseñador Gráfico Jr.",
+                "company": "Alberto Lastra & Asociados",
+                "type": "job",
+                "tools": [""],
+                "achievement": "Diseño gráfico, editorial y publicitario para marcas como Amway LATAM, Capistrano, Henkel y Christus Muguerza."
+            },
+            {
+                "year": "2007",
+                "role": "Diseñador Gráfico Sr./VFX",
+                "company": "ArtCompany",
+                "type": "job",
+                "tools": [],
+                "achievement": "Diseño gráfico, producción y edición de videos para marcas como Liomont, Roche y Adidas."
+            },
+            {
+                "year": "2012",
+                "role": "Diseñador Gráfico/Web Sr.",
+                "company": "TechMedia",
+                "type": "job",
+                "tools": [],
+                "achievement": "Diseño gráfico y edición de video para marcas como Seguritec, Sepsa y Cometra."
+            },
+            {
+                "year": "2014",
+                "role": "Diseñador Web Sr.",
+                "company": "hipos.com",
+                "type": "job",
+                "tools": ["HubSpot"],
+                "achievement": "Desarrollo de Estrategias de captación de leads FinTech."
+            },
+            {
+                "year": "2017",
+                "role": "Digital Marketing Specialist",
+                "company": "Brivé Soluciones",
+                "type": "job",
+                "tools": ["Eloqua"],
+                "achievement": "Product Owner de Evaluatest. Desarrollo de estrategias de captación de leads."
+            },
+            {
+                "year": "2019",
+                "role": "Marketing Coordinator",
+                "company": "Kunmap",
+                "type": "job",
+                "tools": ["Eloqua", "Responsys", "Acoustic", "Salesforce", "HubSpot", "Marketo"],
+                "achievement": "Coordinación de equipos y proyectos MarTech para marcas como 3M LATAM, Christus Muguerza, Abbott, Silanes, Grupo Vidanta."
+            },
+            {
+                "year": "2025",
+                "role": "Consultor Digital",
+                "company": "Nave Nómada",
+                "type": "freelance",
+                "tools": [],
+                "achievement": "Consultorías en Marketing Digital y Diseño."
+            }
+        ]
     },
     
     "mindset": {
@@ -142,7 +208,7 @@
     "data": {
         "1": {
             "title": "Respirador de Partículas 9513",
-            "context": "Landing Page para informar sobre los beneficios, características y propiedades de la mascarilla KN9513 durante pandemia de COVID-19. El enfoque estratégico fue remarcar la calidad de las mascarillas por las capas con las que están fabricadas.",
+            "context": "Landing Page que formó parte de una campaña para informar sobre los beneficios, características y propiedades de la mascarilla KN9513 durante pandemia de COVID-19. El enfoque estratégico fue remarcar la calidad de las mascarillas por las capas con las que están fabricadas.",
             "responsibilities": [
                 "Segmentación de Audiencia",
                 "Estructura narrativa",

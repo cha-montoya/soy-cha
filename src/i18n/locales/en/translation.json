@@ -12,21 +12,87 @@
     "about": {
         "eyebrow": "About me",
         "headline": "Two disciplines.<br />One unified <span class='italic text-primary'>vision.</span>",
-        "p1": "I started as a graphic designer in 2002, building visual identities, campaign assets, and brand systems. But I was always driven by the same question: why do some pieces work while others don’t?",
-        "p2": "That curiosity led me into digital marketing and eventually into marketing automation. Since 2014, I’ve specialized in growth strategy: audience segmentation, data modeling, customer lifecycle, journey mapping, and the technical implementation of platforms like Eloqua, Marketo, Salesforce Marketing Cloud, HubSpot, Responsys, and Acoustic.",
-        "p3": "Today, I work at the intersection of both worlds: bringing strategic thinking into design challenges, and creative judgment into data-driven decisions. I’ve led both technology and creative teams for brands like 3M LATAM, Abbott, Christus Muguerza, and KidZania, always with one eye on results and the other on user experience.",
+        "p1": "I started as a graphic designer in 2002, building visual identities, campaign assets, and brand systems. But I was always driven by the same question: why do some pieces work while others don't?",
+        "p2": "That curiosity led me into digital marketing and eventually into marketing automation. Since 2014, I've specialized in growth strategy: audience segmentation, data modeling, customer lifecycle, journey mapping, and the technical implementation of platforms like Eloqua, Marketo, Salesforce Marketing Cloud, HubSpot, Responsys, and Acoustic.",
+        "p3": "Today, I work at the intersection of both worlds: bringing strategic thinking into design challenges, and creative judgment into data-driven decisions. I've led both technology and creative teams for brands like 3M LATAM, Abbott, Christus Muguerza, and KidZania, always with one eye on results and the other on user experience.",
         "p4": "I specialize in email marketing and deliverability, one of the most technical and often overlooked areas in digital marketing.",
-        "p5": "I’m currently looking for a role where I can lead teams and projects while staying close to execution."
+        "p5": "I'm currently looking for a role where I can lead teams and projects while staying close to execution."
     },
 
     "trajectory": {
         "eyebrow": "My Trajectory",
         "headline": "Where <span class='italic text-primary'>I've been.</span>",
-        "line1": "Two decades across design, marketing automation, growth strategy and technology, always building things that actually work."
+        "line1": "Two decades across design, marketing automation, growth strategy and technology, always building things that actually work.",
+        "milestones": [
+            {
+                "year": "2002",
+                "role": "Bachelor's Degree",
+                "company": "Universidad Justo Sierra",
+                "type": "education",
+                "tools": [],
+                "achievement": "Graduated with a degree in Graphic Design."
+            },
+            {
+                "year": "2002",
+                "role": "Jr. Graphic Designer",
+                "company": "Alberto Lastra & Asociados",
+                "type": "job",
+                "tools": [""],
+                "achievement": "Graphic, editorial, and advertising design for brands including Amway LATAM, Capistrano, Henkel, and Christus Muguerza."
+            },
+            {
+                "year": "2007",
+                "role": "Sr. Graphic Designer / VFX",
+                "company": "ArtCompany",
+                "type": "job",
+                "tools": [],
+                "achievement": "Graphic design, production, and video editing for brands including Liomont, Roche, and Adidas."
+            },
+            {
+                "year": "2012",
+                "role": "Sr. Graphic / Web Designer",
+                "company": "TechMedia",
+                "type": "job",
+                "tools": [],
+                "achievement": "Graphic design and video editing for brands including Seguritec, Sepsa, and Cometra."
+            },
+            {
+                "year": "2014",
+                "role": "Sr. Web Designer",
+                "company": "hipos.com",
+                "type": "job",
+                "tools": ["HubSpot"],
+                "achievement": "Development of FinTech lead generation strategies."
+            },
+            {
+                "year": "2017",
+                "role": "Digital Marketing Specialist",
+                "company": "Brivé Soluciones",
+                "type": "job",
+                "tools": ["Eloqua"],
+                "achievement": "Product Owner for Evaluatest. Development of lead generation strategies."
+            },
+            {
+                "year": "2019",
+                "role": "Marketing Coordinator",
+                "company": "Kunmap",
+                "type": "job",
+                "tools": ["Eloqua", "Responsys", "Acoustic", "Salesforce", "HubSpot", "Marketo"],
+                "achievement": "Coordination of MarTech teams and projects for brands including 3M LATAM, Christus Muguerza, Abbott, Silanes, and Grupo Vidanta."
+            },
+            {
+                "year": "2025",
+                "role": "Digital Consultant",
+                "company": "Nave Nómada",
+                "type": "freelance",
+                "tools": [],
+                "achievement": "Consulting in Digital Marketing and Design."
+            }
+        ]
     },
     
     "mindset": {
-        "line1": "I don’t design individual pieces.",
+        "line1": "I don't design individual pieces.",
         "line2": "I design systems.",
         "line3": "Strategy, execution, and optimization",
         "line4": "as a single, continuous flow."
@@ -35,7 +101,7 @@
     "mindsetHeader": {
         "eyebrow": "How I think",
         "headline": "<span class='italic text-primary'>How I think</span> within a campaign.",
-        "paragraph": "I’m not just the executor or just the analyst. I operate across all three layers and that fundamentally changes the quality of what gets built."
+        "paragraph": "I'm not just the executor or just the analyst. I operate across all three layers and that fundamentally changes the quality of what gets built."
     },
 
     "mindsetCards": {
@@ -72,7 +138,7 @@
             {
             "num": "03",
             "title": "Analytical",
-            "subtitle": "Data doesn’t lie, but it can be misread.",
+            "subtitle": "Data doesn't lie, but it can be misread.",
             "desc": "I read metrics in context, not in isolation. A strong open rate can hide a segmentation issue. A low CTR might point to a design problem.",
             "skills": [
                 ["Dashboard creation", "Reports in Looker Studio, Tableau, and Power BI integrated with GA4 and automation platforms."],
@@ -91,7 +157,7 @@
         "headline": "What I can <span class='italic text-primary'>do for you.</span>",
         "paragraph": "If you need someone who understands both strategy and creative execution without having to translate between the two, we should work together.",
         "sub": "Team Leadership & <span class='italic text-primary'>Project Management</span>",
-        "line1": "I’ve led teams where design, technology, and strategy coexist—and I know that the gap between those worlds is closed through clear communication, not hierarchy. I manage projects with a focus on measurable outcomes, realistic timelines, and teams that grow along the way.",
+        "line1": "I've led teams where design, technology, and strategy coexist—and I know that the gap between those worlds is closed through clear communication, not hierarchy. I manage projects with a focus on measurable outcomes, realistic timelines, and teams that grow along the way.",
         "cards": [
             {
             "title": "Creative and technical team management",
@@ -107,7 +173,7 @@
             },
             {
             "title": "Mentorship and talent development",
-            "desc": "Supporting junior and mid-level profiles in their technical and strategic growth. I focus on building teams that don’t rely on me for every decision."
+            "desc": "Supporting junior and mid-level profiles in their technical and strategic growth. I focus on building teams that don't rely on me for every decision."
             },
             {
             "title": "Cross-functional communication",
@@ -115,7 +181,7 @@
             },
             {
             "title": "Project tracking and delivery",
-            "desc": "Managing timelines, identifying blockers, and handling dependencies across teams. I’d rather fix a problem on Tuesday than explain it on Friday."
+            "desc": "Managing timelines, identifying blockers, and handling dependencies across teams. I'd rather fix a problem on Tuesday than explain it on Friday."
             }
         ]
     },
@@ -124,7 +190,7 @@
     "eyebrow": "Projects",
     "headline": "Work driven by business goals.",
     "p1": "Every project here started with a business problem. Design and strategy were the way to solve it.",
-    "p2": "I don’t just show what it looks like—I show why it works.",
+    "p2": "I don't just show what it looks like—I show why it works.",
     "filters": {
         "all": "All",
         "branding": "Branding",
@@ -243,7 +309,7 @@
     "contact": {
         "eyebrow": "Contact",
         "headline": "Building something <span class='italic text-primary'>interesting?</span>",
-        "paragraph": "I’m exploring new roles and select projects. If you’re looking for someone who understands the business, designs the solution, and measures whether it works—let’s talk.",
+        "paragraph": "I'm exploring new roles and select projects. If you're looking for someone who understands the business, designs the solution, and measures whether it works—let's talk.",
         "linkedin": "LinkedIn",
         "cv": "Download CV",
         "form": {
