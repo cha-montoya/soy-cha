@@ -47,7 +47,7 @@ const TYPE_META = {
                 border: `1px solid ${meta.accent}44`,
             }}
             >
-            {t(`trajectory.typeMeta.${m.type}`)}
+            {t(`${m.type}`)}
             </span>
 
             <h3 className="font-elegant text-xl font-black text-black leading-snug">{m.role}</h3>
@@ -147,85 +147,85 @@ const TYPE_META = {
             }}
             onMouseDown={handleDragScroll}
             >
-            <div
-                className="flex"
-                style={{ height: "500px", width: "max-content", paddingInline: "64px" }}
-            >
-                {milestones.map((m, i) => (
-                <MilestoneCard
-                    key={`${m.year}-${i}`}
-                    m={m}
-                    index={i}
-                    isFirst={i === 0}
-                    isLast={i === milestones.length - 1}
-                />
-                ))}
-            </div>
+                <div
+                    className="flex"
+                    style={{ height: "500px", width: "max-content", paddingInline: "64px" }}
+                >
+                    {milestones.map((m, i) => (
+                    <MilestoneCard
+                        key={`${m.year}-${i}`}
+                        m={m}
+                        index={i}
+                        isFirst={i === 0}
+                        isLast={i === milestones.length - 1}
+                    />
+                    ))}
+                </div>
             </div>
         </section>
 
         {/* Mobile */}
         <section className="lg:hidden bg-white text-black pb-16 px-6" aria-label="Career timeline">
             <div className="relative ml-4">
-            <div className="absolute left-[6px] top-0 bottom-0 w-px bg-slate-700" />
+                <div className="absolute left-[6px] top-0 bottom-0 w-px bg-slate-700" />
 
-            <div className="flex flex-col">
-                {milestones.map((m, i) => {
-                const meta = TYPE_META[m.type]
-                return (
-                    <div key={`${m.year}-${i}`} className="relative pl-10 pb-10">
-                    <div
-                        className="absolute left-0 top-2 w-3.5 h-3.5 rounded-full z-10"
-                        style={{ background: meta.accent, boxShadow: `0 0 8px ${meta.accent}88` }}
-                    />
+                <div className="flex flex-col">
+                    {milestones.map((m, i) => {
+                    const meta = TYPE_META[m.type]
+                    return (
+                        <div key={`${m.year}-${i}`} className="relative pl-10 pb-10">
+                        <div
+                            className="absolute left-0 top-2 w-3.5 h-3.5 rounded-full z-10"
+                            style={{ background: meta.accent, boxShadow: `0 0 8px ${meta.accent}88` }}
+                        />
 
-                    <div
-                        className="font-display text-4xl font-black tracking-tighter leading-none mb-1"
-                        style={{ color: meta.accent }}
-                    >
-                        {m.year}
-                    </div>
+                        <div
+                            className="font-display text-4xl font-black tracking-tighter leading-none mb-1"
+                            style={{ color: meta.accent }}
+                        >
+                            {m.year}
+                        </div>
 
-                    <span
-                        className="inline-block text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2 font-semibold"
-                        style={{
-                        background: `${meta.accent}1a`,
-                        color: meta.accent,
-                        border: `1px solid ${meta.accent}44`,
-                        }}
-                    >
-                        {t(`trajectory.typeMeta.${m.type}`)}
-                    </span>
-
-                    <h3 className="font-elegant text-xl font-black text-white leading-snug">{m.role}</h3>
-                    <p className="text-slate-400 text-xs mb-3">{m.company}</p>
-
-                    <p
-                        className="text-neutral-300 text-sm leading-relaxed border-l-2 pl-3 mb-3"
-                        style={{ borderColor: meta.accent }}
-                    >
-                        {m.achievement}
-                    </p>
-
-                    <div className="flex flex-wrap gap-1.5">
-                        {m.tools.map((tool) => (
                         <span
-                            key={tool}
-                            className="text-[11px] px-2 py-0.5 rounded font-mono"
+                            className="inline-block text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full font-semibold"
                             style={{
-                            background: "rgba(255,255,255,0.05)",
-                            border: "1px solid rgba(255,255,255,0.08)",
-                            color: "#94a3b8",
+                            background: `${meta.accent}1a`,
+                            color: meta.accent,
+                            border: `1px solid ${meta.accent}44`,
                             }}
                         >
-                            {tool}
+                            {t(`${m.type}`)}
                         </span>
-                        ))}
-                    </div>
-                    </div>
-                )
-                })}
-            </div>
+
+                        <h3 className="font-elegant text-xl font-black text-white leading-snug">{m.role}</h3>
+                        <p className="text-slate-400 text-xs mb-3">{m.company}</p>
+
+                        <p
+                            className="text-neutral-300 text-sm leading-relaxed border-l-2 pl-3 mb-3"
+                            style={{ borderColor: meta.accent }}
+                        >
+                            {m.achievement}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1.5">
+                            {m.tools.map((tool) => (
+                            <span
+                                key={tool}
+                                className="text-[11px] px-2 py-0.5 rounded font-mono"
+                                style={{
+                                background: "rgba(255,255,255,0.05)",
+                                border: "1px solid rgba(255,255,255,0.08)",
+                                color: "#94a3b8",
+                                }}
+                            >
+                                {tool}
+                            </span>
+                            ))}
+                        </div>
+                        </div>
+                    )
+                    })}
+                </div>
             </div>
         </section>
         </>

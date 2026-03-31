@@ -25,7 +25,8 @@ const videoSequence = [
 const IDLE_PAUSE = 1200
 
 export default function Hero() {
-  const { headline, sub, cta } = useUTMPersonalization()
+  // ctaAction is now returned alongside headline / sub / cta
+  const { headline, sub, cta, ctaAction } = useUTMPersonalization()
 
   const [currentVideo, setCurrentVideo] = useState(0)
   const timeoutRef = useRef(null)
@@ -169,9 +170,11 @@ export default function Hero() {
             </p>
 
             <div className="mt-8">
+              {/* ✅ ctaAction replaces the hardcoded scrollToSection("about") */}
               <button
-                onClick={() => scrollToSection("about")}
-                className="btn-glitch-fill">
+                onClick={ctaAction}
+                className="btn-glitch-fill"
+              >
                 <span className="text">// {cta}</span>
                 <span className="text-decoration"> _</span>
                 <span className="decoration">⇒</span>
@@ -181,10 +184,6 @@ export default function Hero() {
         </div>
 
         {/* ================= VIDEO ================= */}
-        {/*
-          Mobile  → normal flow, centered below text, relative positioning
-          lg+     → absolute right, vertically centered (original behavior)
-        */}
         <div className="w-full flex justify-center pb-12
                         lg:w-auto lg:pb-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2
                         pointer-events-none">

@@ -187,116 +187,119 @@
     },
 
     "projects": {
-    "eyebrow": "Projects",
-    "headline": "Work driven by business goals.",
-    "p1": "Every project here started with a business problem. Design and strategy were the way to solve it.",
-    "p2": "I don't just show what it looks like—I show why it works.",
-    "filters": {
-        "all": "All",
-        "branding": "Branding",
-        "web": "Web",
-        "email": "Email"
-    },
-    "modal": {
-        "context": "Context",
-        "responsibilities": "Responsibilities",
-        "cta": "View Project",
-        "personalizationTitle": "Try personalization",
-        "personalizationDesc": "This project uses dynamic content for personalization. Enter your name to see how it works on the ugly sweater.",
-        "personalizationPlaceholder": "Enter your name"
-    },
-    "data": {
-        "1": {
-            "title": "Particulate Respirator 9513",
-            "context": "Landing page created to highlight the benefits, features, and properties of the KN9513 mask during the COVID-19 pandemic. The strategic focus was on emphasizing quality through its multi-layer construction.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Graphic design",
-                "Visual optimization"
-            ]
+        "eyebrow": "Projects",
+        "headline": "Work driven by business goals.",
+        "p1": "Every project here started with a business problem. Design and strategy were the way to solve it.",
+        "p2": "I don't just show what it looks like—I show why it works.",
+        "disclamer1": "Some projects were developed during my time at different agencies.",
+        "disclamer2": "All rights belong to their respective clients.",
+        "disclamer3": "They are presented here for portfolio purposes only.",
+        "filters": {
+            "all": "All",
+            "branding": "Branding",
+            "web": "Web",
+            "email": "Email"
         },
-        "2": {
-            "title": "Christmas Newsletter",
-            "context": "Email designed as part of a segmented strategy for a B2B executive program.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Responsive design",
-                "CTR-focused visual optimization"
-            ]
+        "modal": {
+            "context": "Context",
+            "responsibilities": "Responsibilities",
+            "cta": "View Project",
+            "personalizationTitle": "Try personalization",
+            "personalizationDesc": "This project uses dynamic content for personalization. Enter your name to see how it works on the ugly sweater.",
+            "personalizationPlaceholder": "Enter your name"
         },
-        "3": {
-            "title": "Cleaning Spheres",
-            "context": "Email designed as part of a segmented strategy for a B2B executive program.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Responsive design",
-                "CTR-focused visual optimization"
-            ]
-        },
-        "4": {
-            "title": "a:care Campaign Registration",
-            "context": "Email designed as part of a segmented strategy for a B2B executive program.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Responsive design",
-                "CTR-focused visual optimization"
-            ]
-        },
-        "5": {
-            "title": "My Birthday Campaign",
-            "context": "Email designed as part of a segmented strategy for a B2B executive program.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Responsive design",
-                "CTR-focused visual optimization"
-            ]
-        },
-        "6": {
-            "title": "Automated Newsletter",
-            "context": "Email designed as part of a segmented strategy for a B2B executive program.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Responsive design",
-                "CTR-focused visual optimization"
-            ]
-        },
-        "7": {
-            "title": "Amafka",
-            "context": "Email designed as part of a segmented strategy for a B2B executive program.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Responsive design",
-                "CTR-focused visual optimization"
-            ]
-        },
-        "8": {
-            "title": "Hermanos Mezcal",
-            "context": "Email designed as part of a segmented strategy for a B2B executive program.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Responsive design",
-                "CTR-focused visual optimization"
-            ]
-        },
-        "9": {
-            "title": "Carbón",
-            "context": "Email designed as part of a segmented strategy for a B2B executive program.",
-            "responsibilities": [
-                "Audience segmentation",
-                "Narrative structure",
-                "Responsive design",
-                "CTR-focused visual optimization"
-            ]
+        "data": {
+            "1": {
+                "title": "Particulate Respirator 9513",
+                "context": "Landing page created to highlight the benefits, features, and properties of the KN9513 mask during the COVID-19 pandemic. The strategic focus was on emphasizing quality through its multi-layer construction.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Graphic design",
+                    "Visual optimization"
+                ]
+            },
+            "2": {
+                "title": "Christmas Newsletter",
+                "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Responsive design",
+                    "CTR-focused visual optimization"
+                ]
+            },
+            "3": {
+                "title": "Cleaning Spheres",
+                "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Responsive design",
+                    "CTR-focused visual optimization"
+                ]
+            },
+            "4": {
+                "title": "a:care Campaign Registration",
+                "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Responsive design",
+                    "CTR-focused visual optimization"
+                ]
+            },
+            "5": {
+                "title": "My Birthday Campaign",
+                "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Responsive design",
+                    "CTR-focused visual optimization"
+                ]
+            },
+            "6": {
+                "title": "Automated Newsletter",
+                "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Responsive design",
+                    "CTR-focused visual optimization"
+                ]
+            },
+            "7": {
+                "title": "Amafka",
+                "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Responsive design",
+                    "CTR-focused visual optimization"
+                ]
+            },
+            "8": {
+                "title": "Hermanos Mezcal",
+                "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Responsive design",
+                    "CTR-focused visual optimization"
+                ]
+            },
+            "9": {
+                "title": "Carbón",
+                "context": "Email designed as part of a segmented strategy for a B2B executive program.",
+                "responsibilities": [
+                    "Audience segmentation",
+                    "Narrative structure",
+                    "Responsive design",
+                    "CTR-focused visual optimization"
+                ]
+            }
         }
-    }
     },
 
     "timeline": {
@@ -321,7 +324,7 @@
             "message": "Message",
             "idle": "Send message",
             "loading": "Sending...",
-            "success": "✓ Message sent",
+            "success": "Message sent",
             "error": "Error. Please try again"
         }
     },

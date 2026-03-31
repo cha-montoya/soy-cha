@@ -45,7 +45,7 @@ export default function MindsetIntro() {
     <section
       id="mindset-intro"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-600 px-6 md:px-16"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-600 px-6 md:px-16 scroll-mt-20"
     >
       <div className="w-full max-w-6xl container mx-auto px-6 font-black leading-tight tracking-tight text-white
                       text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">

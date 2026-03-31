@@ -52,11 +52,29 @@ const COPY = {
   },
 }
 
+// PDF paths per language — adjust to match your actual asset paths
+const CV_PATHS = {
+  es: 'src/assets/cv/cv_carlos_montoya_es.pdf',
+  en: 'src/assets/cv/cv_carlos_montoya_en.pdf',
+}
+
+/**
+ * Smooth-scroll to a section by id without adding a hash to the URL.
+ * Uses history.replaceState to keep the address bar clean.
+ */
+function scrollToSection(id) {
+  const el = document.getElementById(id)
+  if (!el) return
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  // Keep URL clean — no #hash exposed
+  window.history.replaceState(null, '', window.location.pathname + window.location.search)
+}
+
 export function useUTMPersonalization() {
   const { i18n } = useTranslation()
   const lang = i18n.language === 'en' ? 'en' : 'es'
 
-  const copy = useMemo(() => {
+  const { copy, ctaAction } = useMemo(() => {
     const params = new URLSearchParams(window.location.search)
     const medium = (params.get('utm_medium') || '').toLowerCase()
     const source = (params.get('utm_source') || '').toLowerCase()
@@ -81,8 +99,29 @@ export function useUTMPersonalization() {
       copyVariant: variant,
     })
 
-    return variant
+    // Build the CTA action function for each variant.
+    // We return a factory so the lang used at call-time is correct.
+    const actions = {
+      recruiter: (currentLang) => {
+        const url = CV_PATHS[currentLang] || CV_PATHS.es
+        const a   = document.createElement('a')
+        a.href     = url
+        a.target   = '_blank'
+        a.rel      = 'noopener noreferrer'
+        a.click()
+      },
+      propuesta: () => scrollToSection('services'),
+      referral:  () => scrollToSection('projects'),
+      default:   () => scrollToSection('about'),
+    }
+
+    return { copy: variant, ctaAction: actions[variant] }
   }, []) // variant only needs to be computed once
 
-  return { ...COPY[copy][lang], variant: copy }
+  return {
+    ...COPY[copy][lang],
+    variant: copy,
+    // Wrap so the action always receives the current lang at click-time
+    ctaAction: () => ctaAction(lang),
+  }
 }

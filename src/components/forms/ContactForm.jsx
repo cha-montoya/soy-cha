@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { supabase } from "../../lib/supabase"
+import { XIcon, CheckIcon, SpinnerGapIcon } from "@phosphor-icons/react"
+
 
 export default function ContactForm() {
     const { t } = useTranslation()
@@ -125,9 +127,21 @@ export default function ContactForm() {
                 <span className="decoration">⇒</span>
             </>
             )}
-            {status === "loading" && <span>{t("contact.form.loading")}</span>}
-            {status === "success" && <span>{t("contact.form.success")}</span>}
-            {status === "error" && <span>{t("contact.form.error")}</span>}
+            {status === "loading" && (
+                <>
+                    <span><SpinnerGapIcon /> {t("contact.form.loading")}</span>
+                </>
+            )}
+            {status === "success" && (
+                <>
+                    <span><CheckIcon /> {t("contact.form.success")}</span>
+                </>
+            )}
+            {status === "error" && (
+                <>
+                    <span><XIcon /> {t("contact.form.error")}</span>
+                </>
+            )}
         </button>
 
         </form>

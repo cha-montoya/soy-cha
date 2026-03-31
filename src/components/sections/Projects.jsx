@@ -55,7 +55,6 @@ export default function Projects() {
           <p>{t("projects.p1")}</p>
           <p>{t("projects.p2")}</p>
         </div>
-        
       </div>
 
       {/* FILTERS */}
@@ -111,6 +110,14 @@ export default function Projects() {
           onClose={() => setActiveProject(null)}
         />
       )}
+
+      <div className="mt-20 text-center">
+        <div className="text-sm leading-relaxed text-neutral-200">
+          <p>{t("projects.disclamer1")}</p>
+          <p>{t("projects.disclamer2")}</p>
+          <p>{t("projects.disclamer3")}</p>
+        </div>
+      </div>
     </section>
   )
 }

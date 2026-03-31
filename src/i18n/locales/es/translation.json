@@ -187,116 +187,119 @@
     },
 
     "projects": {
-    "eyebrow": "Proyectos",
-    "headline": "Trabajos con propósito de negocio.",
-    "p1": "Cada proyecto aquí comenzó con un problema de negocio. El diseño y la estrategia fueron la forma de resolverlo.",
-    "p2": "No solo muestro cómo quedó, muestro por qué funcionó.",
-    "filters": {
-        "all": "Todos",
-        "branding": "Branding",
-        "web": "Web",
-        "email": "Email"
-    },
-    "modal": {
-        "context": "Contexto",
-        "responsibilities": "Responsabilidades",
-        "cta": "Ver Proyecto",
-        "personalizationTitle": "Prueba la personalización",
-        "personalizationDesc": "En este proyecto se utilizó contenido dinámico para personalización. Ingresa tu nombre para ver cómo funciona en el ugly sweater.",
-        "personalizationPlaceholder": "Escribe tu nombre"
-    },
-    "data": {
-        "1": {
-            "title": "Respirador de Partículas 9513",
-            "context": "Landing Page que formó parte de una campaña para informar sobre los beneficios, características y propiedades de la mascarilla KN9513 durante pandemia de COVID-19. El enfoque estratégico fue remarcar la calidad de las mascarillas por las capas con las que están fabricadas.",
-            "responsibilities": [
-                "Segmentación de Audiencia",
-                "Estructura narrativa",
-                "Diseño Gráfico",
-                "Optimización Visual"
-            ]
+        "eyebrow": "Proyectos",
+        "headline": "Trabajos con propósito de negocio.",
+        "p1": "Cada proyecto aquí comenzó con un problema de negocio. El diseño y la estrategia fueron la forma de resolverlo.",
+        "p2": "No solo muestro cómo quedó, muestro por qué funcionó.",
+        "disclamer1": "Parte de los proyectos presentados fueron desarrollados durante mi colaboración con distintas agencias.",
+        "disclamer2": "Los clientes y derechos de estas piezas pertenecen a dichas organizaciones. Su inclusión aquí responde únicamente a fines de portafolio.",
+        "disclamer3": "Su inclusión aquí responde únicamente a fines de portafolio.",
+        "filters": {
+            "all": "Todos",
+            "branding": "Branding",
+            "web": "Web",
+            "email": "Email"
         },
-        "2": {
-            "title": "Newsletter Navidad",
-            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-            "responsibilities": [
-                "Segmentación de audiencia",
-                "Estructura narrativa",
-                "Diseño responsive",
-                "Optimización visual para CTR"
-            ]
+        "modal": {
+            "context": "Contexto",
+            "responsibilities": "Responsabilidades",
+            "cta": "Ver Proyecto",
+            "personalizationTitle": "Prueba la personalización",
+            "personalizationDesc": "En este proyecto se utilizó contenido dinámico para personalización. Ingresa tu nombre para ver cómo funciona en el ugly sweater.",
+            "personalizationPlaceholder": "Escribe tu nombre"
         },
-        "3": {
-            "title": "Esferas de Limpieza",
-            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-            "responsibilities": [
-                "Segmentación de audiencia",
-                "Estructura narrativa",
-                "Diseño responsive",
-                "Optimización visual para CTR"
-            ]
-        },
-        "4": {
-            "title": "Registro Campaña a:care",
-            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-            "responsibilities": [
-                "Segmentación de audiencia",
-                "Estructura narrativa",
-                "Diseño responsive",
-                "Optimización visual para CTR"
-            ]
-        },
-        "5": {
-            "title": "Campaña Mi Cumple",
-            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-            "responsibilities": [
-                "Segmentación de audiencia",
-                "Estructura narrativa",
-                "Diseño responsive",
-                "Optimización visual para CTR"
-            ]
-        },
-        "6": {
-            "title": "Newsletter Automatizado",
-            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-            "responsibilities": [
-                "Segmentación de audiencia",
-                "Estructura narrativa",
-                "Diseño responsive",
-                "Optimización visual para CTR"
-            ]
-        },
-        "7": {
-            "title": "Amafka",
-            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-            "responsibilities": [
-                "Segmentación de audiencia",
-                "Estructura narrativa",
-                "Diseño responsive",
-                "Optimización visual para CTR"
-            ]
-        },
-        "8": {
-            "title": "Hermanos Mezcal",
-            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-            "responsibilities": [
-                "Segmentación de audiencia",
-                "Estructura narrativa",
-                "Diseño responsive",
-                "Optimización visual para CTR"
-            ]
-        },
-        "9": {
-            "title": "Carbón",
-            "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
-            "responsibilities": [
-                "Segmentación de audiencia",
-                "Estructura narrativa",
-                "Diseño responsive",
-                "Optimización visual para CTR"
-            ]
+        "data": {
+            "1": {
+                "title": "Respirador de Partículas 9513",
+                "context": "Landing Page que formó parte de una campaña para informar sobre los beneficios, características y propiedades de la mascarilla KN9513 durante pandemia de COVID-19. El enfoque estratégico fue remarcar la calidad de las mascarillas por las capas con las que están fabricadas.",
+                "responsibilities": [
+                    "Segmentación de Audiencia",
+                    "Estructura narrativa",
+                    "Diseño Gráfico",
+                    "Optimización Visual"
+                ]
+            },
+            "2": {
+                "title": "Newsletter Navidad",
+                "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+                "responsibilities": [
+                    "Segmentación de audiencia",
+                    "Estructura narrativa",
+                    "Diseño responsive",
+                    "Optimización visual para CTR"
+                ]
+            },
+            "3": {
+                "title": "Esferas de Limpieza",
+                "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+                "responsibilities": [
+                    "Segmentación de audiencia",
+                    "Estructura narrativa",
+                    "Diseño responsive",
+                    "Optimización visual para CTR"
+                ]
+            },
+            "4": {
+                "title": "Registro Campaña a:care",
+                "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+                "responsibilities": [
+                    "Segmentación de audiencia",
+                    "Estructura narrativa",
+                    "Diseño responsive",
+                    "Optimización visual para CTR"
+                ]
+            },
+            "5": {
+                "title": "Campaña Mi Cumple",
+                "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+                "responsibilities": [
+                    "Segmentación de audiencia",
+                    "Estructura narrativa",
+                    "Diseño responsive",
+                    "Optimización visual para CTR"
+                ]
+            },
+            "6": {
+                "title": "Newsletter Automatizado",
+                "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+                "responsibilities": [
+                    "Segmentación de audiencia",
+                    "Estructura narrativa",
+                    "Diseño responsive",
+                    "Optimización visual para CTR"
+                ]
+            },
+            "7": {
+                "title": "Amafka",
+                "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+                "responsibilities": [
+                    "Segmentación de audiencia",
+                    "Estructura narrativa",
+                    "Diseño responsive",
+                    "Optimización visual para CTR"
+                ]
+            },
+            "8": {
+                "title": "Hermanos Mezcal",
+                "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+                "responsibilities": [
+                    "Segmentación de audiencia",
+                    "Estructura narrativa",
+                    "Diseño responsive",
+                    "Optimización visual para CTR"
+                ]
+            },
+            "9": {
+                "title": "Carbón",
+                "context": "Email diseñado como parte de una estrategia segmentada para programa ejecutivo B2B.",
+                "responsibilities": [
+                    "Segmentación de audiencia",
+                    "Estructura narrativa",
+                    "Diseño responsive",
+                    "Optimización visual para CTR"
+                ]
+            }
         }
-    }
     },
 
     "timeline": {
@@ -321,7 +324,7 @@
             "message": "Mensaje",
             "idle": "Enviar mensaje",
             "loading": "Enviando...",
-            "success": "✓ Mensaje enviado",
+            "success": "Mensaje enviado",
             "error": "Error. Intenta nuevamente"
         }
     },
