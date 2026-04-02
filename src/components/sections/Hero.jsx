@@ -10,6 +10,8 @@ import basketIn from "../../assets/videos/basket_in.mp4"
 import basketOut from "../../assets/videos/basket_out.mp4"
 import watchIn from "../../assets/videos/watch_in.mp4"
 import watchOut from "../../assets/videos/watch_out.mp4"
+import popcornIn from "../../assets/videos/popcorn_in.mp4"
+import popcornOut from "../../assets/videos/popcorn_out.mp4"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -20,6 +22,8 @@ const videoSequence = [
   { src: basketOut, type: "idle" },
   { src: watchIn, type: "action" },
   { src: watchOut, type: "idle" },
+  { src: popcornIn, type: "action" },
+  { src: popcornOut, type:"idle" },
 ]
 
 const IDLE_PAUSE = 1200
@@ -170,7 +174,6 @@ export default function Hero() {
             </p>
 
             <div className="mt-8">
-              {/* ✅ ctaAction replaces the hardcoded scrollToSection("about") */}
               <button
                 onClick={ctaAction}
                 className="btn-glitch-fill"

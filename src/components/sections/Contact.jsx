@@ -5,8 +5,8 @@ function Contact() {
     const { t, i18n } = useTranslation()
 
     const cvFile = i18n.language === "es"
-    ? "src/assets/cv/cv_carlos_montoya_es.pdf"
-    : "src/assets/cv/cv_carlos_montoya_en.pdf"
+    ? "/cv/cv_carlos_montoya_es.pdf"
+    : "/cv/cv_carlos_montoya_en.pdf"
 
     return (
         <section id="contact" className="min-h-screen bg-slate-100 relative scroll-mt-20 px-6 py-16 md:py-32">

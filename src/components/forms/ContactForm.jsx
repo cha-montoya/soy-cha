@@ -50,6 +50,12 @@ export default function ContactForm() {
         console.error(error)
         setStatus("error")
         } else {
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+            event: "contact_form_submitted",
+            form_location: "contact_section",
+            language: document.documentElement.lang || "es",
+        })
         setStatus("success")
         setFormData({ name: "", lastName: "", email: "", phone: "", company: "", message: "" })
         }

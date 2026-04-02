@@ -3,15 +3,15 @@ import gsap from "gsap"
 import { ArrowClockwiseIcon } from "@phosphor-icons/react"
 
 // ─── THEME ────────────────────────────────────────────────────────────────────
-const LIME      = "#9fc131"
+const LIME      = "#D6D58E"
 const LIME_GLOW = "rgba(159,193,49,0.22)"
-const LINE_CLR  = "#444"
+const LINE_CLR  = "#94a3b8"
 
 // Card width is fixed; height is computed per-card from item count
-const CW         = 148  // card width (px)
-const ROW_H      = 18   // height per item row (px)
+const CW         = 160  // card width (px)
+const ROW_H      = 20   // height per item row (px)
 const CARD_PAD_V = 20   // total vertical padding inside card (px)
-const MIN_CH     = 72   // minimum card height (px)
+const MIN_CH     = 80   // minimum card height (px)
 
 /** Compute card height for a given step based on its item count */
 function cardHeight(step) {
@@ -20,9 +20,9 @@ function cardHeight(step) {
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const STEPS = [
-  { id: "estrategia", title: "Estrategia",  items: ["Entendimiento de Negocio", "Customer Journey", "Propuesta de Valor"],                                        accent: true  },
+  { id: "estrategia", title: "Estrategia",  items: ["Brief", "Customer Journey", "Propuesta de Valor"],                                        accent: true  },
   { id: "datos",      title: "Datos",        items: ["Modelo de Datos", "Segmentación", "Arquitectura CRM"],                                                       accent: false },
-  { id: "ejecucion",  title: "Ejecución",    items: ["Campañas", "Flujos de Automatización", "Lifecycle", "Eventos Trigger", "Personalización", "Omnicanalidad"], accent: true  },
+  { id: "ejecucion",  title: "Ejecución",    items: ["Campañas", "Automatización", "Lifecycle", "Eventos", "Hipersonalización", "Omnicanalidad"], accent: true  },
   { id: "optim",      title: "Optimización", items: ["A/B Testing", "Deliverability", "Rendimiento"],                                                              accent: false },
   { id: "resultados", title: "Resultados",   items: ["Conversión", "Retención", "Growth"],                                                                        accent: true  },
 ]
@@ -263,21 +263,11 @@ export default function ProgressGraph() {
             <div style={{
               height:       `${ch}px`,
               borderRadius: 10,
-              padding:      "15px",
+              padding:      "20px",
               display:      "flex",
               alignItems:   "center",
               background:   step.accent ? LIME     : "#101010",
-              border:       step.accent
-                ? `1.5px solid ${LIME}`
-                : `1.5px solid ${on ? "#3a3a3a" : "#222"}`,
               color:        step.accent ? "#FFFFFF" : "#FFFFFF",
-              boxShadow: on
-                ? step.accent
-                  ? `0 16px 40px rgba(159,193,49,0.5), 0 0 0 2px ${LIME}`
-                  : "0 16px 40px rgba(0,0,0,0.7)"
-                : step.accent
-                  ? `0 4px 24px ${LIME_GLOW}`
-                  : "0 2px 12px rgba(0,0,0,0.45)",
               transform:  on
                 ? step.accent ? "scale(1.06) rotate(-0.5deg)" : "scale(1.06) rotate(0.5deg)"
                 : "scale(1)",
@@ -304,19 +294,16 @@ export default function ProgressGraph() {
       <button
         onClick={() => { setPos({ ...DEFAULT_POS }); setSvgKey(k => k + 1) }}
         style={{
-          position:  "absolute", bottom: 10, right: 10, zIndex: 100,
+          position:  "absolute", bottom: 0, right: 0, zIndex: 100,
           background: LIME, color: "#FFFFFF", border: "none",
           padding: "10px 13px",
-          fontSize: 14, letterSpacing: "0.2rem", fontFamily: "Monospace, sans-serif",
+          fontSize: 16, letterSpacing: "0.2rem", fontFamily: "VT323, monospace",
           textTransform: "uppercase", cursor: "pointer",
-          boxShadow: `0 0 20px ${LIME_GLOW}`,
           display: "flex", alignItems: "center", gap: 5,
           transition: "transform 0.14s",
         }}
-        onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.06)" }}
-        onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"    }}
       >
-        // Organizar <ArrowClockwiseIcon />
+        // Organizar _<ArrowClockwiseIcon />
       </button>
 
     </div>

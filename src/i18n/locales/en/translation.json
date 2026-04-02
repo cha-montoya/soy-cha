@@ -125,9 +125,9 @@
             "num": "02",
             "title": "Operational",
             "subtitle": "Strategy is only as good as its execution.",
-            "desc": "I implement what I design. I know these platforms inside out—their limits, their workarounds, and how to make them work together.",
+            "desc": "I implement what I design. I know these platforms inside out their limits, their workarounds, and how to make them work together.",
             "skills": [
-                ["Marketing Automation", "Flows in Eloqua, Marketo, SFMC, HubSpot, Responsys, and Acoustic—from welcome series to cart recovery."],
+                ["Marketing Automation", "Flows in Eloqua, Marketo, SFMC, HubSpot, Responsys, and Acoustic from welcome series to cart recovery."],
                 ["Campaigns", "End-to-end setup: lists, segments, templates, scheduling, A/B testing, and QA. Nothing goes live without a checklist."],
                 ["MarTech Integrations", "Connecting automation platforms, CRM, ecommerce, and analytics through APIs, webhooks, and native connectors."],
                 ["Asset development", "Using attributes and dynamic content to tailor every message."],
@@ -157,7 +157,7 @@
         "headline": "What I can <span class='italic text-primary'>do for you.</span>",
         "paragraph": "If you need someone who understands both strategy and creative execution without having to translate between the two, we should work together.",
         "sub": "Team Leadership & <span class='italic text-primary'>Project Management</span>",
-        "line1": "I've led teams where design, technology, and strategy coexist—and I know that the gap between those worlds is closed through clear communication, not hierarchy. I manage projects with a focus on measurable outcomes, realistic timelines, and teams that grow along the way.",
+        "line1": "I've led teams where design, technology, and strategy coexist and I know that the gap between those worlds is closed through clear communication, not hierarchy. I manage projects with a focus on measurable outcomes, realistic timelines, and teams that grow along the way.",
         "cards": [
             {
             "title": "Creative and technical team management",
@@ -169,7 +169,7 @@
             },
             {
             "title": "Stakeholder and client management",
-            "desc": "Managing expectations, communicating progress, and escalating decisions. I know when to shield the team from last-minute changes—and when to adapt."
+            "desc": "Managing expectations, communicating progress, and escalating decisions. I know when to shield the team from last-minute changes and when to adapt."
             },
             {
             "title": "Mentorship and talent development",
@@ -177,7 +177,7 @@
             },
             {
             "title": "Cross-functional communication",
-            "desc": "Acting as a bridge between design, technology, and business. I speak all three languages—reducing friction, accelerating decisions, and improving output quality."
+            "desc": "Acting as a bridge between design, technology, and business. I speak all three languages, reducing friction, accelerating decisions, and improving output quality."
             },
             {
             "title": "Project tracking and delivery",
@@ -190,7 +190,7 @@
         "eyebrow": "Projects",
         "headline": "Work driven by business goals.",
         "p1": "Every project here started with a business problem. Design and strategy were the way to solve it.",
-        "p2": "I don't just show what it looks like—I show why it works.",
+        "p2": "I don't just show what it looks like, I show why it works.",
         "disclamer1": "Some projects were developed during my time at different agencies.",
         "disclamer2": "All rights belong to their respective clients.",
         "disclamer3": "They are presented here for portfolio purposes only.",
@@ -312,7 +312,7 @@
     "contact": {
         "eyebrow": "Contact",
         "headline": "Building something <span class='italic text-primary'>interesting?</span>",
-        "paragraph": "I'm exploring new roles and select projects. If you're looking for someone who understands the business, designs the solution, and measures whether it works—let's talk.",
+        "paragraph": "I'm exploring new roles and select projects. If you're looking for someone who understands the business, designs the solution, and measures whether it works, let's talk.",
         "linkedin": "LinkedIn",
         "cv": "Download CV",
         "form": {

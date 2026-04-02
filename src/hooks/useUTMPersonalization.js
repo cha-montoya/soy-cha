@@ -54,8 +54,8 @@ const COPY = {
 
 // PDF paths per language — adjust to match your actual asset paths
 const CV_PATHS = {
-  es: 'src/assets/cv/cv_carlos_montoya_es.pdf',
-  en: 'src/assets/cv/cv_carlos_montoya_en.pdf',
+  es: '/cv/cv_carlos_montoya_es.pdf',
+  en: '/cv/cv_carlos_montoya_en.pdf',
 }
 
 /**
