@@ -69,6 +69,18 @@ const GLOBAL_CSS = `
     .ai-tooltip.tb .tip strong { color:#38BDF8; }
     code { font-family:monospace; font-size:11px; color:#C084FC; background:rgba(192,132,252,.1); padding:1px 5px; border-radius:3px; }
     .hero-content-anim { animation: fadeUp .9s ease both; }
+    @media (max-width: 640px) {
+        .ai-tooltip .tip { width: 220px; font-size: 11.5px; }
+        .seg-card:hover { transform: none; }
+    }
+    @media print {
+        @page { margin: 0; size: A4; }
+        body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        nav, header, .reset-btn, .no-print { display: none !important; }
+        section { break-inside: avoid; page-break-inside: avoid; }
+        .animate-bounce { animation: none !important; }
+        .reveal { opacity: 1 !important; transform: none !important; }
+    }
     `
 
 // ─── GRAPH DATA ────────────────────────────────────────────────────────────────
@@ -444,7 +456,7 @@ const NODE_DEFS = [
         ref={boardRef}
         className="relative overflow-hidden"
         style={{
-            height: 580,
+        height: 'clamp(380px, 60vw, 580px)',
             background: T.bg,
             backgroundImage: 'radial-gradient(rgba(255,255,255,.032) 1px,transparent 1px)',
             backgroundSize: '22px 22px',
@@ -634,9 +646,13 @@ function Hero() {
         }
     }
 
+    const handleDownloadPDF = () => {
+        window.print()
+    }
+
     return (
-    <section id="case-hero" className="relative w-full bg-white scroll-mt-20 h-auto min-h-screen flex flex-col lg:h-screen lg:block">
-        <div className="relative z-10 h-full mx-auto px-6 md:px-12 flex items-center justify-center text-center">
+    <section id="case-hero" className="relative w-full bg-white scroll-mt-20 min-h-screen flex flex-col justify-center">
+        <div className="relative z-10 w-full mx-auto px-6 md:px-12 flex items-center justify-center text-center py-24 md:py-32">
             <div className="w-full max-w-4xl mx-auto flex flex-col items-center text-center">
                 <img src="/edenred-logo.svg" alt="Edenred" className="reveal h-8 md:h-16 animate-fade mb-8" />
                 <div className="reveal hero-eyebrow text-neutral-500">Case Study <span className="e-dot"></span> Lyfecycle & Automation Specialist</div>
@@ -644,15 +660,15 @@ function Hero() {
                 <p className="reveal mt-8 max-w-2xl text-sm md:text-base lg:text-lg leading-relaxed text-neutral-500 font-sans">Una base activa, campos incompletos, tracking inconsistente. En lugar de esperar data perfecta, el enfoque es construir un sistema que aprende mientras convierte.</p>
                 
                 <div className="reveal grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 border-y border-slate-200 py-8 w-full">
-                    <div className="grid leading-relaxed">
+                    <div className="grid leading-relaxed md:border-r">
                         <span className="text-xs font-sans text-neutral-500 tracking-[.2em] uppercase">Plataforma</span>
                         <span className="text-xs font-sans text-neutral-400 tracking-wide mt-2">HubSpot</span>
                     </div>
-                    <div className="grid leading-relaxed">
+                    <div className="grid leading-relaxed md:border-r">
                         <span className="text-xs font-sans text-neutral-500 tracking-[.2em] uppercase">Canales</span>
                         <span className="text-xs font-sans text-neutral-400 tracking-wide mt-2">Email · In-app · WhatsApp</span>
                     </div>
-                    <div className="grid leading-relaxed">
+                    <div className="grid leading-relaxed md:border-r">
                         <span className="text-xs font-sans text-neutral-500 tracking-[.2em] uppercase">Objetivo</span>
                         <span className="text-xs font-sans text-neutral-400 tracking-wide mt-2">Up-sell &amp; Cross-sell</span>
                     </div>
@@ -662,17 +678,15 @@ function Hero() {
                     </div>
                 </div>
 
-                {/* <div className="mt-16">
-                    <a href="case-study/carlos_montoya_edenred.pdf" target="_blank">
-                        <button className="btn-glitch-fill">
+                {/* <div className="mt-8">
+                    <button onClick={handleDownloadPDF} className="btn-glitch-fill">
                         <span className="text">// Descargar</span>
                         <span className="text-decoration"> _</span>
                         <span className="decoration">⇒</span>
-                        </button>
-                    </a>
+                    </button>
                 </div> */}
 
-                <div className="mt-8">
+                <div className="mt-16 no-print">
                     <button
                     onClick={() => scrollToSection("diagnostic")}
                     className="cursor-pointer bg-main-color px-3 py-2 rounded-md text-white tracking-wider animate-bounce hover:animate-none"
@@ -703,8 +717,8 @@ function Hero() {
 // ── DIAGNÓSTICO ────────────────────────────────────────────────────────────────
 function Diagnostico() {
     return (
-    <section id="diagnostic" className="bg-slate-900 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-32">
-        <div className="relative z-10 w-full container mx-auto px-12">
+    <section id="diagnostic" className="bg-slate-900 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-16 md:py-32">
+        <div className="relative z-10 w-full container mx-auto px-4 md:px-12">
 
             <div className="max-w-2xl">
                 <div className="reveal hero-eyebrow text-neutral-200">Diagnóstico de datos</div>
@@ -774,7 +788,7 @@ function Diagnostico() {
 
                 <p className="text-sm md:text-base lg:text-lg leading-relaxed font-sans my-4">Los campos: "plan" e "intereses", están incompletos. Ese es exactamente el problema que el TP 3 del flujo va a resolver. No son prerrequisito para lanzar, son el resultado esperado del sistema.</p>
 
-                <div className="grid grid-cols-2 gap-8 my-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
                     <div className="bg-slate-700 rounded-xl p-8">
                         <h3 className="font-display font-black tracking-tight uppercase text-lg font-main-color">Problemas que bloquean antes de lanzar</h3>
                         <p className="text-sm md:text-base lg:text-lg leading-relaxed font-sans my-4">Duplicados en CRM que pueden generar doble envío. Esto se trata antes de activar workflows.</p>
@@ -787,20 +801,20 @@ function Diagnostico() {
 
                 <div className="bg-slate-700 rounded-xl p-8">
                     <h3 className="font-display font-black tracking-tight uppercase text-lg font-main-color mb-4">Deduplicación previa al lanzamiento</h3>
-                    <div className="grid grid-cols-4 gap-8">
-                        <div className="border-r border-slate-600">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="lg:border-r border-slate-600">
                             <h3 className="font-elegant text-4xl italic mb-2 text-slate-500">1</h3>
                             <h4 className="text-[0.65rem] uppercase text-slate-500 font-display tracking-widest font-black mb-4">Regla Primaria</h4>
                             <div className="line-divider" />
                             <p className="text-sm md:text-base lg:text-lg leading-relaxed font-sans mt-4">Email como campo único. Merge automático si mismo email, diferente Contact ID.</p>
                         </div>
-                        <div className="border-r border-slate-600">
+                        <div className="lg:border-r border-slate-600">
                             <h3 className="font-elegant text-4xl italic mb-2 text-slate-500">2</h3>
                             <h4 className="text-[0.65rem] uppercase text-slate-500 font-display tracking-widest font-black mb-4">Validación secundaria</h4>
                             <div className="line-divider" />
                             <p className="text-sm md:text-base lg:text-lg leading-relaxed font-sans mt-4">Teléfono como criterio de merge manual cuando email difiere pero teléfono coincide.</p>
                         </div>
-                        <div className="border-r border-slate-600">
+                        <div className="lg:border-r border-slate-600">
                             <h3 className="font-elegant text-4xl italic mb-2 text-slate-500">3</h3>
                             <h4 className="text-[0.65rem] uppercase text-slate-500 font-display tracking-widest font-black mb-4">Exclusión activa</h4>
                             <div className="line-divider" />
@@ -825,13 +839,13 @@ function Diagnostico() {
 // ── CONTEXTO & DECISIÓN ────────────────────────────────────────────────────────
 function ContextoDecision() {
     return (
-    <section id="context" className="bg-slate-400 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-32">
-        <div className="relative z-10 w-full container mx-auto px-12">
+    <section id="context" className="bg-slate-400 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-16 md:py-32">
+        <div className="relative z-10 w-full container mx-auto px-4 md:px-12">
             
             <div className="reveal hero-eyebrow text-neutral-200">Contexto &amp; Decisión</div>
             <h2 className="reveal font-elegant text-4xl md:text-4xl lg:text-6xl xl:text-6xl font-black tracking-tight mb-8">El punto de partida y <span class="italic text-primary">cómo responder a él</span></h2>
 
-            <div className="reveal grid grid-cols-2 gap-8">
+            <div className="reveal grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-slate-500 rounded-xl p-8">
                     <h3 className="font-display font-black tracking-tight uppercase text-lg font-main-color mb-4">La situación real</h3>
                         <p className="text-sm md:text-base lg:text-lg leading-relaxed font-sans"><span className="skill-dot"></span> Campos de plan, uso e intereses: incompletos o desactualizados</p>
@@ -864,7 +878,7 @@ function ContextoDecision() {
                 <h3 className="font-display font-black tracking-tight uppercase text-lg font-main-color mb-4">La decisión de arquitectura</h3>
                 <p className="text-sm md:text-base lg:text-lg leading-relaxed font-sans my-4">Usar lo que existe ahora como punto de partida. El sistema mejora su propia data mientras opera.</p>
 
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-slate-600 rounded-xl p-8">
                         <h4 className="text-[0.65rem] uppercase text-slate-400 font-display tracking-widest font-black mb-4">Lo que no haremos</h4>
                         <div className="line-divider" />
@@ -899,8 +913,8 @@ function ContextoDecision() {
 // ── SEGMENTACIÓN ───────────────────────────────────────────────────────────────
 function Segmentacion() {
     return (
-    <section id="segmentation" className="bg-slate-100 text-neutral-900 overflow-hidden flex flex-col z-20 scroll-mt-20 py-32">
-        <div className="relative z-10 w-full container mx-auto px-12">
+    <section id="segmentation" className="bg-slate-100 text-neutral-900 overflow-hidden flex flex-col z-20 scroll-mt-20 py-16 md:py-32">
+        <div className="relative z-10 w-full container mx-auto px-4 md:px-12">
 
             <div className="max-w-2xl">
                 <div className="reveal hero-eyebrow text-neutral-900">Segmentación</div>
@@ -908,7 +922,7 @@ function Segmentacion() {
                 <p className="reveal text-sm md:text-base lg:text-lg leading-relaxed font-sans">El brief pide criterios aunque sean aproximados, eso no significa vagos. Cada segmento tiene umbrales concretos para ser replicable en HubSpot.</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                 <div className="reveal bg-slate-200 p-8 rounded-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-slate-300">
                     <div className="p-2 basic-color-1 inline-block rounded-xl">
                         <ChartLineIcon className="w-10 h-10 text-white" />
@@ -966,14 +980,14 @@ function Segmentacion() {
 // ── LIFECYCLE CANVAS ───────────────────────────────────────────────────────────
 function FlujoCamvas() {
     return (
-    <section id="lifecycle" className="bg-slate-700 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-32">
-        <div className="relative z-10 w-full container px-24">
+    <section id="lifecycle" className="bg-slate-700 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-16 md:py-32">
+        <div className="relative z-10 w-full container px-4 md:px-24">
             <div className="reveal hero-eyebrow">Flujo de Automatización</div>
             <h2 className="reveal font-elegant text-4xl md:text-4xl lg:text-6xl xl:text-6xl font-black tracking-tight mb-8">Orquestación del <span class="italic text-primary">lifecycle</span></h2>
             <p className="reveal text-sm md:text-base lg:text-lg leading-relaxed font-sans">Máximo 6 touchpoints · Workflows HubSpot · Listas dinámicas</p>
         </div>
 
-        <div className="relative z-10 w-full px-24 mt-8">
+        <div className="relative z-10 w-full px-4 md:px-24 mt-8">
             <div className="overflow-hidden bg-slate-800 rounded-3xl">
                 <div style={{ padding:'16px 24px', borderBottom:`1px solid ${T.border}`, display:'flex', alignItems:'center', gap:11 }}>
                     <div style={{ display:'flex', gap:5 }}>
@@ -991,12 +1005,12 @@ function FlujoCamvas() {
 // ── DATA ENGINE ────────────────────────────────────────────────────────────────
 function DataEngine() {
     return (
-    <section id="data" className="bg-slate-400 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-32">
-        <div className="relative z-10 w-full container mx-auto px-12">
+    <section id="data" className="bg-slate-400 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-16 md:py-32">
+        <div className="relative z-10 w-full container mx-auto px-4 md:px-12">
             <div className="reveal hero-eyebrow">Enfoque de data & cleanup</div>
             <h2 className="reveal font-elegant text-4xl md:text-4xl lg:text-6xl xl:text-6xl font-black tracking-tight mb-8"><span class="italic text-primary">La calidad de datos</span> es un resultado del sistema, no su prerequisito</h2>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="reveal bg-slate-500 p-8 rounded-xl transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-slate-700">
                     <h3 className="font-elegant text-4xl italic mb-2 text-slate-400">1</h3>
                     <h4 className="text-[0.65rem] uppercase text-slate-400 font-display tracking-widest font-black mb-4">Progressive Profiling</h4>
@@ -1030,14 +1044,14 @@ function DataEngine() {
 // ── MÉTRICAS ───────────────────────────────────────────────────────────────────
 function Metricas() {
     return (
-        <section id="metrics" className="bg-slate-500 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-32">
-            <div className="relative z-10 w-full container mx-auto px-12">
+        <section id="metrics" className="bg-slate-500 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-16 md:py-32">
+            <div className="relative z-10 w-full container mx-auto px-4 md:px-12">
                 <div className="max-w-2xl">
                     <div className="reveal hero-eyebrow">Métricas & Evaluación</div>
                     <h2 className="reveal font-elegant text-4xl md:text-4xl lg:text-6xl xl:text-6xl font-black tracking-tight mb-8">Se miden conversiones. Y se miden si <span class="italic text-primary">el sistema aprende.</span></h2>
                 </div>
 
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="reveal bg-slate-600 p-8 rounded-xl">
                         <h4 className="text-[0.65rem] uppercase text-slate-400 font-display tracking-widest font-black mb-4">Impacto en negocio</h4>
                         <div className="flex items-center border-b border-slate-500 py-4">
@@ -1079,8 +1093,8 @@ function Metricas() {
 // ── ITERACIÓN ──────────────────────────────────────────────────────────────────
 function Iteracion() {
     return (
-        <section id="optimization" className="bg-slate-600 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-32">
-            <div className="relative z-10 w-full container mx-auto px-12">
+        <section id="optimization" className="bg-slate-600 text-white overflow-hidden flex flex-col z-20 scroll-mt-20 py-16 md:py-32">
+            <div className="relative z-10 w-full container mx-auto px-4 md:px-12">
                 
                 <div className="max-w-2xl">
                     <div className="reveal hero-eyebrow">Optimización</div>
@@ -1123,12 +1137,12 @@ function Iteracion() {
                     </div>
                 </div>
 
-                <div className="reveal grid grid-cols-[8fr_1fr_8fr] gap-2 items-center">
+                <div className="reveal grid grid-cols-1 md:grid-cols-[8fr_1fr_8fr] gap-2 items-center">
                     <div className="bg-slate-700 p-8 rounded-xl">
                         <h3 className="font-display font-black tracking-tight uppercase text-xl mb-2 color-1">Grupo A</h3>
                         <p className="text-sm md:text-base lg:text-lg leading-relaxed font-sans">Segmentación inicial: proxies de comportamiento (email engagement + visita a pricing)</p>
                     </div>
-                    <div className="text-center font-elegant text-4xl italic text-slate-400">
+                    <div className="text-center font-elegant text-4xl italic text-slate-400 py-2 md:py-0">
                         vs
                     </div>
                     <div className="bg-slate-700 p-8 rounded-xl">
