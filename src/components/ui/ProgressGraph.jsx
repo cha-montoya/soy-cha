@@ -20,11 +20,11 @@ function cardHeight(step) {
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const STEPS = [
-  { id: "estrategia", title: "Estrategia",  items: ["Brief", "Customer Journey", "Propuesta de Valor"],                                        accent: true  },
-  { id: "datos",      title: "Datos",        items: ["Modelo de Datos", "Segmentación", "Arquitectura CRM"],                                                       accent: false },
-  { id: "ejecucion",  title: "Ejecución",    items: ["Campañas", "Automatización", "Lifecycle", "Eventos", "Hipersonalización", "Omnicanalidad"], accent: true  },
-  { id: "optim",      title: "Optimización", items: ["A/B Testing", "Deliverability", "Rendimiento"],                                                              accent: false },
-  { id: "resultados", title: "Resultados",   items: ["Conversión", "Retención", "Growth"],                                                                        accent: true  },
+  { id: "estrategia", title: "Estrategia",  items: ["Brief", "Customer Journey", "Propuesta de Valor"],                                                             accent: true  },
+  { id: "datos",      title: "Datos",        items: ["Modelo de Datos", "Segmentación", "Arquitectura CRM"],                                                         accent: false },
+  { id: "ejecucion",  title: "Ejecución",    items: ["Campañas", "Automatización", "Lifecycle", "Eventos", "Hipersonalización", "Omnicanalidad"],                    accent: true  },
+  { id: "optim",      title: "Optimización", items: ["A/B Testing", "Deliverability", "Rendimiento"],                                                                accent: false },
+  { id: "resultados", title: "Resultados",   items: ["Conversión", "Retención", "Growth"],                                                                          accent: true  },
 ]
 
 const DEFAULT_POS = {
@@ -44,32 +44,24 @@ const EDGES = [
 ]
 
 // ─── PATH HELPERS ─────────────────────────────────────────────────────────────
-
-/**
- * Clamp line endpoint to the card edge using that card's actual dynamic height.
- */
 function clampToEdge(cx, cy, tx, ty, step) {
   const hw = CW / 2 + 6
   const hh = cardHeight(step) / 2 + 6
-
   const dx = tx - cx
   const dy = ty - cy
   if (dx === 0 && dy === 0) return { x: cx, y: cy }
-
   const tX = Math.abs(dx) > 0 ? hw / Math.abs(dx) : Infinity
   const tY = Math.abs(dy) > 0 ? hh / Math.abs(dy) : Infinity
   const t  = Math.min(tX, tY)
-
   return { x: cx + dx * t, y: cy + dy * t }
 }
 
-/** Smooth cubic bezier between two edge points */
 function cubicPath(x1, y1, x2, y2) {
   const dx = Math.abs(x2 - x1)
   const dy = Math.abs(y2 - y1)
-  const cx = dx > dy ? dx * 0.5 : 0
-  const cy = dy > dx ? dy * 0.5 : 0
-  return `M ${x1} ${y1} C ${x1 + Math.sign(x2 - x1) * cx} ${y1 + Math.sign(y2 - y1) * cy}, ${x2 - Math.sign(x2 - x1) * cx} ${y2 - Math.sign(y2 - y1) * cy}, ${x2} ${y2}`
+  const bx = dx > dy ? dx * 0.5 : 0
+  const by = dy > dx ? dy * 0.5 : 0
+  return `M ${x1} ${y1} C ${x1 + Math.sign(x2 - x1) * bx} ${y1 + Math.sign(y2 - y1) * by}, ${x2 - Math.sign(x2 - x1) * bx} ${y2 - Math.sign(y2 - y1) * by}, ${x2} ${y2}`
 }
 
 // ─── COMPONENT ────────────────────────────────────────────────────────────────
@@ -188,16 +180,13 @@ export default function ProgressGraph() {
           const eA = clampToEdge(A.x, A.y, B.x, B.y, stepById[a])
           const eB = clampToEdge(B.x, B.y, A.x, A.y, stepById[b])
           const isAccent = stepById[a]?.accent || stepById[b]?.accent
-
           return (
             <g key={`edge-${a}-${b}`}>
-              <path
-                className="cp"
+              <path className="cp"
                 d={cubicPath(eA.x, eA.y, eB.x, eB.y)}
                 stroke={isAccent ? LIME : LINE_CLR}
                 strokeWidth={isAccent ? 1.5 : 1.2}
-                fill="none"
-                strokeLinecap="round"
+                fill="none" strokeLinecap="round"
                 opacity={isAccent ? 0.7 : 0.5}
               />
               <circle className="cd" cx={eA.x} cy={eA.y} r={3.5}
@@ -210,7 +199,6 @@ export default function ProgressGraph() {
           )
         })}
 
-        {/* Dashed ring around accent nodes */}
         {STEPS.filter(s => s.accent).map(({ id }) => {
           const p = toPx(id)
           return (
@@ -228,11 +216,8 @@ export default function ProgressGraph() {
         const p  = pos[step.id]
         const on = activeId === step.id
         const ch = cardHeight(step)
-
         return (
-          <div
-            key={step.id}
-            className="cc absolute"
+          <div key={step.id} className="cc absolute"
             style={{
               left:       `${p.x}%`,
               top:        `${p.y}%`,
@@ -245,30 +230,21 @@ export default function ProgressGraph() {
             }}
             onPointerDown={e => onDown(e, step.id)}
           >
-            {/* Title */}
             <p style={{
-              fontSize:      14,
-              fontWeight:    900,
-              fontFamily:    "Red Hat Display, sans-serif",
-              textTransform: "uppercase",
-              marginBottom:  8,
-              textAlign:     "center",
-              color:         step.accent ? LIME : "#777",
-              lineHeight:    1,
+              fontSize: 14, fontWeight: 900,
+              fontFamily: "Red Hat Display, sans-serif",
+              textTransform: "uppercase", marginBottom: 8,
+              textAlign: "center", lineHeight: 1,
+              color: step.accent ? LIME : "#777",
             }}>
               {step.title}
             </p>
-
-            {/* Card body — height grows with content */}
             <div style={{
-              height:       `${ch}px`,
-              borderRadius: 10,
-              padding:      "20px",
-              display:      "flex",
-              alignItems:   "center",
-              background:   step.accent ? LIME     : "#101010",
-              color:        step.accent ? "#FFFFFF" : "#FFFFFF",
-              transform:  on
+              height: `${ch}px`, borderRadius: 10, padding: "20px",
+              display: "flex", alignItems: "center",
+              background: step.accent ? LIME : "#101010",
+              color: "#FFFFFF",
+              transform: on
                 ? step.accent ? "scale(1.06) rotate(-0.5deg)" : "scale(1.06) rotate(0.5deg)"
                 : "scale(1)",
               transition: "transform 0.14s ease, box-shadow 0.14s ease",
@@ -276,8 +252,7 @@ export default function ProgressGraph() {
               <ul style={{ listStyle: "none", margin: 0, padding: 0, width: "100%" }}>
                 {step.items.map(item => (
                   <li key={item} style={{
-                    fontSize:   12,
-                    lineHeight: `${ROW_H}px`,
+                    fontSize: 12, lineHeight: `${ROW_H}px`,
                     fontFamily: "Figtree, sans-serif",
                     fontWeight: step.accent ? 700 : 400,
                   }}>
@@ -294,12 +269,11 @@ export default function ProgressGraph() {
       <button
         onClick={() => { setPos({ ...DEFAULT_POS }); setSvgKey(k => k + 1) }}
         style={{
-          position:  "absolute", bottom: 0, right: 0, zIndex: 100,
+          position: "absolute", bottom: 0, right: 0, zIndex: 100,
           background: LIME, color: "#FFFFFF", border: "none",
-          padding: "10px 13px",
-          fontSize: 16, letterSpacing: "0.2rem", fontFamily: "VT323, monospace",
-          textTransform: "uppercase", cursor: "pointer",
-          display: "flex", alignItems: "center", gap: 5,
+          padding: "10px 13px", fontSize: 16, letterSpacing: "0.2rem",
+          fontFamily: "VT323, monospace", textTransform: "uppercase",
+          cursor: "pointer", display: "flex", alignItems: "center", gap: 5,
           transition: "transform 0.14s",
         }}
       >

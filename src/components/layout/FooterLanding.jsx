@@ -46,68 +46,7 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-black font-display mb-4">
-              {t("footer.menu")}
-            </h4>
 
-            <ul className="space-y-2 text-neutral-200 text-sm md:text-base lg:text-lg">
-              <li>
-                <button
-                  onClick={() => scrollToSection("hero")}
-                  className="hover:text-primary transition nav-link"
-                >
-                  {t("footer.menu1")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="hover:text-primary transition nav-link"
-                >
-                  {t("footer.menu2")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("trajectory")}
-                  className="hover:text-primary transition nav-link"
-                >
-                  {t("footer.menu3")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("mindset-intro")}
-                  className="hover:text-primary transition nav-link"
-                >
-                  {t("footer.menu4")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="hover:text-primary transition nav-link"
-                >
-                  {t("footer.menu5")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("projects")}
-                  className="hover:text-primary transition nav-link"
-                >
-                  {t("footer.menu6")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="hover:text-primary transition nav-link"
-                >
-                  {t("footer.menu7")}
-                </button>
-              </li>
-            </ul>
           </div>
 
           {/* CONTACT */}

@@ -6,6 +6,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --bg: #09090e;
+    --surface: #0f0f17;
+    --surface2: #14141e;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.04);
+    --accent: #7B5EA7;
+    --accent2: #DBF227;
+    --accent3: #38BDF8;
+    --green: #34D399;
+    --red: #F87171;
+    --gold: #F59E0B;
+    --pink: #F472B6;
+    --text: #e4e4f0;
+    --muted: #6a6a8a;
+    --muted2: #9090b0;
+  }
+
 html {
   scroll-behavior: smooth;
 }
@@ -52,6 +70,42 @@ body,
 
 }
 
+.basic-color-1 {
+  background: #0E99DA;
+}
+
+.color-1 {
+  color: #0E99DA;
+}
+
+.color-1-300 {
+  color: #87cced;
+}
+
+.basic-color-2 {
+  background: #93C700;
+}
+
+.color-2 {
+  color: #93C700;
+}
+
+.color-2-300 {
+  color: #d4e999;
+}
+
+.basic-color-3 {
+  background: #FF530D;
+}
+
+.color-3 {
+  color: #FF530D;
+}
+
+.color-3-300 {
+  color: #ffba9e;
+}
+
 .font-main-color {
   color: #DBF227;
 }
@@ -61,7 +115,19 @@ body,
 }
 
 .border-main-color {
-  border-color: #DBF227
+  border-color: #DBF227;
+}
+
+.font-secondary-color {
+  color: #D6D58E;
+}
+
+.bg-secondary-color {
+  background: #D6D58E;
+}
+
+.border-secondary-color {
+  border-color: #D6D58E;
 }
 
 .hero-eyebrow {
@@ -333,6 +399,12 @@ body,
     height: 2px;
 }
 
+.line-divider-dark {
+    width: 3em;
+    background-color: #005C53;
+    height: 2px;
+}
+
 .reveal-line {
   opacity: 0.2;
   will-change: opacity;
@@ -384,6 +456,39 @@ body,
   flex-shrink: 0;
 }
 
+.dot-1 {
+  background: #0E99DA;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: .45rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.dot-2 {
+  background: #93C700;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: .45rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.dot-3 {
+  background: #FF530D;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: .45rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
 .input {
   padding: 0.875rem;
   font-size: 1rem;
@@ -400,4 +505,38 @@ body,
 
 footer a:hover {
   color: #DBF227;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fade 0.4s ease;
+}
+
+.e-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent2);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% {
+    opacity:1;
+    transform:scale(1)
+  }
+  50% {
+    opacity:.4;
+    transform:scale(.7)
+  }
 }

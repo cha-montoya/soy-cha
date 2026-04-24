@@ -1,51 +1,26 @@
 import { useEffect, useState } from "react"
-import { useTranslation } from "react-i18next"
 import { Menu, X } from "lucide-react"
 
 const sections = [
-  { id: "hero", anchor: "hero", tKey: "nav.hero" },
-  { id: "about", anchor: "about", tKey: "nav.about" },
-  { id: "trajectory", anchor: "trajectory", tKey: "nav.trajectory" },
-  { id: "mindset-intro", anchor: "mindset-intro", tKey: "nav.mindset" },
-  { id: "services", anchor: "services", tKey: "nav.services" },
-  { id: "projects", anchor: "projects", tKey: "nav.projects" },
-  { id: "contact", anchor: "contact", tKey: "nav.contact" },
+  { id: "case-hero", label: "Inicio" },
+  { id: "diagnostic", label: "Diagnóstico" },
+  { id: "context", label: "Contexto" },
+  { id: "segmentation", label: "Segmentación" },
+  { id: "lifecycle", label: "Lifecycle" },
+  { id: "data", label: "Data Engine" },
+  { id: "metrics", label: "Métricas" },
+  { id: "optimization", label: "Optimización" },
 ]
 
 export default function Header() {
-  const { t, i18n } = useTranslation()
   const [active, setActive] = useState("hero")
   const [menuOpen, setMenuOpen] = useState(false)
-
-  const toggleLanguage = () => {
-    const next = i18n.language === "es" ? "en" : "es"
-    i18n.changeLanguage(next)
-    localStorage.setItem("language", next)
-  }
-
-  const LanguageToggle = () => (
-    <div className="flex items-center gap-2 text-sm font-semibold text-neutral-500">
-      <button
-        onClick={toggleLanguage}
-        className={`transition-colors hover:text-black ${i18n.language === "es" ? "text-black pb-1 pt-1 border-b-2 border-main-color" : ""}`}
-      >
-        ES
-      </button>
-      <span>|</span>
-      <button
-        onClick={toggleLanguage}
-        className={`transition-colors hover:text-black ${i18n.language === "en" ? "text-black pb-1 pt-1 border-b-2 border-main-color" : ""}`}
-      >
-        EN
-      </button>
-    </div>
-  )
 
   useEffect(() => {
     const observers = []
 
-    sections.forEach(({ anchor, id }) => {
-      const el = document.getElementById(anchor)
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id)
       if (!el) return
 
       const observer = new IntersectionObserver(
@@ -63,7 +38,10 @@ export default function Header() {
   }, [])
 
   const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
     setMenuOpen(false)
     history.replaceState(null, "", window.location.pathname)
   }
@@ -78,26 +56,24 @@ export default function Header() {
           <a href="/">Carlos 'Cha' Montoya</a>
         </span>
 
-        {/* Desktop menu + Language toggle */}
+        {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
-          <ul className="flex gap-8 text-sm font-medium">
-            {sections.map(({ id, tKey }) => (
+          <ul className="flex gap-8 text-sm font-medium font-sans">
+            {sections.map(({ id, label }) => (
               <li key={id}>
                 <button
                   onClick={() => scrollTo(id)}
                   className={`nav-link ${active === id ? "nav-link-active" : ""}`}
                 >
-                  {t(tKey)}
+                  {label}
                 </button>
               </li>
             ))}
           </ul>
-          <LanguageToggle />
         </div>
 
-        {/* Mobile: language toggle + hamburger */}
+        {/* Mobile toggle */}
         <div className="flex md:hidden items-center gap-4">
-          <LanguageToggle />
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -110,13 +86,13 @@ export default function Header() {
         menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
       }`}>
         <ul className="flex flex-col items-center gap-6 py-10 text-lg font-medium">
-          {sections.map(({ id, tKey }) => (
+          {sections.map(({ id, label }) => (
             <li key={id}>
               <button
                 onClick={() => scrollTo(id)}
                 className={`${active === id ? "text-black font-semibold" : "text-neutral-500"}`}
               >
-                {t(tKey)}
+                {label}
               </button>
             </li>
           ))}

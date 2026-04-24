@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:12;">
+    <g transform="matrix(1.841742,0,0,2.958433,-314.213808,-108.546305)">
+        <path d="M300.918,141.476C329.171,98.788 392.078,67.112 474.667,67.112" style="fill:none;stroke:black;stroke-width:1.18px;stroke-dasharray:2.367,4.735,0,0,0,0;stroke-dashoffset:1.184;"/>
+    </g>
+    <g transform="matrix(1.237113,0,0,0.989011,-74.226804,4.395604)">
+        <path d="M254,245.3L254,372.7C254,387.767 244.221,400 232.175,400L81.825,400C69.779,400 60,387.767 60,372.7L60,245.3C60,230.233 69.779,218 81.825,218L232.175,218C244.221,218 254,230.233 254,245.3Z" style="fill:rgb(235,235,235);"/>
+    </g>
+    <g transform="matrix(1.237113,0,0,0.989011,485.773196,-215.604396)">
+        <path d="M254,245.3L254,372.7C254,387.767 244.221,400 232.175,400L81.825,400C69.779,400 60,387.767 60,372.7L60,245.3C60,230.233 69.779,218 81.825,218L232.175,218C244.221,218 254,230.233 254,245.3Z" style="fill:rgb(235,235,235);"/>
+    </g>
+    <g transform="matrix(1,0,0,1,0.309245,-2.26432)">
+        <g transform="matrix(1,0,0,1,-27.362815,164.093753)">
+            <g transform="matrix(33.333333,0,0,33.333333,213.150575,153.779943)">
+            </g>
+            <text x="79.72px" y="153.78px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:33.333px;">Revenue</text>
+        </g>
+        <g transform="matrix(1,0,0,1,-27.362815,185)">
+            <g transform="matrix(16.666667,0,0,16.666667,185.814963,153.779943)">
+            </g>
+            <text x="107.055px" y="153.78px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:16.667px;">Estancado</text>
+        </g>
+    </g>
+    <g transform="matrix(1,0,0,1,560.309245,-226.494137)">
+        <g transform="matrix(1,0,0,1,-27.362815,164.093753)">
+            <g transform="matrix(33.333333,0,0,33.333333,248.314963,153.779943)">
+            </g>
+            <text x="44.555px" y="153.78px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:33.333px;">Up/Cross Sell</text>
+        </g>
+        <g transform="matrix(1,0,0,1,-27.362815,185)">
+            <g transform="matrix(16.666667,0,0,16.666667,177.005556,153.779943)">
+            </g>
+            <text x="115.865px" y="153.78px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:16.667px;">Objetivo</text>
+        </g>
+    </g>
+</svg>
