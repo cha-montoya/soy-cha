@@ -5,6 +5,7 @@ import Loader from "./components/ui/Loader";
 import Home from "./pages/Home";
 import GrowthSystems from "./pages/growth-systems";
 import CaseStudy from "./pages/case-study";
+import ContentMastermind from "./pages/labs/content-mastermind"
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -51,6 +52,12 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/growth-systems" element={<GrowthSystems />} />
       <Route path="/case-study" element={<CaseStudy />} />
+
+      {/*  Nuevo Módulo */}
+      <Route
+          path="/labs/content-mastermind/*"
+          element={<ContentMastermind />}
+      />
     </Routes>
   );
 }

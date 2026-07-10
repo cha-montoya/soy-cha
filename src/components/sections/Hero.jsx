@@ -165,7 +165,7 @@ export default function Hero() {
             </div>
 
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight font-elegant"
+              className="text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight font-elegant"
               dangerouslySetInnerHTML={{ __html: headline }}
             />
 
