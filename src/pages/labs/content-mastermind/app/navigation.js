@@ -1,43 +1,62 @@
+import {
+  HouseLineIcon,
+  ArticleMediumIcon,
+  RobotIcon,
+  ImageIcon,
+  PaperPlaneTiltIcon,
+  GitForkIcon,
+  ChartPieSliceIcon,
+  GearSixIcon
+} from "@phosphor-icons/react"
+
 const navigation = [
   {
     id: "overview",
     label: "Overview",
-    path: "",
+    path: "/labs/content-mastermind",
+    icon: HouseLineIcon,
   },
   {
     id: "content",
     label: "Content",
-    path: "content",
+    path: "/labs/content-mastermind/content",
+    icon: ArticleMediumIcon,
   },
   {
     id: "agents",
     label: "Agents",
-    path: "agents",
+    path: "/labs/content-mastermind/agents",
+    icon: RobotIcon,
   },
   {
     id: "images",
     label: "Images",
-    path: "images",
+    path: "/labs/content-mastermind/images",
+    icon: ImageIcon,
   },
   {
     id: "publishing",
     label: "Publishing",
-    path: "publishing",
+    path: "/labs/content-mastermind/publishing",
+    icon: PaperPlaneTiltIcon,
   },
   {
     id: "workflows",
     label: "Workflows",
-    path: "workflows",
+    path: "/labs/content-mastermind/workflows",
+    icon: GitForkIcon,
   },
   {
     id: "analytics",
     label: "Analytics",
-    path: "analytics",
+    path: "/labs/content-mastermind/analytics",
+    icon: ChartPieSliceIcon,
   },
   {
     id: "settings",
     label: "Settings",
-    path: "settings",
+    path: "/labs/content-mastermind/settings",
+    icon: GearSixIcon,
   },
 ];
 
