@@ -1,6 +1,7 @@
 import {
   HouseLineIcon,
-  ArticleMediumIcon,
+  BrainIcon,
+  ArticleNyTimesIcon,
   RobotIcon,
   ImageIcon,
   PaperPlaneTiltIcon,
@@ -17,10 +18,16 @@ const navigation = [
     icon: HouseLineIcon,
   },
   {
+    id: "analysis",
+    label: "Analysis",
+    path: "/labs/content-mastermind/analysis",
+    icon: BrainIcon,
+  },
+  {
     id: "content",
     label: "Content",
     path: "/labs/content-mastermind/content",
-    icon: ArticleMediumIcon,
+    icon: ArticleNyTimesIcon,
   },
   {
     id: "agents",
