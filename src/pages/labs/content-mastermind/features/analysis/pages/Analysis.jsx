@@ -19,30 +19,6 @@ export default function Analysis() {
   const [selectedAnalysis, setSelectedAnalysis] = useState(null);
   const [search, setSearch] = useState("");
 
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  const handleGenerate = async (analysisId) => {
-
-      setIsGenerating(true);
-
-      try {
-
-          await generateContent(analysisId);
-
-          alert("LinkedIn draft generated successfully.");
-
-      } catch (error) {
-
-          alert(error.message);
-
-      } finally {
-
-          setIsGenerating(false);
-
-      }
-
-  };
-
   const filteredAnalysis = useMemo(() => {
     return analysis.filter((item) => {
       const text = `
@@ -70,16 +46,28 @@ export default function Analysis() {
     }
   }, [filteredAnalysis, selectedAnalysis]);
 
+  const [isGenerating, setIsGenerating] = useState(false);
+
   const handleGenerate = async (analysisId) => {
-    try {
-      await generateContent(analysisId);
 
-      alert("LinkedIn draft generated successfully.");
-    } catch (error) {
-        console.error(error);
+      setIsGenerating(true);
 
-        alert(error.message);
+      try {
+
+          await generateContent(analysisId);
+
+          alert("LinkedIn draft generated successfully.");
+
+      } catch (error) {
+
+          alert(error.message);
+
+      } finally {
+
+          setIsGenerating(false);
+
       }
+
   };
 
   if (loading) {
