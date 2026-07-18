@@ -15,7 +15,7 @@ export default function AnalysisListItem({
         hover:bg-gray-50
         ${
           selected
-            ? "bg-blue-50 border-l-4 border-l-blue-600"
+            ? "bg-blue-50 border-l-4 border-l-slate-600"
             : "bg-white"
         }
       `}

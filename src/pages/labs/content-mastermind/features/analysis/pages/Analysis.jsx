@@ -3,10 +3,15 @@ import { useEffect, useMemo, useState } from "react";
 import useAnalysis from "../hooks/useAnalysis";
 
 import SearchBar from "../../content/components/SearchBar";
+
 import AnalysisList from "../components/AnalysisList";
 import AnalysisDetail from "../components/AnalysisDetail";
+
 import EmptyState from "../../../shared/components/EmptyState";
 import Spinner from "../../../shared/components/Spinner";
+import SectionLoader from "../../../shared/components/SectionLoader";
+
+import { generateContent } from "../../content/services/content-generator.service";
 
 export default function Analysis() {
   const { analysis, loading, error } = useAnalysis();
@@ -14,12 +19,40 @@ export default function Analysis() {
   const [selectedAnalysis, setSelectedAnalysis] = useState(null);
   const [search, setSearch] = useState("");
 
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const handleGenerate = async (analysisId) => {
+
+      setIsGenerating(true);
+
+      try {
+
+          await generateContent(analysisId);
+
+          alert("LinkedIn draft generated successfully.");
+
+      } catch (error) {
+
+          alert(error.message);
+
+      } finally {
+
+          setIsGenerating(false);
+
+      }
+
+  };
+
   const filteredAnalysis = useMemo(() => {
-    return analysis.filter((item) =>
-      item.summary.toLowerCase().includes(search.toLowerCase()) ||
-      item.topic.toLowerCase().includes(search.toLowerCase()) ||
-      item.target_audience.toLowerCase().includes(search.toLowerCase())
-    );
+    return analysis.filter((item) => {
+      const text = `
+        ${item.summary}
+        ${item.topic}
+        ${item.target_audience}
+      `.toLowerCase();
+
+      return text.includes(search.toLowerCase());
+    });
   }, [analysis, search]);
 
   useEffect(() => {
@@ -37,12 +70,24 @@ export default function Analysis() {
     }
   }, [filteredAnalysis, selectedAnalysis]);
 
+  const handleGenerate = async (analysisId) => {
+    try {
+      await generateContent(analysisId);
+
+      alert("LinkedIn draft generated successfully.");
+    } catch (error) {
+        console.error(error);
+
+        alert(error.message);
+      }
+  };
+
   if (loading) {
-    return (
-      <div className="flex justify-center p-10">
-        <Spinner size={32} />
-      </div>
-    );
+      return (
+          <SectionLoader
+              text="Loading article analysis..."
+          />
+      );
   }
 
   if (error) {
@@ -67,7 +112,7 @@ export default function Analysis() {
         </div>
 
         <p className="mb-3 text-sm text-gray-500">
-          {filteredAnalysis.length} article
+          {filteredAnalysis.length} artículo
           {filteredAnalysis.length !== 1 ? "s" : ""}
         </p>
 
@@ -87,6 +132,8 @@ export default function Analysis() {
 
         <AnalysisDetail
           analysis={selectedAnalysis}
+          onGenerate={handleGenerate}
+          generating={isGenerating}
         />
 
       </div>

@@ -9,6 +9,9 @@ import ContentDetail from "../components/ContentDetail";
 import StatusBadge from "../components/StatusBadge";
 import SearchBar from "../components/SearchBar";
 
+import Spinner from "../../../shared/components/Spinner";
+import SectionLoader from "../../../shared/components/SectionLoader";
+
 export default function Content() {
   const { contents, loading, error } = useContent();
 
@@ -60,7 +63,11 @@ export default function Content() {
   }, [filteredContents, selectedContent]);
 
   if (loading) {
-    return <p>Cargando contenido...</p>;
+      return (
+          <SectionLoader
+              text="Loading generated content..."
+          />
+      );
   }
 
   if (error) {
