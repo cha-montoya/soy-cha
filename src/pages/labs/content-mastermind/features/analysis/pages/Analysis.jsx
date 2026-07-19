@@ -8,23 +8,26 @@ import AnalysisList from "../components/AnalysisList";
 import AnalysisDetail from "../components/AnalysisDetail";
 
 import EmptyState from "../../../shared/components/EmptyState";
-import Spinner from "../../../shared/components/Spinner";
 import SectionLoader from "../../../shared/components/SectionLoader";
+
+import { useToast } from "../../../shared/context/ToastContext";
 
 import { generateContent } from "../../content/services/content-generator.service";
 
 export default function Analysis() {
   const { analysis, loading, error } = useAnalysis();
+  const toast = useToast();
 
   const [selectedAnalysis, setSelectedAnalysis] = useState(null);
   const [search, setSearch] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const filteredAnalysis = useMemo(() => {
     return analysis.filter((item) => {
       const text = `
-        ${item.summary}
-        ${item.topic}
-        ${item.target_audience}
+        ${item.summary || ""}
+        ${item.topic || ""}
+        ${item.target_audience || ""}
       `.toLowerCase();
 
       return text.includes(search.toLowerCase());
@@ -37,45 +40,47 @@ export default function Analysis() {
       return;
     }
 
-    const exists = filteredAnalysis.find(
+    const selectedStillExists = filteredAnalysis.some(
       (item) => item.id === selectedAnalysis?.id
     );
 
-    if (!exists) {
+    if (!selectedStillExists) {
       setSelectedAnalysis(filteredAnalysis[0]);
     }
   }, [filteredAnalysis, selectedAnalysis]);
 
-  const [isGenerating, setIsGenerating] = useState(false);
-
   const handleGenerate = async (analysisId) => {
+    if (!analysisId || isGenerating) {
+      return;
+    }
 
-      setIsGenerating(true);
+    setIsGenerating(true);
 
-      try {
+    try {
+      await generateContent(analysisId);
 
-          await generateContent(analysisId);
-
-          alert("LinkedIn draft generated successfully.");
-
-      } catch (error) {
-
-          alert(error.message);
-
-      } finally {
-
-          setIsGenerating(false);
-
-      }
-
+      toast.success({
+        title: "Content generated",
+        message:
+          "The LinkedIn draft was generated successfully and is ready for review.",
+      });
+    } catch (generationError) {
+      toast.error({
+        title: "Generation failed",
+        message:
+          generationError?.message ||
+          "An error occurred while generating the LinkedIn draft.",
+        duration: 7000,
+      });
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   if (loading) {
-      return (
-          <SectionLoader
-              text="Loading article analysis..."
-          />
-      );
+    return (
+      <SectionLoader text="Loading article analysis..." />
+    );
   }
 
   if (error) {
@@ -88,10 +93,8 @@ export default function Analysis() {
   }
 
   return (
-    <div className="flex gap-6 h-full">
-
-      <div className="w-1/3 flex flex-col">
-
+    <div className="flex h-full gap-6">
+      <div className="flex w-1/3 flex-col">
         <div className="mb-3">
           <SearchBar
             value={search}
@@ -104,28 +107,22 @@ export default function Analysis() {
           {filteredAnalysis.length !== 1 ? "s" : ""}
         </p>
 
-        <div className="border rounded-lg overflow-auto flex-1">
-
+        <div className="flex-1 overflow-auto rounded-lg border">
           <AnalysisList
             analysis={filteredAnalysis}
             selectedAnalysis={selectedAnalysis}
             onSelect={setSelectedAnalysis}
           />
-
         </div>
-
       </div>
 
-      <div className="flex-1 border rounded-lg overflow-auto">
-
+      <div className="flex-1 overflow-auto rounded-lg border">
         <AnalysisDetail
           analysis={selectedAnalysis}
           onGenerate={handleGenerate}
           generating={isGenerating}
         />
-
       </div>
-
     </div>
   );
 }
