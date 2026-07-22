@@ -1,5 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 
+import { routes } from "../../../config/routes";
+import useSelectedResource from "../../../shared/hooks/useSelectedResource";
+
 import useAnalysis from "../hooks/useAnalysis";
 
 import SearchBar from "../../content/components/SearchBar";
@@ -18,36 +21,72 @@ export default function Analysis() {
   const { analysis, loading, error } = useAnalysis();
   const toast = useToast();
 
-  const [selectedAnalysis, setSelectedAnalysis] = useState(null);
   const [search, setSearch] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
 
-  const filteredAnalysis = useMemo(() => {
-    return analysis.filter((item) => {
-      const text = `
-        ${item.summary || ""}
-        ${item.topic || ""}
-        ${item.target_audience || ""}
-      `.toLowerCase();
+  const {
+    selectedResource: selectedAnalysis,
+    selectResource: selectAnalysis,
+    invalidSelection,
+  } = useSelectedResource(analysis, routes.analysis, {
+    loading,
+    autoSelectFirst: true,
+  });
 
-      return text.includes(search.toLowerCase());
+  const filteredAnalysis = useMemo(() => {
+    const normalizedSearch = search.trim().toLowerCase();
+
+    return analysis.filter((item) => {
+      if (!normalizedSearch) {
+        return true;
+      }
+
+      const searchableText = [
+        item.summary,
+        item.topic,
+        item.target_audience,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      return searchableText.includes(normalizedSearch);
     });
   }, [analysis, search]);
 
   useEffect(() => {
-    if (!filteredAnalysis.length) {
-      setSelectedAnalysis(null);
+    if (loading) {
       return;
     }
 
-    const selectedStillExists = filteredAnalysis.some(
-      (item) => item.id === selectedAnalysis?.id
+    if (invalidSelection) {
+      return;
+    }
+
+    if (!filteredAnalysis.length) {
+      return;
+    }
+
+    if (!selectedAnalysis) {
+      return;
+    }
+
+    const selectedIsVisible = filteredAnalysis.some(
+      (item) => item.id === selectedAnalysis.id
     );
 
-    if (!selectedStillExists) {
-      setSelectedAnalysis(filteredAnalysis[0]);
+    if (!selectedIsVisible) {
+      selectAnalysis(filteredAnalysis[0], {
+        replace: true,
+      });
     }
-  }, [filteredAnalysis, selectedAnalysis]);
+  }, [
+    filteredAnalysis,
+    invalidSelection,
+    loading,
+    selectedAnalysis,
+    selectAnalysis,
+  ]);
 
   const handleGenerate = async (analysisId) => {
     if (!analysisId || isGenerating) {
@@ -87,7 +126,10 @@ export default function Analysis() {
     return (
       <EmptyState
         title="Unable to load analysis"
-        description={error.message}
+        description={
+          error?.message ||
+          "An unexpected error occurred while loading the analysis."
+        }
       />
     );
   }
@@ -111,17 +153,24 @@ export default function Analysis() {
           <AnalysisList
             analysis={filteredAnalysis}
             selectedAnalysis={selectedAnalysis}
-            onSelect={setSelectedAnalysis}
+            onSelect={selectAnalysis}
           />
         </div>
       </div>
 
       <div className="flex-1 overflow-auto rounded-lg border">
-        <AnalysisDetail
-          analysis={selectedAnalysis}
-          onGenerate={handleGenerate}
-          generating={isGenerating}
-        />
+        {invalidSelection ? (
+          <EmptyState
+            title="Analysis not found"
+            description="The selected analysis does not exist or is no longer available."
+          />
+        ) : (
+          <AnalysisDetail
+            analysis={selectedAnalysis}
+            onGenerate={handleGenerate}
+            generating={isGenerating}
+          />
+        )}
       </div>
     </div>
   );

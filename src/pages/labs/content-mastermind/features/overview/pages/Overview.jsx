@@ -1,7 +1,7 @@
 import {
   CheckCircleIcon,
   FileTextIcon,
-  ImageIcon,
+  PaintBrushIcon,
   BrainIcon,
   ArticleNyTimesIcon,
 } from "@phosphor-icons/react";
@@ -99,10 +99,10 @@ export default function Overview() {
         />
 
         <MetricCard
-          label="Images"
+          label="Image Studio"
           value={metrics.images}
           description="Generated visual assets."
-          icon={ImageIcon}
+          icon={PaintBrushIcon}
         />
 
         <MetricCard

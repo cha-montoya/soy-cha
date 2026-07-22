@@ -2,9 +2,10 @@ export const CM_BASE = "/labs/content-mastermind";
 
 export const routes = {
   overview: CM_BASE,
+  analysis: `${CM_BASE}/analysis`,
   content: `${CM_BASE}/content`,
   agents: `${CM_BASE}/agents`,
-  images: `${CM_BASE}/images`,
+  imageStudio: `${CM_BASE}/image-studio`,
   publishing: `${CM_BASE}/publishing`,
   workflows: `${CM_BASE}/workflows`,
   analytics: `${CM_BASE}/analytics`,

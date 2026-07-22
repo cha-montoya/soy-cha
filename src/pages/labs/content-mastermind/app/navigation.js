@@ -3,7 +3,7 @@ import {
   BrainIcon,
   ArticleNyTimesIcon,
   RobotIcon,
-  ImageIcon,
+  PaintBrushIcon,
   PaperPlaneTiltIcon,
   GitForkIcon,
   ChartPieSliceIcon,
@@ -36,10 +36,10 @@ const navigation = [
     icon: RobotIcon,
   },
   {
-    id: "images",
-    label: "Images",
-    path: "/labs/content-mastermind/images",
-    icon: ImageIcon,
+    id: "image-studio",
+    label: "Image Studio",
+    path: "/labs/content-mastermind/image-studio",
+    icon: PaintBrushIcon,
   },
   {
     id: "publishing",

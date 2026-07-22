@@ -1,5 +1,5 @@
 import {
-  ImageIcon,
+  PaintBrushIcon,
   PaletteIcon,
   BrainIcon,
   ArticleNyTimesIcon,
@@ -20,10 +20,10 @@ const ACTIONS = [
     icon: ArticleNyTimesIcon,
   },
   {
-    label: "Image workspace",
+    label: "Image Studio workspace",
     description: "Manage visual generation.",
-    to: "/labs/content-mastermind/images",
-    icon: ImageIcon,
+    to: "/labs/content-mastermind/image-studio",
+    icon: PaintBrushIcon,
   },
   {
     label: "Brand assets",
