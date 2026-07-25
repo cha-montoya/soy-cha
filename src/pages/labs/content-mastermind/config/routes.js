@@ -10,4 +10,6 @@ export const routes = {
   workflows: `${CM_BASE}/workflows`,
   analytics: `${CM_BASE}/analytics`,
   settings: `${CM_BASE}/settings`,
+  settingsWorkspace: `${CM_BASE}/settings/workspace`,
+  settingsBrandAssets: `${CM_BASE}/settings/brand-assets`,
 };

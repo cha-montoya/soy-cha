@@ -15,39 +15,40 @@ export default function Button({
       border-black
       bg-black
       text-white
-      hover:bg-white
-      hover:text-black
+      hover:bg-neutral-900
+      hover:border-neutral-900
     `,
 
     secondary: `
       border-gray-300
       bg-white
-      text-gray-800
+      text-gray-900
       hover:border-black
-      hover:bg-gray-50
+      hover:bg-gray-100
     `,
 
     success: `
       border-green-700
       bg-green-700
       text-white
-      hover:bg-white
-      hover:text-green-700
+      hover:bg-green-800
+      hover:border-green-800
     `,
 
     warning: `
       border-yellow-500
       bg-yellow-500
       text-black
-      hover:bg-white
+      hover:bg-yellow-400
+      hover:border-yellow-400
     `,
 
     danger: `
       border-red-600
       bg-red-600
       text-white
-      hover:bg-white
-      hover:text-red-600
+      hover:bg-red-700
+      hover:border-red-700
     `,
   };
 
@@ -61,41 +62,33 @@ export default function Button({
       aria-busy={loading}
       className={`
         inline-flex
-        whitespace-nowrap
         min-w-[220px]
         items-center
         justify-center
         gap-2
-        border-1
-        p-4
+        whitespace-nowrap
+        border
+        px-6
+        py-3.5
         font-mono
         text-sm
+        font-medium
         uppercase
-        tracking-[0.2rem]
+        tracking-[0.18rem]
         transition-all
         duration-200
         ease-out
-        hover:bg-white
-        hover:text-gray-900
-        hover:border-2
-        hover:border-gray-900
+
         disabled:pointer-events-none
-        disabled:cursor-not-allowed
         disabled:opacity-50
+
         ${variants[variant] || variants.primary}
         ${className}
       `}
     >
-      {loading && (
-        <Spinner
-          size={16}
-          aria-hidden="true"
-        />
-      )}
+      {loading && <Spinner size={16} />}
 
-      <span>
-        {loading ? loadingText : children}
-      </span>
+      <span>{loading ? loadingText : children}</span>
     </button>
   );
 }
