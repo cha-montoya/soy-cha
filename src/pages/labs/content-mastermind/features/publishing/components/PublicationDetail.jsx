@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { routes } from "../../../config/routes";
 import Button from "../../../shared/components/Button";
 import SectionCard from "../../../shared/components/SectionCard";
+import Badge from "../../../shared/components/Badge";
+import StatusBadge from "../../../shared/components/StatusBadge";
 
 function toLocalInputValue(value) {
   const date = value ? new Date(value) : new Date(Date.now() + 60 * 60 * 1000);
@@ -45,12 +47,8 @@ export default function PublicationDetail({
     <div className="space-y-6 p-6">
       <section>
         <div className="flex flex-wrap items-center gap-3">
-          <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-blue-700">
-            {publication.platform}
-          </span>
-          <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-700">
-            {String(publication.status).replaceAll("_", " ")}
-          </span>
+          <Badge variant="info">{publication.platform}</Badge>
+          <StatusBadge value={publication.status} />
         </div>
 
         <h1 className="mt-3 font-display text-3xl font-black tracking-tight">

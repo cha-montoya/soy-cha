@@ -1,5 +1,6 @@
 import Button from "../../../shared/components/Button";
 import Spinner from "../../../shared/components/Spinner";
+import StatusBadge from "../../../shared/components/StatusBadge";
 
 export default function ImageInspector({
   content,
@@ -158,18 +159,6 @@ function MetadataRow({ label, value }) {
         {value}
       </dd>
     </div>
-  );
-}
-
-function StatusBadge({ value, fallback = "unknown" }) {
-  const normalizedValue = String(value || fallback)
-    .replaceAll("_", " ")
-    .trim();
-
-  return (
-    <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-gray-600">
-      {normalizedValue}
-    </span>
   );
 }
 

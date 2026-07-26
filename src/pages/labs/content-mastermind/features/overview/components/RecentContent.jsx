@@ -1,5 +1,6 @@
 import { ImageIcon } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
+import StatusBadge from "../../../shared/components/StatusBadge";
 
 function formatDate(value) {
   if (!value) {
@@ -95,9 +96,7 @@ export default function RecentContent({ items }) {
               </div>
 
               <div className="flex shrink-0 items-center justify-between gap-4 sm:block sm:text-right">
-                <span className="inline-flex rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600">
-                  {formatStatus(item.status)}
-                </span>
+                <StatusBadge value={item.status} />
 
                 <p className="mt-0 text-xs text-slate-400 sm:mt-2">
                   {formatDate(item.created_at)}

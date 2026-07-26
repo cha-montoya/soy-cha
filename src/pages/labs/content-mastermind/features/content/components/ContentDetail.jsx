@@ -6,6 +6,8 @@ import { routes } from "../../../config/routes";
 
 import Button from "../../../shared/components/Button";
 import SectionCard from "../../../shared/components/SectionCard";
+import Badge from "../../../shared/components/Badge";
+import StatusBadge from "../../../shared/components/StatusBadge";
 import { useToast } from "../../../shared/context/ToastContext";
 import { approveContent } from "../../publishing/services/publication.service";
 
@@ -85,10 +87,7 @@ export default function ContentDetail({ content, onContentUpdated }) {
         </h1>
 
         <div className="flex flex-wrap items-center gap-3">
-          <StatusBadge
-            value={content.status}
-            variant="warning"
-          />
+          <StatusBadge value={content.status} />
 
           {formattedDate && (
             <span className="text-sm text-gray-500">
@@ -145,14 +144,11 @@ export default function ContentDetail({ content, onContentUpdated }) {
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <StatusBadge
             value={content.image_status}
-            fallback={hasImage ? "generated" : "not generated"}
-            variant={hasImage ? "success" : "neutral"}
+            fallback={hasImage ? "generated" : "not_generated"}
           />
 
           {content.image_model && (
-            <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
-              {content.image_model}
-            </span>
+            <Badge>{content.image_model}</Badge>
           )}
         </div>
       </SectionCard>
@@ -236,10 +232,7 @@ export default function ContentDetail({ content, onContentUpdated }) {
               Current Status
             </p>
 
-            <StatusBadge
-              value={content.status}
-              variant="warning"
-            />
+            <StatusBadge value={content.status} />
           </div>
 
           <div className="flex flex-wrap gap-3">
@@ -263,33 +256,5 @@ export default function ContentDetail({ content, onContentUpdated }) {
         </div>
       </SectionCard>
     </div>
-  );
-}
-
-function StatusBadge({
-  value,
-  fallback = "unknown",
-  variant = "neutral",
-}) {
-  const styles = {
-    neutral: "bg-gray-100 text-gray-600",
-    warning: "bg-yellow-100 text-yellow-700",
-    success: "bg-green-100 text-green-700",
-  };
-
-  const label = String(value || fallback)
-    .replaceAll("_", " ")
-    .trim();
-
-  return (
-    <span
-      className={[
-        "rounded-full px-3 py-1 text-xs font-semibold",
-        "uppercase tracking-wide",
-        styles[variant] || styles.neutral,
-      ].join(" ")}
-    >
-      {label}
-    </span>
   );
 }

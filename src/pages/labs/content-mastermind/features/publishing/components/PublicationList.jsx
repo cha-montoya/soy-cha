@@ -1,4 +1,5 @@
 import ResourceListItem from "../../../shared/components/ResourceListItem";
+import StatusBadge from "../../../shared/components/StatusBadge";
 
 function formatDate(value) {
   if (!value) return "Not scheduled";
@@ -25,11 +26,7 @@ export default function PublicationList({ publications, selected, onSelect }) {
         const content = publication.generated_content || {};
         const active = String(publication.id) === String(selected?.id);
 
-        const badge = (
-          <span className="rounded-full bg-gray-100 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-gray-600">
-            {String(publication.status || "unknown").replaceAll("_", " ")}
-          </span>
-        );
+        const badge = <StatusBadge value={publication.status} />;
 
         return (
           <ResourceListItem

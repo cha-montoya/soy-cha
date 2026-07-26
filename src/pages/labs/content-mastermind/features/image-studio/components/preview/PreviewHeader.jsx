@@ -4,6 +4,7 @@ import {
 } from "@phosphor-icons/react";
 
 import PreviewAvatar from "./PreviewAvatar";
+import Badge from "../../../../shared/components/Badge";
 
 export default function PreviewHeader({
   authorName = "Content Mastermind",
@@ -42,14 +43,13 @@ export default function PreviewHeader({
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700">
-        <LinkedinLogoIcon
-          size={15}
-          weight="fill"
-        />
-
-        <span>{channel}</span>
-      </div>
+      <Badge
+        variant="info"
+        size="md"
+        icon={<LinkedinLogoIcon size={15} weight="fill" />}
+      >
+        {channel}
+      </Badge>
     </header>
   );
 }

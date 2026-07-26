@@ -1,4 +1,5 @@
 import ResourceListItem from "../../../shared/components/ResourceListItem";
+import StatusBadge from "../../../shared/components/StatusBadge";
 
 export default function ImageGalleryItem({
   content,
@@ -26,18 +27,7 @@ export default function ImageGalleryItem({
     </div>
   );
 
-  const badge = (
-    <span
-      className={[
-        "rounded-full px-2 py-1 text-[10px] font-semibold uppercase tracking-wide",
-        hasImage
-          ? "bg-green-100 text-green-700"
-          : "bg-gray-100 text-gray-500",
-      ].join(" ")}
-    >
-      {formatStatus(imageStatus)}
-    </span>
-  );
+  const badge = <StatusBadge value={imageStatus} />;
 
   return (
     <ResourceListItem
@@ -48,10 +38,4 @@ export default function ImageGalleryItem({
       badge={badge}
     />
   );
-}
-
-function formatStatus(status) {
-  return String(status || "unknown")
-    .replaceAll("_", " ")
-    .trim();
 }
