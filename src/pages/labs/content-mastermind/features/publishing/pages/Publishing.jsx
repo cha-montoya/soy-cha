@@ -94,7 +94,7 @@ export default function Publishing() {
           <select
             value={status}
             onChange={(event) => setStatus(event.target.value)}
-            className="mt-4 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm"
+            className="input w-full border-b border-neutral-300 bg-transparent py-3 focus:outline-none"
           >
             {STATUSES.map((value) => (
               <option key={value} value={value}>
