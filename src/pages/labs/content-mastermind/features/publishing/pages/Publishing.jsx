@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { routes } from "../../../config/routes";
 import { useToast } from "../../../shared/context/ToastContext";
 import useSelectedResource from "../../../shared/hooks/useSelectedResource";
@@ -10,6 +11,9 @@ import usePublications from "../hooks/usePublications";
 import {
   cancelPublication,
   schedulePublication,
+  publishPublication,
+  getLinkedInStatus,
+  getLinkedInAuthorizationUrl,
 } from "../services/publication.service";
 
 const STATUSES = [
@@ -25,6 +29,8 @@ const STATUSES = [
 export default function Publishing() {
   const [status, setStatus] = useState("all");
   const [busyAction, setBusyAction] = useState("");
+  const [linkedInStatus, setLinkedInStatus] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
   const filters = useMemo(() => ({ status, platform: "linkedin" }), [status]);
   const { publications, loading, error, replacePublication } = usePublications(filters);
   const toast = useToast();
@@ -38,6 +44,52 @@ export default function Publishing() {
     autoSelectFirst: true,
   });
 
+
+  useEffect(() => {
+    let active = true;
+
+    getLinkedInStatus()
+      .then((integration) => {
+        if (active) setLinkedInStatus(integration);
+      })
+      .catch((statusError) => {
+        if (active) {
+          setLinkedInStatus({ connected: false });
+          toast.error({
+            title: "Unable to read LinkedIn connection",
+            message: statusError.message,
+          });
+        }
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [toast]);
+
+  useEffect(() => {
+    const result = searchParams.get("linkedin");
+    if (!result) return;
+
+    if (result === "connected") {
+      toast.success({
+        title: "LinkedIn connected",
+        message: "Publish now is ready to use.",
+      });
+      getLinkedInStatus().then(setLinkedInStatus).catch(() => {});
+    } else if (result === "error") {
+      toast.error({
+        title: "LinkedIn connection failed",
+        message: searchParams.get("message") || "The authorization could not be completed.",
+      });
+    }
+
+    const next = new URLSearchParams(searchParams);
+    next.delete("linkedin");
+    next.delete("message");
+    setSearchParams(next, { replace: true });
+  }, [searchParams, setSearchParams, toast]);
+
   useEffect(() => {
     if (loading || invalidSelection || !publications.length || !selected) return;
 
@@ -49,6 +101,40 @@ export default function Publishing() {
       selectPublication(publications[0], { replace: true });
     }
   }, [invalidSelection, loading, publications, selected, selectPublication]);
+
+
+  async function handleConnectLinkedIn() {
+    try {
+      setBusyAction("connect");
+      const authorizationUrl = await getLinkedInAuthorizationUrl();
+      window.location.assign(authorizationUrl);
+    } catch (actionError) {
+      toast.error({
+        title: "Unable to connect LinkedIn",
+        message: actionError.message,
+      });
+      setBusyAction("");
+    }
+  }
+
+  async function handlePublish() {
+    try {
+      setBusyAction("publish");
+      const updated = await publishPublication(selected.id);
+      replacePublication(updated);
+      toast.success({
+        title: "Published on LinkedIn",
+        message: "The post was published successfully.",
+      });
+    } catch (actionError) {
+      toast.error({
+        title: "LinkedIn publication failed",
+        message: actionError.message,
+      });
+    } finally {
+      setBusyAction("");
+    }
+  }
 
   async function handleSchedule(scheduledAt) {
     try {
@@ -142,6 +228,9 @@ export default function Publishing() {
             busyAction={busyAction}
             onSchedule={handleSchedule}
             onCancel={handleCancel}
+            onPublish={handlePublish}
+            linkedInStatus={linkedInStatus}
+            onConnectLinkedIn={handleConnectLinkedIn}
           />
         ) : (
           <EmptyState

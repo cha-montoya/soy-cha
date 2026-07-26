@@ -52,3 +52,22 @@ export async function cancelPublication(publicationId, reason = "") {
 
   return response.publication;
 }
+
+export async function getLinkedInStatus() {
+  const response = await api.get("/integrations/linkedin/status");
+  return response.integration;
+}
+
+export async function getLinkedInAuthorizationUrl() {
+  const response = await api.get("/integrations/linkedin/connect");
+  return response.authorization_url;
+}
+
+export async function publishPublication(publicationId) {
+  const response = await api.post(
+    `/publications/${encodeURIComponent(publicationId)}/publish`,
+    {}
+  );
+
+  return response.publication;
+}

@@ -20,6 +20,9 @@ export default function PublicationDetail({
   busyAction,
   onSchedule,
   onCancel,
+  onPublish,
+  linkedInStatus,
+  onConnectLinkedIn,
 }) {
   const [scheduledAt, setScheduledAt] = useState(() =>
     toLocalInputValue(publication?.scheduled_at)
@@ -65,6 +68,17 @@ export default function PublicationDetail({
             </Link>
           </div>
         )}
+
+        {publication.external_post_id && (
+          <a
+            className="mt-4 inline-block text-sm font-medium underline underline-offset-4"
+            href={publication.metadata?.linkedin?.external_url || `https://www.linkedin.com/feed/update/${publication.external_post_id}/`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View published post
+          </a>
+        )}
       </section>
 
       <SectionCard title="LinkedIn preview">
@@ -91,16 +105,33 @@ export default function PublicationDetail({
 
       <SectionCard title="Publication actions">
         <div className="flex flex-wrap gap-3">
-          <Button
-            disabled={!canPreparePublishNow}
-            title="LinkedIn connection required"
-          >
-            Publish now
-          </Button>
+          {linkedInStatus?.connected ? (
+            <Button
+              disabled={!canPreparePublishNow}
+              loading={busyAction === "publish"}
+              loadingText="Publishing..."
+              onClick={onPublish}
+            >
+              Publish now
+            </Button>
+          ) : (
+            <Button
+              variant="secondary"
+              loading={busyAction === "connect"}
+              loadingText="Connecting..."
+              onClick={onConnectLinkedIn}
+            >
+              Connect LinkedIn
+            </Button>
+          )}
         </div>
 
         <p className="mt-3 text-sm text-gray-500">
-          Publish now is ready in the interface and will be enabled when the LinkedIn publishing connection is completed.
+          {linkedInStatus?.connected
+            ? `Connected${linkedInStatus.display_name ? ` as ${linkedInStatus.display_name}` : ""}. The post will be published immediately.`
+            : linkedInStatus?.expired
+              ? "The LinkedIn connection expired. Reconnect the account before publishing."
+              : "Connect the LinkedIn account that will publish this content."}
         </p>
       </SectionCard>
 
