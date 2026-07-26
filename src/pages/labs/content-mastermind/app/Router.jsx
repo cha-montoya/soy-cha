@@ -24,19 +24,12 @@ export default function Router() {
       <Route path="image-studio/:id" element={<ImageStudio />} />
 
       <Route path="publishing" element={<Publishing />} />
+      <Route path="publishing/:id" element={<Publishing />} />
 
       <Route path="settings" element={<SettingsLayout />}>
         <Route index element={<Navigate to="workspace" replace />} />
-
-        <Route
-          path="workspace"
-          element={<WorkspaceSettings />}
-        />
-
-        <Route
-          path="brand-assets"
-          element={<BrandAssetsSettings />}
-        />
+        <Route path="workspace" element={<WorkspaceSettings />} />
+        <Route path="brand-assets" element={<BrandAssetsSettings />} />
       </Route>
     </Routes>
   );

@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { routes } from "../../../config/routes";
 import Button from "../../../shared/components/Button";
 import SectionCard from "../../../shared/components/SectionCard";
 
@@ -37,6 +39,7 @@ export default function PublicationDetail({
 
   const canSchedule = ["approved", "failed", "scheduled"].includes(publication.status);
   const canCancel = !["published", "cancelled", "publishing"].includes(publication.status);
+  const canPreparePublishNow = ["approved", "failed", "scheduled"].includes(publication.status);
 
   return (
     <div className="space-y-6 p-6">
@@ -49,9 +52,21 @@ export default function PublicationDetail({
             {String(publication.status).replaceAll("_", " ")}
           </span>
         </div>
+
         <h1 className="mt-3 font-display text-3xl font-black tracking-tight">
           {content.title || "Untitled publication"}
         </h1>
+
+        {content.id && (
+          <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium">
+            <Link className="underline underline-offset-4" to={`${routes.content}/${content.id}`}>
+              Open in Content
+            </Link>
+            <Link className="underline underline-offset-4" to={`${routes.imageStudio}/${content.id}`}>
+              Open in Image Studio
+            </Link>
+          </div>
+        )}
       </section>
 
       <SectionCard title="LinkedIn preview">
@@ -74,6 +89,21 @@ export default function PublicationDetail({
             />
           )}
         </div>
+      </SectionCard>
+
+      <SectionCard title="Publication actions">
+        <div className="flex flex-wrap gap-3">
+          <Button
+            disabled={!canPreparePublishNow}
+            title="LinkedIn connection required"
+          >
+            Publish now
+          </Button>
+        </div>
+
+        <p className="mt-3 text-sm text-gray-500">
+          Publish now is ready in the interface and will be enabled when the LinkedIn publishing connection is completed.
+        </p>
       </SectionCard>
 
       <SectionCard title="Schedule">
@@ -101,10 +131,6 @@ export default function PublicationDetail({
             {publication.status === "scheduled" ? "Reschedule" : "Schedule"}
           </Button>
         </div>
-
-        <p className="mt-3 text-sm text-gray-500">
-          Publishing to LinkedIn will be connected in the next integration step. This action currently prepares the queue and scheduler state.
-        </p>
       </SectionCard>
 
       {canCancel && (
