@@ -2,6 +2,10 @@ import { useEffect, useMemo, useState } from "react";
 
 import { routes } from "../../../config/routes";
 import { generateImage } from "../../../services/image.service";
+import {
+  approveContent,
+  createPublication,
+} from "../../publishing/services/publication.service";
 
 import useSelectedResource from "../../../shared/hooks/useSelectedResource";
 
@@ -29,6 +33,8 @@ export default function ImageStudio() {
 
   const [generatingId, setGeneratingId] = useState(null);
   const [generationError, setGenerationError] = useState("");
+  const [approvingId, setApprovingId] = useState(null);
+  const [sendingId, setSendingId] = useState(null);
 
   const sortedContents = useMemo(() => {
     return [...contents].sort((first, second) => {
@@ -149,6 +155,52 @@ export default function ImageStudio() {
     }
   }
 
+
+  async function handleApproveContent() {
+    if (!selectedContent?.id || approvingId) return;
+
+    try {
+      setApprovingId(selectedContent.id);
+      const updated = await approveContent(selectedContent.id);
+      replaceContent(updated);
+      toast.success({
+        title: "Content approved",
+        message: "The copy is ready for the publication workflow.",
+      });
+    } catch (approveError) {
+      toast.error({
+        title: "Unable to approve content",
+        message: approveError?.message || "The content could not be approved.",
+      });
+    } finally {
+      setApprovingId(null);
+    }
+  }
+
+  async function handleSendToPublishing() {
+    if (!selectedContent?.id || sendingId) return;
+
+    try {
+      setSendingId(selectedContent.id);
+      const response = await createPublication(selectedContent.id, "linkedin");
+      toast.success({
+        title: response.already_exists
+          ? "Already in Publishing"
+          : "Sent to Publishing",
+        message: response.already_exists
+          ? "An active LinkedIn queue record already exists for this content."
+          : "The LinkedIn publication is ready to be scheduled.",
+      });
+    } catch (sendError) {
+      toast.error({
+        title: "Unable to send to Publishing",
+        message: sendError?.message || "The publication queue record could not be created.",
+      });
+    } finally {
+      setSendingId(null);
+    }
+  }
+
   if (loading) {
     return (
       <SectionLoader text="Loading Image Studio..." />
@@ -215,6 +267,10 @@ export default function ImageStudio() {
         <ImageWorkspace
           content={selectedContent}
           generating={isGenerating}
+          approving={approvingId === selectedContent?.id}
+          sending={sendingId === selectedContent?.id}
+          onApprove={handleApproveContent}
+          onSendToPublishing={handleSendToPublishing}
         />
       </main>
 

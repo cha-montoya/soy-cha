@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowSquareOutIcon } from "@phosphor-icons/react";
 
@@ -6,9 +6,13 @@ import { routes } from "../../../config/routes";
 
 import Button from "../../../shared/components/Button";
 import SectionCard from "../../../shared/components/SectionCard";
+import { useToast } from "../../../shared/context/ToastContext";
+import { approveContent } from "../../publishing/services/publication.service";
 
-export default function ContentDetail({ content }) {
+export default function ContentDetail({ content, onContentUpdated }) {
   const navigate = useNavigate();
+  const toast = useToast();
+  const [approving, setApproving] = useState(false);
 
   const formattedDate = useMemo(() => {
     if (!content?.created_at) {
@@ -38,6 +42,27 @@ export default function ContentDetail({ content }) {
         String(content.id)
       )}`
     );
+  }
+
+  async function handleApprove() {
+    if (!content?.id || approving) return;
+
+    try {
+      setApproving(true);
+      const updated = await approveContent(content.id);
+      onContentUpdated?.(updated);
+      toast.success({
+        title: "Content approved",
+        message: "Review the final mockup in Image Studio before sending it to Publishing.",
+      });
+    } catch (approveError) {
+      toast.error({
+        title: "Unable to approve content",
+        message: approveError?.message || "The content could not be approved.",
+      });
+    } finally {
+      setApproving(false);
+    }
   }
 
   if (!content) {
@@ -220,16 +245,19 @@ export default function ContentDetail({ content }) {
           <div className="flex flex-wrap gap-3">
             <Button
               variant="warning"
-              disabled
+              disabled={content.status === "approved"}
+              loading={approving}
+              loadingText="Approving..."
+              onClick={handleApprove}
             >
-              Approve
+              {content.status === "approved" ? "Approved" : "Approve copy"}
             </Button>
 
             <Button
               variant="success"
-              disabled
+              onClick={handleOpenImageStudio}
             >
-              Publish
+              Review & publish
             </Button>
           </div>
         </div>

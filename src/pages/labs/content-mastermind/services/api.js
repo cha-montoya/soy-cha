@@ -15,7 +15,11 @@ const API_BASE_URL =
         const data = await response.json();
 
         if (!response.ok) {
-        throw new Error(data.message || "Request failed");
+          throw new Error(
+            data?.error?.message ||
+            data?.message ||
+            "Request failed"
+          );
         }
 
         return data;

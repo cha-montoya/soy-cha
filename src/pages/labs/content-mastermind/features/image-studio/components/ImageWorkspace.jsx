@@ -1,9 +1,14 @@
 import ImagePreview from "./ImagePreview";
 import { LinkedInPostPreview } from "./preview";
+import PublishingActions from "./PublishingActions";
 
 export default function ImageWorkspace({
   content,
   generating = false,
+  approving = false,
+  sending = false,
+  onApprove,
+  onSendToPublishing,
 }) {
   if (!content) {
     return (
@@ -60,6 +65,14 @@ export default function ImageWorkspace({
           />
         </section>
       </div>
+
+      <PublishingActions
+        content={content}
+        approving={approving}
+        sending={sending}
+        onApprove={onApprove}
+        onSend={onSendToPublishing}
+      />
     </div>
   );
 }

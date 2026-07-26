@@ -13,7 +13,7 @@ import SearchBar from "../components/SearchBar";
 import SectionLoader from "../../../shared/components/SectionLoader";
 
 export default function Content() {
-  const { contents, loading, error } = useContent();
+  const { contents, loading, error, replaceContent } = useContent();
 
   const [filter, setFilter] = useState("all");
   const [search, setSearch] = useState("");
@@ -161,7 +161,7 @@ export default function Content() {
             </div>
           </div>
         ) : (
-          <ContentDetail content={selectedContent} />
+          <ContentDetail content={selectedContent} onContentUpdated={replaceContent} />
         )}
       </div>
     </div>
