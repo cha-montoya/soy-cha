@@ -1,9 +1,17 @@
-<Header />
+import Header from "./Header";
+import Router from "./Router";
+import Sidebar from "./Sidebar";
 
-<div className="app-body">
-    <Sidebar />
-
-    <main>
-        <Router />
-    </main>
-</div>
+export default function Layout() {
+  return (
+    <div className="min-h-screen bg-slate-100">
+      <Header />
+      <div className="flex">
+        <Sidebar />
+        <main className="min-w-0 flex-1">
+          <Router />
+        </main>
+      </div>
+    </div>
+  );
+}

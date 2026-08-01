@@ -1,14 +1,5 @@
-import { supabase } from "../../../lib/supabase";
+import { getContents } from "../../content/services/content.service";
 
 export async function getImageStudioContents() {
-  const { data, error } = await supabase
-    .from("generated_content")
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  if (error) {
-    throw error;
-  }
-
-  return Array.isArray(data) ? data : [];
+  return getContents();
 }

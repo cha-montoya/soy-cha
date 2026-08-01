@@ -11,6 +11,8 @@ import useSelectedResource from "../../../shared/hooks/useSelectedResource";
 
 import EmptyState from "../../../shared/components/EmptyState";
 import SectionLoader from "../../../shared/components/SectionLoader";
+import { SearchInput, SelectInput } from "../../../shared/components/filters/FilterControls";
+import { matchesSearch, uniqueOptions } from "../../../shared/utils/filters";
 
 import { useToast } from "../../../shared/context/ToastContext";
 
@@ -35,25 +37,31 @@ export default function ImageStudio() {
   const [generationError, setGenerationError] = useState("");
   const [approvingId, setApprovingId] = useState(null);
   const [sendingId, setSendingId] = useState(null);
+  const [search, setSearch] = useState("");
+  const [source, setSource] = useState("all");
+  const [imageStatus, setImageStatus] = useState("all");
+
+  const sourceOptions = useMemo(
+    () => uniqueOptions(contents, (item) => item.source_name, "All sources"),
+    [contents]
+  );
 
   const sortedContents = useMemo(() => {
-    return [...contents].sort((first, second) => {
-      const firstDate =
-        first.image_generated_at ||
-        first.created_at ||
-        0;
-
-      const secondDate =
-        second.image_generated_at ||
-        second.created_at ||
-        0;
-
-      return (
-        new Date(secondDate).getTime() -
-        new Date(firstDate).getTime()
-      );
-    });
-  }, [contents]);
+    return contents
+      .filter((content) => {
+        const normalizedImageStatus = content.image_status || (content.image_url ? "generated" : "not_generated");
+        return (
+          (source === "all" || content.source_name === source) &&
+          (imageStatus === "all" || normalizedImageStatus === imageStatus) &&
+          matchesSearch([content.title, content.topic, content.source_name], search)
+        );
+      })
+      .sort((first, second) => {
+        const firstDate = first.image_generated_at || first.created_at || 0;
+        const secondDate = second.image_generated_at || second.created_at || 0;
+        return new Date(secondDate).getTime() - new Date(firstDate).getTime();
+      });
+  }, [contents, imageStatus, search, source]);
 
   const {
     selectedResource: selectedContent,
@@ -249,17 +257,38 @@ export default function ImageStudio() {
           </h1>
 
           <p className="mt-1 text-sm text-gray-500">
-            {sortedContents.length} content item
-            {sortedContents.length !== 1 ? "s" : ""}
+            {sortedContents.length} of {contents.length} content item
+            {contents.length !== 1 ? "s" : ""}
           </p>
+
+          <div className="mt-4 space-y-3">
+            <SearchInput value={search} onChange={setSearch} placeholder="Search content..." />
+            <SelectInput label="Source" value={source} onChange={setSource} options={sourceOptions} />
+            <SelectInput
+              label="Image status"
+              value={imageStatus}
+              onChange={setImageStatus}
+              options={[
+                { value: "all", label: "All image statuses" },
+                { value: "not_generated", label: "Not generated" },
+                { value: "generating", label: "Generating" },
+                { value: "generated", label: "Generated" },
+                { value: "failed", label: "Failed" },
+              ]}
+            />
+          </div>
         </div>
 
         <div className="min-h-0 flex-1 overflow-y-auto">
-          <ImageGallery
-            contents={sortedContents}
-            selectedContent={selectedContent}
-            onSelect={selectContent}
-          />
+          {sortedContents.length ? (
+            <ImageGallery
+              contents={sortedContents}
+              selectedContent={selectedContent}
+              onSelect={selectContent}
+            />
+          ) : (
+            <EmptyState title="No matching content" description="Change the search or filters." />
+          )}
         </div>
       </aside>
 

@@ -5,6 +5,9 @@ import { useToast } from "../../../shared/context/ToastContext";
 import useSelectedResource from "../../../shared/hooks/useSelectedResource";
 import EmptyState from "../../../shared/components/EmptyState";
 import SectionLoader from "../../../shared/components/SectionLoader";
+import PageHeader from "../../../shared/components/PageHeader";
+import { ClearFiltersButton, DateInput, FilterPanel, SearchInput, SelectInput } from "../../../shared/components/filters/FilterControls";
+import { isWithinDateRange, matchesSearch } from "../../../shared/utils/filters";
 import PublicationList from "../components/PublicationList";
 import PublicationDetail from "../components/PublicationDetail";
 import usePublications from "../hooks/usePublications";
@@ -30,10 +33,30 @@ export default function Publishing() {
   const [status, setStatus] = useState("all");
   const [busyAction, setBusyAction] = useState("");
   const [linkedInStatus, setLinkedInStatus] = useState(null);
+  const [search, setSearch] = useState("");
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const filters = useMemo(() => ({ status, platform: "linkedin" }), [status]);
   const { publications, loading, error, replacePublication } = usePublications(filters);
   const toast = useToast();
+
+  const filteredPublications = useMemo(() => {
+    return publications.filter((publication) => {
+      const content = publication.generated_content || {};
+      return (
+        matchesSearch(
+          [content.title, content.content, publication.platform, publication.status],
+          search
+        ) &&
+        isWithinDateRange(
+          publication.published_at || publication.scheduled_at || publication.created_at,
+          from,
+          to
+        )
+      );
+    });
+  }, [from, publications, search, to]);
 
   const {
     selectedResource: selected,
@@ -91,16 +114,16 @@ export default function Publishing() {
   }, [searchParams, setSearchParams, toast]);
 
   useEffect(() => {
-    if (loading || invalidSelection || !publications.length || !selected) return;
+    if (loading || invalidSelection || !filteredPublications.length || !selected) return;
 
-    const selectedIsVisible = publications.some(
+    const selectedIsVisible = filteredPublications.some(
       (item) => String(item.id) === String(selected.id)
     );
 
     if (!selectedIsVisible) {
-      selectPublication(publications[0], { replace: true });
+      selectPublication(filteredPublications[0], { replace: true });
     }
-  }, [invalidSelection, loading, publications, selected, selectPublication]);
+  }, [filteredPublications, invalidSelection, loading, selected, selectPublication]);
 
 
   async function handleConnectLinkedIn() {
@@ -186,59 +209,75 @@ export default function Publishing() {
   }
 
   return (
-    <div className="flex h-full min-h-0 gap-6">
-      <aside className="flex w-[360px] shrink-0 flex-col overflow-hidden rounded-xl border border-gray-200 bg-white">
-        <div className="border-b border-gray-200 p-4">
-          <h1 className="font-display text-xl font-black tracking-tight">Publishing</h1>
-          <p className="mt-1 text-sm text-gray-500">
-            {publications.length} LinkedIn publication{publications.length === 1 ? "" : "s"}
-          </p>
-          <select
-            value={status}
-            onChange={(event) => setStatus(event.target.value)}
-            className="mt-4 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm"
-          >
-            {STATUSES.map((value) => (
-              <option key={value} value={value}>
-                {value === "all" ? "All statuses" : value.replaceAll("_", " ")}
-              </option>
-            ))}
-          </select>
-        </div>
+    <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
+      <PageHeader
+        title="Publishing"
+        description="Review, schedule and publish LinkedIn content from one consistent queue."
+        meta={<span className="text-sm font-medium text-slate-500">{filteredPublications.length} of {publications.length}</span>}
+      />
 
-        <div className="min-h-0 flex-1 overflow-y-auto">
+      <FilterPanel>
+        <SearchInput value={search} onChange={setSearch} placeholder="Search publication title or copy..." />
+        <SelectInput
+          label="Status"
+          value={status}
+          onChange={setStatus}
+          options={STATUSES.map((value) => ({
+            value,
+            label: value === "all" ? "All statuses" : value.replaceAll("_", " "),
+          }))}
+        />
+        <div className="grid grid-cols-2 gap-3">
+          <DateInput label="From" value={from} onChange={setFrom} />
+          <DateInput label="To" value={to} onChange={setTo} />
+        </div>
+        <div className="flex items-end">
+          <ClearFiltersButton
+            disabled={!search && status === "all" && !from && !to}
+            onClick={() => {
+              setSearch("");
+              setStatus("all");
+              setFrom("");
+              setTo("");
+            }}
+          />
+        </div>
+      </FilterPanel>
+
+      <div className="grid min-h-0 flex-1 lg:grid-cols-[360px_minmax(0,1fr)]">
+        <aside className="min-h-0 overflow-y-auto border-b border-slate-200 lg:border-b-0 lg:border-r">
           <PublicationList
-            publications={publications}
+            publications={filteredPublications}
             selected={selected}
             onSelect={selectPublication}
           />
-        </div>
-      </aside>
+        </aside>
 
-      <main className="min-w-0 flex-1 overflow-auto rounded-xl border border-gray-200 bg-white">
-        {invalidSelection ? (
-          <EmptyState
-            title="Publication not found"
-            description="The selected publication does not exist or is no longer available."
-          />
-        ) : selected ? (
-          <PublicationDetail
-            key={selected.id}
-            publication={selected}
-            busyAction={busyAction}
-            onSchedule={handleSchedule}
-            onCancel={handleCancel}
-            onPublish={handlePublish}
-            linkedInStatus={linkedInStatus}
-            onConnectLinkedIn={handleConnectLinkedIn}
-          />
-        ) : (
-          <EmptyState
-            title="Publication queue is empty"
-            description="Approve content and send it to Publishing from Image Studio."
-          />
-        )}
-      </main>
+        <main className="min-w-0 overflow-auto bg-slate-50/40">
+          {invalidSelection ? (
+            <EmptyState
+              title="Publication not found"
+              description="The selected publication does not exist or is no longer available."
+            />
+          ) : selected && filteredPublications.length ? (
+            <PublicationDetail
+              key={selected.id}
+              publication={selected}
+              busyAction={busyAction}
+              onSchedule={handleSchedule}
+              onCancel={handleCancel}
+              onPublish={handlePublish}
+              linkedInStatus={linkedInStatus}
+              onConnectLinkedIn={handleConnectLinkedIn}
+            />
+          ) : (
+            <EmptyState
+              title={publications.length ? "No matching publications" : "Publication queue is empty"}
+              description={publications.length ? "Change or clear the current filters." : "Approve content and send it to Publishing from Image Studio."}
+            />
+          )}
+        </main>
+      </div>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Analysis from "../features/analysis";
 import Content from "../features/content";
 import ImageStudio from "../features/image-studio";
 import Publishing from "../features/publishing";
+import Analytics from "../features/analytics";
 import SettingsLayout from "../features/settings/components/SettingsLayout";
 import WorkspaceSettings from "../features/settings/pages/WorkspaceSettings";
 import BrandAssetsSettings from "../features/settings/pages/BrandAssetsSettings";
@@ -25,6 +26,8 @@ export default function Router() {
 
       <Route path="publishing" element={<Publishing />} />
       <Route path="publishing/:id" element={<Publishing />} />
+
+      <Route path="analytics" element={<Analytics />} />
 
       <Route path="settings" element={<SettingsLayout />}>
         <Route index element={<Navigate to="workspace" replace />} />
