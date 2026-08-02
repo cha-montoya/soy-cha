@@ -53,7 +53,7 @@ export default function UploadField({
           py-8
           text-center
           transition
-          hover:border-black
+          hover:border-slate-950
           hover:bg-white
         "
       >
@@ -65,7 +65,7 @@ export default function UploadField({
           className="sr-only"
         />
 
-        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-slate-200 bg-white">
           <UploadSimple size={22} />
         </div>
 
@@ -112,19 +112,19 @@ export default function UploadField({
                     w-8
                     items-center
                     justify-center
-                    rounded-full
+                    rounded-lg
                     border
                     border-slate-200
                     bg-white
                     text-slate-700
                     shadow-sm
                     transition
-                    hover:border-black
-                    hover:text-black
+                    hover:border-slate-950
+                    hover:text-slate-950
                   "
                   aria-label={`Remove ${file.name}`}
                 >
-                  <X size={16} />
+                  <X size={16} weight="regular" />
                 </button>
               </div>
 

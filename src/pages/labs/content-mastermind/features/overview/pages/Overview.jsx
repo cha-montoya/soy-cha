@@ -6,6 +6,7 @@ import {
   ArticleNyTimesIcon,
 } from "@phosphor-icons/react";
 
+import Button from "../../../shared/components/Button";
 import SectionLoader from "../../../shared/components/SectionLoader";
 import BrandHeader from "../components/BrandHeader";
 import MetricCard from "../components/MetricCard";
@@ -41,7 +42,7 @@ export default function Overview() {
 
       <header className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+          <p className="text-sm font-medium text-slate-500">
             Dashboard
           </p>
 
@@ -54,14 +55,15 @@ export default function Overview() {
           </p>
         </div>
 
-        <button
-          type="button"
+        <Button
+          variant="secondary"
           onClick={refresh}
           disabled={refreshing}
-          className="inline-flex h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
+          loading={refreshing}
+          loadingText="Refreshing..."
         >
-          {refreshing ? "Refreshing..." : "Refresh data"}
-        </button>
+          Refresh data
+        </Button>
       </header>
 
       {error ? (

@@ -10,10 +10,10 @@ export default function PostPerformanceTable({ posts }) {
   return (
     <section className="overflow-hidden rounded-xl border border-slate-200 bg-white">
       <div className="border-b border-slate-200 px-5 py-4">
-        <h2 className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">Published posts</h2>
+        <h2 className="text-base font-semibold text-slate-950">Published posts</h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-slate-200 text-sm">
+        <table className="min-w-[900px] divide-y divide-slate-200 text-sm">
           <thead className="bg-slate-50 text-left text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-500">
             <tr>
               <th className="px-5 py-3">Post</th>
@@ -51,10 +51,10 @@ export default function PostPerformanceTable({ posts }) {
                         href={post.external_url}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex rounded-lg border border-slate-300 p-2 text-slate-600 transition hover:border-slate-900 hover:text-slate-950"
+                        className="inline-flex h-10 w-10 items-center justify-center whitespace-nowrap rounded-lg border border-slate-300 text-slate-600 transition hover:border-slate-950 hover:text-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-950/20"
                         aria-label="Open LinkedIn post"
                       >
-                        <ArrowSquareOutIcon size={17} weight="bold" />
+                        <ArrowSquareOutIcon size={17} weight="regular" />
                       </a>
                     ) : null}
                   </td>

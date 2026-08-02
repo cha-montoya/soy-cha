@@ -8,7 +8,7 @@ export default function AppShell() {
         <div className="min-h-screen bg-gray-100">
         <Header />
 
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
             <Sidebar />
 
             <Workspace>

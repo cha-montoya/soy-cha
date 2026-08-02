@@ -1,14 +1,8 @@
 export default function Header() {
-    return (
-        <header className="h-16 border-b bg-white flex items-center justify-between px-6 md:px-16 h-20">
-
-            <span className="text-xl md:text-3xl font-black tracking-tight font-display">
-            Content Mastermind
-            </span>
-
-            <span className="text-sm text-gray-500">
-                v0.1.0
-            </span>
-        </header>
-    );
+  return (
+    <header className="flex min-h-16 items-center justify-between gap-4 border-b border-slate-200 bg-white px-4 py-3 sm:px-6 lg:px-8">
+      <span className="truncate text-xl font-semibold tracking-tight text-slate-950 sm:text-2xl">Content Mastermind</span>
+      <span className="shrink-0 text-sm font-normal text-slate-500">v0.5.0</span>
+    </header>
+  );
 }

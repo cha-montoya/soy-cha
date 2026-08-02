@@ -7,7 +7,7 @@ export default function PerformanceBars({ title, items, metric = "posts" }) {
 
   return (
     <section className="rounded-xl border border-slate-200 bg-white p-5">
-      <h2 className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">{title}</h2>
+      <h2 className="text-base font-semibold text-slate-950">{title}</h2>
       <div className="mt-5 space-y-4">
         {items.length ? items.map((item) => {
           const value = Number(item[metric] || 0);

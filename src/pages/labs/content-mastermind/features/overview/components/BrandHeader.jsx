@@ -17,7 +17,7 @@ export default function BrandHeader({ companyName, companyLogo }) {
             ) : (
               <BuildingsIcon
                 size={34}
-                weight="duotone"
+                weight="regular"
                 className="text-slate-400"
               />
             )}

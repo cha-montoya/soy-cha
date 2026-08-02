@@ -128,7 +128,7 @@ export default function Analysis() {
   }
 
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
+    <div className="flex min-h-[70vh] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white lg:h-full lg:min-h-0">
       <PageHeader
         title="Analysis"
         description="Review AI analysis by source, topic and analysis date before generating content."
@@ -160,7 +160,7 @@ export default function Analysis() {
         </div>
       </FilterPanel>
 
-      <div className="grid min-h-0 flex-1 lg:grid-cols-[360px_minmax(0,1fr)]">
+      <div className="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-[360px_minmax(0,1fr)]">
         <aside className="min-h-0 overflow-y-auto border-b border-slate-200 lg:border-b-0 lg:border-r">
           <AnalysisList
             analysis={filteredAnalysis}

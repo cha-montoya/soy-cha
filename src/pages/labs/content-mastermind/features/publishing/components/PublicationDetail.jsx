@@ -54,7 +54,7 @@ export default function PublicationDetail({
           <StatusBadge value={publication.status} />
         </div>
 
-        <h1 className="mt-3 font-display text-3xl font-black tracking-tight">
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight">
           {content.title || "Untitled publication"}
         </h1>
 

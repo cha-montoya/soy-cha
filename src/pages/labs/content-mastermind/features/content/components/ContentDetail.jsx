@@ -82,7 +82,7 @@ export default function ContentDetail({ content, onContentUpdated }) {
       {/* Header */}
 
       <section className="space-y-3">
-        <h1 className="font-display text-3xl font-black tracking-tight">
+        <h1 className="text-3xl font-semibold tracking-tight">
           {content.title || "Untitled content"}
         </h1>
 

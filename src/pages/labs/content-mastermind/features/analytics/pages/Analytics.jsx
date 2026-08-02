@@ -33,7 +33,7 @@ export default function Analytics() {
           title="LinkedIn Analytics"
           description="Daily publishing performance connected to the source, topic, prompt version and Brand Voice behind each post."
           action={
-            <Button variant="secondary" onClick={reload} className="min-w-0 px-4 py-2.5">
+            <Button variant="secondary" onClick={reload} className="">
               <ArrowClockwiseIcon size={17} weight="bold" />
               Refresh
             </Button>
@@ -43,9 +43,9 @@ export default function Analytics() {
           <DateInput label="From" value={from} onChange={setFrom} />
           <DateInput label="To" value={to} onChange={setTo} />
           {(from || to) ? (
-            <button type="button" onClick={() => { setFrom(""); setTo(""); }} className="h-10 rounded-lg border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-700 hover:border-slate-900">
+            <Button variant="secondary" onClick={() => { setFrom(""); setTo(""); }}>
               Clear period
-            </button>
+            </Button>
           ) : null}
         </div>
       </div>
@@ -75,12 +75,12 @@ export default function Analytics() {
       <PostPerformanceTable posts={posts} />
 
       <section className="rounded-xl border border-slate-200 bg-white p-5">
-        <h2 className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-500">Daily publishing activity</h2>
+        <h2 className="text-base font-semibold text-slate-950">Daily publishing activity</h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {daily.map((item) => (
             <div key={item.publication_date} className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-slate-500">{item.publication_date}</p>
-              <p className="mt-2 text-2xl font-black text-slate-950">{item.posts_published}</p>
+              <p className="text-xs font-medium text-slate-500">{item.publication_date}</p>
+              <p className="mt-2 text-2xl font-semibold text-slate-950">{item.posts_published}</p>
               <p className="text-xs text-slate-500">post{Number(item.posts_published) === 1 ? "" : "s"} published</p>
             </div>
           ))}

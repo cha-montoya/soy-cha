@@ -8,7 +8,7 @@ export default function SectionCard({
 
       <div className="mb-4 flex items-center justify-between">
 
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+        <h2 className="text-base font-semibold text-slate-950">
           {title}
         </h2>
 

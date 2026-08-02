@@ -59,23 +59,7 @@ export default function ColorField({
         </p>
       )}
 
-      <div
-        className="
-          flex
-          items-center
-          gap-3
-          rounded-xl
-          border
-          border-slate-300
-          bg-white
-          px-4
-          py-3
-          transition
-          focus-within:border-black
-          focus-within:ring-2
-          focus-within:ring-black/10
-        "
-      >
+      <div className="flex items-center gap-3 border-b border-neutral-300 py-1">
         <label
           htmlFor={`${name}-picker`}
           className="
@@ -111,7 +95,7 @@ export default function ColorField({
           maxLength={7}
           spellCheck="false"
           autoComplete="off"
-          className="input w-full border-b border-neutral-300 bg-transparent py-3 focus:outline-none"
+          className="input min-w-0 flex-1 bg-transparent py-3 text-sm focus:outline-none"
         />
       </div>
     </div>

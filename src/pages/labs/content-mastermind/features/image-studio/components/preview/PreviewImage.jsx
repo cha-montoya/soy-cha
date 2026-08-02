@@ -19,7 +19,7 @@ export default function PreviewImage({
         <div className="text-center">
           <SparkleIcon
             size={30}
-            weight="duotone"
+            weight="regular"
             className="mx-auto animate-pulse text-gray-400"
           />
 
@@ -42,7 +42,7 @@ export default function PreviewImage({
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 bg-white">
             <ImageIcon
               size={24}
-              weight="duotone"
+              weight="regular"
               className="text-gray-400"
             />
           </div>

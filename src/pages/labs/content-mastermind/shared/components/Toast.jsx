@@ -64,7 +64,7 @@ export default function Toast({
 
         <div className="min-w-0 flex-1">
           {title && (
-            <p className="font-mono text-sm uppercase tracking-[0.2rem] text-gray-900">
+            <p className="text-sm font-medium text-gray-900">
               {title}
             </p>
           )}
@@ -79,29 +79,12 @@ export default function Toast({
         <button
           type="button"
           onClick={onClose}
-          className="
-            inline-flex
-            flex-shrink-0
-            items-center
-            justify-center
-            border
-            border-transparent
-            p-1
-            text-gray-400
-            transition-colors
-            duration-200
-            hover:border-gray-300
-            hover:text-gray-900
-            focus:outline-none
-            focus:ring-2
-            focus:ring-gray-900
-            focus:ring-offset-2
-          "
+          className="inline-flex h-9 w-9 shrink-0 items-center justify-center whitespace-nowrap rounded-lg border border-transparent text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-950/20"
           aria-label="Cerrar notificación"
         >
           <XIcon
             size={18}
-            weight="bold"
+            weight="regular"
             aria-hidden="true"
           />
         </button>

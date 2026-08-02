@@ -57,7 +57,7 @@ export default function QuickActions() {
               className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-600 transition group-hover:bg-slate-900 group-hover:text-white">
-                <Icon size={20} weight="duotone" />
+                <Icon size={20} weight="regular" />
               </div>
 
               <h3 className="mt-4 text-sm font-semibold text-slate-900">

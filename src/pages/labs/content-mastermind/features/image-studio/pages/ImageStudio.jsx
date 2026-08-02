@@ -249,14 +249,14 @@ export default function ImageStudio() {
     generatingId === selectedContent?.id;
 
   return (
-    <div className="flex h-full min-h-0 overflow-hidden rounded-xl border border-gray-200 bg-white">
+    <div className="flex min-h-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white lg:h-full">
       <aside className="flex w-72 shrink-0 flex-col border-r border-gray-200">
         <div className="border-b border-gray-200 p-4">
-          <h1 className="font-display text-xl font-black tracking-tight text-gray-900">
+          <h1 className="text-2xl font-semibold tracking-tight text-slate-950">
             Image Studio
           </h1>
 
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-slate-500">
             {sortedContents.length} of {contents.length} content item
             {contents.length !== 1 ? "s" : ""}
           </p>

@@ -1,57 +1,34 @@
 import Spinner from "./Spinner";
 
+const VARIANTS = {
+  primary: "border-slate-950 bg-slate-950 text-white hover:border-slate-800 hover:bg-slate-800",
+  secondary: "border-slate-300 bg-white text-slate-800 hover:border-slate-950 hover:text-slate-950",
+  ghost: "border-transparent bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-950",
+  success: "border-emerald-700 bg-emerald-700 text-white hover:border-emerald-800 hover:bg-emerald-800",
+  warning: "border-amber-500 bg-amber-500 text-slate-950 hover:border-amber-400 hover:bg-amber-400",
+  danger: "border-red-600 bg-red-600 text-white hover:border-red-700 hover:bg-red-700",
+};
+
+const SIZES = {
+  sm: "h-9 px-3 text-sm",
+  md: "h-10 px-4 text-sm",
+  lg: "h-11 px-5 text-sm",
+  icon: "h-10 w-10 p-0",
+};
+
 export default function Button({
   children,
   variant = "primary",
+  size = "md",
   disabled = false,
   loading = false,
   loadingText = "Loading...",
   onClick,
   className = "",
   type = "button",
+  title,
+  "aria-label": ariaLabel,
 }) {
-  const variants = {
-    primary: `
-      border-black
-      bg-black
-      text-white
-      hover:bg-neutral-900
-      hover:border-neutral-900
-    `,
-
-    secondary: `
-      border-gray-300
-      bg-white
-      text-gray-900
-      hover:border-black
-      hover:bg-gray-100
-    `,
-
-    success: `
-      border-green-700
-      bg-green-700
-      text-white
-      hover:bg-green-800
-      hover:border-green-800
-    `,
-
-    warning: `
-      border-yellow-500
-      bg-yellow-500
-      text-black
-      hover:bg-yellow-400
-      hover:border-yellow-400
-    `,
-
-    danger: `
-      border-red-600
-      bg-red-600
-      text-white
-      hover:bg-red-700
-      hover:border-red-700
-    `,
-  };
-
   const isDisabled = disabled || loading;
 
   return (
@@ -60,35 +37,14 @@ export default function Button({
       disabled={isDisabled}
       onClick={onClick}
       aria-busy={loading}
-      className={`
-        inline-flex
-        min-w-[220px]
-        items-center
-        justify-center
-        gap-2
-        whitespace-nowrap
-        border
-        px-6
-        py-3.5
-        font-mono
-        text-sm
-        font-medium
-        uppercase
-        tracking-[0.18rem]
-        transition-all
-        duration-200
-        ease-out
-
-        disabled:pointer-events-none
-        disabled:opacity-50
-
-        ${variants[variant] || variants.primary}
-        ${className}
-      `}
+      aria-label={ariaLabel}
+      title={title}
+      className={`inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg border font-medium leading-none transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-950/20 disabled:pointer-events-none disabled:opacity-50 ${SIZES[size] || SIZES.md} ${VARIANTS[variant] || VARIANTS.primary} ${className}`}
     >
-      {loading && <Spinner size={16} />}
-
-      <span>{loading ? loadingText : children}</span>
+      {loading ? <Spinner size={16} /> : null}
+      <span className="inline-flex min-w-0 items-center justify-center gap-2 whitespace-nowrap">
+        {loading ? loadingText : children}
+      </span>
     </button>
   );
 }

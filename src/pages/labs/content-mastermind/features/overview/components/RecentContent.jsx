@@ -79,7 +79,7 @@ export default function RecentContent({ items }) {
                 ) : (
                   <ImageIcon
                     size={24}
-                    weight="duotone"
+                    weight="regular"
                     className="text-slate-400"
                   />
                 )}
